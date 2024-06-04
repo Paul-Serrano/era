@@ -1,0 +1,39 @@
+version: '4.3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - ./public:/var/www/html
+      - ./src:/var/www/html/src
+    env_file:
+      - .env
+
+  db:
+    image: mysql:8.0
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: era
+      MYSQL_USER: user
+      MYSQL_PASSWORD: erapass
+    ports:
+      - "3306:3306"
+    env_file:
+      - .env
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root
+
+volumes:
+  db-data:

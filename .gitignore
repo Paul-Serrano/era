@@ -1,0 +1,45 @@
+# Ignore les fichiers de configuration de l'environnement
+.env
+
+# Ignore les répertoires des volumes Docker
+db-data/
+
+# Ignore les fichiers générés par le système d'exploitation
+.DS_Store
+Thumbs.db
+
+# Ignore les fichiers et dossiers générés par les éditeurs de code
+.vscode/
+.idea/
+*.swp
+
+# Ignore les fichiers et dossiers de logs
+logs/
+*.log
+
+# Ignore les fichiers et dossiers de déploiement
+*.bak
+*.backup
+
+# Ignore les dossiers de dépendances (si applicable)
+node_modules/
+vendor/
+
+# Ignore les fichiers compilés
+*.class
+*.o
+*.so
+
+# Ignore les fichiers de build et d'artefacts
+/build/
+/dist/
+/out/
+
+# Ignore les fichiers de configuration d'IDE
+*.iml
+*.ipr
+*.iws
+
+# Ignore Tailwind CSS
+tailwind.config.js
+postcss.config.js
