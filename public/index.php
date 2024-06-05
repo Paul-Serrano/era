@@ -1,4 +1,11 @@
 <!-- public/index.php -->
+<?php
+
+// require_once '../src/db.php';
+// require_once '../src/routes.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr-FR">
     <head>
