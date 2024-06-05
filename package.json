@@ -1,10 +1,16 @@
 {
-  "dependencies": {
-    "tailwindcss": "^3.4.3"
-  },
+  "name": "era",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "build:css": "tailwindcss build -o public/tailwind.css",
-    "watch:css": "tailwindcss build -o public/tailwind.css --watch"
+    "watch:css": "tailwindcss build -o public/tailwind.css --watch",
+    "postinstall": "npx tailwindcss init && node scripts/setup-tailwind.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.0.0"
   }
-  
 }
