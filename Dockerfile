@@ -10,6 +10,7 @@ COPY src/ /var/www/html/src/
 
 # Configuration Apache
 COPY .docker/vhost.conf /etc/apache2/sites-available/000-default.conf
+COPY .docker/apache2.conf /etc/apache2/apache2.conf
 
 # Activer les modules Apache
 RUN a2enmod rewrite

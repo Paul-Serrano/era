@@ -6,8 +6,7 @@
   "scripts": {
     "build:css": "tailwindcss build -o public/tailwind.css",
     "watch:css": "tailwindcss build -o public/tailwind.css --watch",
-    "postinstall": "npx tailwindcss init && node scripts/setup-tailwind.js",
-    "heroku-postbuild": "npm install"
+    "postinstall": "npx tailwindcss init && node scripts/setup-tailwind.js"
   },
   "author": "",
   "license": "ISC",

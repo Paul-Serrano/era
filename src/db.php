@@ -5,8 +5,6 @@ $dbname = $_ENV['MYSQL_DATABASE'];
 $username = $_ENV['MYSQL_USER'];
 $password = $_ENV['MYSQL_PASSWORD'];
 
-var_dump($dbname, $username, $password);
-
 try {
     // Connexion à la base de données MySQL avec PDO
     $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
@@ -20,5 +18,3 @@ try {
     echo "Connection failed: " . $e->getMessage();
     exit;
 }
-
-var_dump($pdo);

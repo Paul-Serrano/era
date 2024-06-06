@@ -30,4 +30,4 @@
         <li><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Contact</a></li>
     </ul>
 </nav>
-<script src="../nav/nav.js"></script>
+<script src="/src/views/components/nav/nav.js"></script>

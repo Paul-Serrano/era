@@ -8,8 +8,10 @@ services:
     volumes:
       - ./public:/var/www/html
       - ./src:/var/www/html/src
+      - ./.docker/vhost.conf:/etc/apache2/sites-available/000-default.conf
     env_file:
       - .env
+    command: /bin/bash -c "apache2ctl -D FOREGROUND"
 
   db:
     image: mysql:8.0

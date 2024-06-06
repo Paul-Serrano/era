@@ -26,4 +26,4 @@
     <button class="prev-carousel left-0 top-1/2 transform -translate-y-1/2">Prev</button>
     <button class="next-carousel right-0 top-1/2 transform -translate-y-1/2">Next</button>
 </div>
-<script src="../carousel/carousel.js"></script>
+<script src="/src/views/components/carousel/carousel.js"></script>

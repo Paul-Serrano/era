@@ -27,4 +27,4 @@
     </div>
 </div>
 
-<script src="../slider/slider.js"></script>
+<script src="/src/views/components/slider/slider.js"></script>
