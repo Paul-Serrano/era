@@ -2,7 +2,8 @@
 
 const fs = require('fs');
 
-const tailwindConfig = `/** @type {import('tailwindcss').Config} */
+const tailwindConfig = `// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./public/**/*.{html,php}",
@@ -11,9 +12,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#1E40AF', // blue-800
-        secondary: '#D97706', // amber-600
-        accent: '#10B981', // green-500
+        text: {
+          primary: '#000000',
+          secondary: '#ffffff'
+        },
+        bg: {
+          primary: '#7AB555',
+          secondary: '#93C6E5',
+          tertiary: '#D1D3D3'
+        }
       },
     },
   },

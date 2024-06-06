@@ -2,16 +2,17 @@
 
 namespace Src\Models;
 
-require_once __DIR__ . '/../db.php';
+use Src\Models\Database;
 
 class User
 {
     private $pdo;
+    private $database;
 
     public function __construct()
     {
-        global $pdo;
-        $this->pdo = $pdo;
+        $this->database = new Database();
+        $this->pdo = $this->database->getPdo();
     }
 
     public function getAllUsers()
