@@ -12,16 +12,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        text: {
-          primary: '#000000',
-          secondary: '#ffffff'
-        },
-        bg: {
-          primary: '#7AB555',
-          secondary: '#93C6E5',
-          tertiary: '#D1D3D3'
-        }
+        primary: '#7AB555',
+        secondary: '#93C6E5',
+        tertiary: '#D1D3D3'
       },
+      fontFamily: {
+        gothamBook: ['"Gotham-Book"', "sans-serif"],
+      }
     },
   },
   plugins: [],

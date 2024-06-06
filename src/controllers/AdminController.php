@@ -8,13 +8,13 @@ use Src\Models\Admin;
 
 class AdminController 
 {
-    public static $admin;
+    public static Admin $admin;
     
     public function __construct() {
         self::$admin = new Admin();
     }
     
-    public function index()
+    public function index(): string
     {
         $adminKey = self::getAdminKey();
         ob_start();
@@ -22,12 +22,12 @@ class AdminController
         return ob_get_clean();
     }
 
-    public static function getAdminKey() {
+    public static function getAdminKey(): string {
         $adminKey = self::$admin->getAdminKey();
         return $adminKey;
     }
 
-    public function handleFormSubmission() {
+    public function handleFormSubmission(): void{
         // Traitement du formulaire pour mettre à jour la clé admin
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST['newKey'])) {
@@ -40,7 +40,7 @@ class AdminController
         }
     }
 
-    public static function updateAdminKey(string $newKey) {
+    public static function updateAdminKey(string $newKey): void {
         self::$admin->setAdminKey($newKey);
         // Message de confirmation de mise à jour
     }
