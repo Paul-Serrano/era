@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace Src\Controllers;
 
@@ -8,40 +8,74 @@ use Src\Models\Admin;
 
 class AdminController 
 {
-    public static Admin $admin;
+    private $admin;
+    private $path;
     
-    public function __construct() {
-        self::$admin = new Admin();
+    public function __construct(string $path) {
+        $this->path = $path;
     }
     
     public function index(): string
     {
-        $adminKey = self::getAdminKey();
+        $path = $this->getPath();
+        $admin = $this->admin;
+        switch ($path) {
+            case '/admin/update/general':
+                $component = __DIR__ . '../../../src/views/components/general-admin/general-admin.php';
+                break;
+            case '/admin/update/blog':
+                $component = __DIR__ . '../../../src/views/components/blog-admin/blog-admin.php';
+                break;
+            default:
+                break;
+        }
         ob_start();
+        require __DIR__ . '/../views/components/header/header.php';
         require __DIR__ . '/../views/pages/admin.php';
         return ob_get_clean();
     }
 
-    public static function getAdminKey(): string {
-        $adminKey = self::$admin->getAdminKey();
-        return $adminKey;
+    public function getPath(): string {
+        return $this->path;
     }
 
-    public function handleFormSubmission(): void{
-        // Traitement du formulaire pour mettre à jour la clé admin
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (isset($_POST['newKey'])) {
-                $newKey = $_POST['newKey'];
-                $this->updateAdminKey($newKey);
-                // Redirection vers la page admin après le traitement du formulaire
-                header("Location: /../../admin");
-                exit();
+    public function setPath(string $path): void {
+        $this->path = $path; 
+    }
+
+    public function getAdmin(): Admin {
+        return $this->admin;
+    }
+
+    public function setAdmin(Admin $admin) : void {
+        $this->admin = $admin;
+    }
+
+    public function updateAdmin(array $data): void {
+        $this->admin = new Admin($data['mail']);
+        $this->admin->setMail($data['mail']);
+        $this->admin->setPass($data['pass']);
+        header("Location: /../../admin/update");
+        exit();
+        // Message de confirmation de mise à jour
+    }
+
+    public function checkAdminInfos(array $data): ?Admin {
+        $admins = Admin::findAll();
+        $mailFound = false;
+        foreach ($admins as $admin) {
+            if ($admin['mail'] === $data['mail']) {
+                if ($data['pass'] ===  $admin['pass']) { // Utiliser password_verify pour vérifier le mot de passe
+                    $this->admin = new Admin($data['mail']);
+                    $mailFound = true;
+                    return $this->admin;
+                } else {
+                    header("Location: /../../admin?error=wrongPass");
+                    return null;
+                }
             }
         }
-    }
-
-    public static function updateAdminKey(string $newKey): void {
-        self::$admin->setAdminKey($newKey);
-        // Message de confirmation de mise à jour
+        !$mailFound ? header("Location: /../../admin?error=wrongMail") : null;
+        return null;
     }
 }

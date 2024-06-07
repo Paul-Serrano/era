@@ -1,4 +1,4 @@
-<div class="container mx-auto mt-8">
+<div class="container mx-auto">
     <section>
         <?php include __DIR__ . '/../components/cover/cover.php'; ?>
     </section>

@@ -1,17 +1,17 @@
 <!-- public/components/nav/nav.php -->
-<nav class="bg-white p-4 font-gothamBook">
+<nav class="bg-white py-6 px-20 font-gothamBook border-b-4 border-secondary">
     <div class="container mx-auto flex justify-between items-center max-w-full">
         <!-- Logo for mobile and desktop -->
-        <a href="#" class="text-2xl font-bold lg:order-1 w-[15%]"><img src="/public/assets/img/logo.png" alt="logo du site" /></a>
+        <a href="#" class="text-2xl font-bold lg:order-1 w-[15%]"><img src="../../assets/img/logo.png" alt="logo du site" /></a>
         
         <!-- Menu for desktop -->
-        <ul class="hidden lg:flex lg:order-2 lg:w-3/4 lg:justify-evenly space-x-4">
-            <li><a href="#" class="hover:text-secondary">Destinations</a> <img src="/app/assets/img/drop-down-arrow.png" alt="fleche menu déroulent" /></li>
-            <li><a href="#" class="hover:text-secondary">Blog</a></li>
-            <li><a href="#" class="hover:text-secondary">Offres</a></li>
-            <li><a href="#" class="hover:text-secondary">Contact</a></li>
-            <li><a href="#" class="hover:text-secondary"><img src="public/assets/img/cart.png" alt="panier" /></a></li>
-            <button><p>Se Connecter</p></button>
+        <ul class="hidden lg:flex lg:order-2 lg:w-[60%] lg:justify-evenly space-x-4">
+            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic">Destinations</a> <img src="../../assets/img/drop-down-arrow.png" alt="fleche menu déroulent" /></li>
+            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic">Blog</a></li>
+            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic">Offres</a></li>
+            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic">Contact</a></li>
+            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary"><img src="../../assets/img/cart.png" alt="panier" /></a></li>
+            <button class="rounded-lg flex items-center bg-secondary w-[25%] py-2 px-5"><p class="uppercase italic text-center w-full">Se Connecter</p></button>
         </ul>
         
         <!-- Burger menu for mobile -->

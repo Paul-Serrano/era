@@ -20,7 +20,19 @@ switch ($requestUri) {
         echo $controller->index();
         break;
     case '/admin':
-        $controller = new AdminController();
+        $controller = new AdminController($requestUri);
+        echo $controller->index();
+        break;
+    case '/admin/update': 
+        $controller = new AdminController($requestUri);
+        echo $controller->index();
+        break;
+    case '/admin/update/general': 
+        $controller = new AdminController($requestUri);
+        echo $controller->index();
+        break;
+    case '/admin/update/blog': 
+        $controller = new AdminController($requestUri);
         echo $controller->index();
         break;
     case '/blog':
