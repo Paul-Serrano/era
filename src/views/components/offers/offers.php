@@ -10,7 +10,7 @@
                     <p class="text-white font-light">Nos services à partir de</p>
                     <p class="text-white text-4xl font-bold">2 500€</p>
                     <p class="text-white font-light py-5">Inclut l’offre freemium avec, en supplément, l’organisation du voyage (choix du transport), des relations avec les locaux, logement, support sur place, un réseau professionnel avec des offres de travail hebdomadaires, un suivi post-voyage complet, et des informations sur les destinations.</p>
-                    <button class="text-white font-light border-2 border-white w-1/2 flex items-center justify-evenly rounded-full py-2 px-4">
+                    <button class="text-white font-light border-2 border-white w-2/3 flex items-center justify-evenly rounded-full py-2 px-4">
                         <p>Voir plus</p>
                         <img src="../../assets/img/arrow-button.png" alt="why digital nomad">
                     </button>
@@ -22,7 +22,7 @@
                     <p class="text-white font-light">Nos services à partir de</p>
                     <p class="text-white text-4xl font-bold">2 500€</p>
                     <p class="text-white font-light py-5">Inclut l’offre freemium avec, en supplément, l’organisation du voyage (choix du transport), des relations avec les locaux, logement, support sur place, un réseau professionnel avec des offres de travail hebdomadaires, un suivi post-voyage complet, et des informations sur les destinations.</p>
-                    <button class="text-white font-light border-2 border-white w-1/2 flex items-center justify-evenly rounded-full py-2 px-4">
+                    <button class="text-white font-light border-2 border-white w-2/3 flex items-center justify-evenly rounded-full py-2 px-4">
                         <p>Voir plus</p>
                         <img src="../../assets/img/arrow-button.png" alt="why digital nomad">
                     </button>
@@ -34,7 +34,7 @@
                     <p class="text-white font-light">Nos services à partir de</p>
                     <p class="text-white text-4xl font-bold">2 500€</p>
                     <p class="text-white font-light py-5">Inclut l’offre freemium avec, en supplément, l’organisation du voyage (choix du transport), des relations avec les locaux, logement, support sur place, un réseau professionnel avec des offres de travail hebdomadaires, un suivi post-voyage complet, et des informations sur les destinations.</p>
-                    <button class="text-white font-light border-2 border-white w-1/2 flex items-center justify-evenly rounded-full py-2 px-4">
+                    <button class="text-white font-light border-2 border-white w-2/3 flex items-center justify-evenly rounded-full py-2 px-4">
                         <p>Voir plus</p>
                         <img src="../../assets/img/arrow-button.png" alt="why digital nomad">
                     </button>

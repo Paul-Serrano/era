@@ -32,5 +32,5 @@
         </div>
         <button type="submit"></button>
     </form>
-    <img class="rotate-[-30deg] origin-top-left w-full h-full absolute right-0 bottom-0 z-[1]" src="../../assets/img/quotation-net.png" alt="">
+    <img class="overflow-hidden origin-top-left w-full h-full absolute right-0 bottom-0 z-[1]" src="../../assets/img/quotation-net.png" alt="">
 </div>
