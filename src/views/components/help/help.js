@@ -69,5 +69,5 @@ function initializeCarousel(carouselSelector, nextButtonSelector, prevButtonSele
     });
 }
 
-initializeCarousel('.carousel-inner', '.next-carousel', '.prev-carousel', '.carousel-indicators .indicator-item');
-initializeCarousel('.carousel-inner2', '.next-carousel2', '.prev-carousel2', '.carousel-indicators2 .indicator-item');
+initializeCarousel('.carousel-help-inner', '.next-carousel-help', '.prev-carousel-help', '.carousel-help-indicators .help-indicator-item');
+initializeCarousel('.carousel-help-inner2', '.next-carousel-help2', '.prev-carousel-help2', '.carousel-help-indicators2 .help-indicator-item');

@@ -20,6 +20,9 @@ class AdminController
         $path = $this->getPath();
         $admin = $this->admin;
         switch ($path) {
+            case '/wrongMethodAdmin':
+                header('Location: /admin');
+                break;
             case '/admin/update/general':
                 $component = __DIR__ . '../../../src/views/components/general-admin/general-admin.php';
                 break;
@@ -65,7 +68,10 @@ class AdminController
         $mailFound = false;
         foreach ($admins as $admin) {
             if ($admin['mail'] === $data['mail']) {
-                if ($data['pass'] ===  $admin['pass']) { // Utiliser password_verify pour vérifier le mot de passe
+                // var_dump(password_verify($data['pass'], $admin['pass']));
+                // die();
+                // password_verify($data['pass'], $admin['pass']);
+                if ($data['pass'] == $admin['pass']) { // Utiliser password_verify pour vérifier le mot de passe
                     $this->admin = new Admin($data['mail']);
                     $mailFound = true;
                     return $this->admin;

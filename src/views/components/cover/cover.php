@@ -1,7 +1,25 @@
 <!-- public/components/cover-image.php -->
 
+<div class="cover-component py-4 px-12">
+    <!-- <div class="h-[250px]">
+        <img src="" alt="">
+    </div> -->
+    <div class="flex flex-col justify-evenly w-full mt-40">
+        <h2 class="text-2xl font-bold w-3/4 leading-8">Plongez sereinement dans un bain de culture </h2>
+        <p class="my-4 font-light w-full">On vous accompagne tout au long de votre aventure !</p>
+        <button class="w-2/3 flex justify-evenly items-center bg-black rounded-full px-4 py-3">
+            <p class="text-white font-light">Nous découvrir</p>
+            <img src="../../assets/img/arrow-button.png" alt="découvrir">
+        </button>
+    </div>
+<img class="w-full h-full absolute right-0 bottom-0 z-[-1]" src="../../assets/img/bubble.png" alt="">
+</div>
+
+
+
+
 <!-- cover dekstop -->
-<div class="cover-component hidden lg:flex flex-col justify-between relative h-[750px] px-20 py-10 bg-[#585757]">
+<!-- <div class="cover-component hidden lg:flex flex-col justify-between relative h-[750px] px-20 py-10 bg-[#585757]">
     <div class="flex flex-col w-[50%] ml-[50%] bg-white opacity-50 px-10 py-8 rounded-xl">
         <div class="flex">
             <div>
@@ -31,7 +49,7 @@
 
 <div class="bg-white h-[250px]">
 
-</div>
+</div> -->
 
 <!-- cover mobile -->
 <!-- <div class="cover-component flex flex-col lg:hidden items-center relative">

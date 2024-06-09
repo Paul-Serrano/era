@@ -1,8 +1,8 @@
 <!-- public/components/nav/nav.php -->
-<nav class="bg-white py-6 px-20 font-gothamBook border-b-4 border-secondary">
+<nav class="bg-white py-6 px-10 font-gothamBook lg:border-secondary relative">
     <div class="container mx-auto flex justify-between items-center max-w-full">
         <!-- Logo for mobile and desktop -->
-        <a href="#" class="text-2xl font-bold lg:order-1 w-[15%]"><img src="../../assets/img/logo.png" alt="logo du site" /></a>
+        <a href="#" class="w-[20%] lg:order-1"><img class="w-full" src="../../assets/img/logo.png" alt="logo du site" /></a>
         
         <!-- Menu for desktop -->
         <ul class="hidden lg:flex lg:order-2 lg:w-[60%] lg:justify-evenly space-x-4">
@@ -15,9 +15,9 @@
         </ul>
         
         <!-- Burger menu for mobile -->
-        <div class="lg:hidden w-[15%]">
+        <div class="flex justify-end items-center lg:hidden w-1/3">
             <button id="burger-menu" class="focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
@@ -25,13 +25,13 @@
     </div>
     
     <!-- Mobile navigation links -->
-    <ul id="mobile-nav-links" class="lg:hidden hidden flex-col space-y-2 mt-4">
-        <li><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Destinations</a></li>
-        <li><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Blog</a></li>
-        <li><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Offres</a></li>
-        <li><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Contact</a></li>
-        <li><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark"><img src="/public/assets/img/cart.png" alt="panier" /></a></li>
-        <li><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Se Connecter</a></li>
+    <ul id="mobile-nav-links" class="bg-white lg:hidden hidden flex-col items-center space-y-2 mt-4 absolute left-0 w-full z-50">
+        <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Destinations</a></li>
+        <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Blog</a></li>
+        <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Offres</a></li>
+        <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Contact</a></li>
+        <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark"><img src="../../assets/img/cart.png" alt="panier" /></a></li>
+        <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Se Connecter</a></li>
     </ul>
 </nav>
 <script src="/src/views/components/nav/nav.js"></script>

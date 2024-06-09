@@ -12,8 +12,8 @@ use Src\Controllers\BlogController;
 use Src\Controllers\CartController;
 use Src\Controllers\OfferController;
 
+// !isset($_SESSION['admin']) && strpos($_SERVER['REQUEST_URI'], 'admin/update') ? $requestUri = '/wrongMethodAdmin' : $requestUri = $_SERVER['REQUEST_URI'];
 $requestUri = $_SERVER['REQUEST_URI'];
-
 switch ($requestUri) {
     case '/':
         $controller = new HomeController();
@@ -45,6 +45,10 @@ switch ($requestUri) {
         break;
     case '/cart':
         $controller = new CartController();
+        echo $controller->index();
+        break;
+    case '/wrongMethodAdmin': 
+        $controller = new AdminController($requestUri);
         echo $controller->index();
         break;
     default:
