@@ -1,5 +1,5 @@
 <!-- public/components/nav/nav.php -->
-<nav class="bg-white py-6 px-10 font-gothamBook lg:border-secondary relative">
+<nav class="bg-white py-6 px-10 lg:border-secondary relative">
     <div class="container mx-auto flex justify-between items-center max-w-full">
         <!-- Logo for mobile and desktop -->
         <a href="#" class="w-[20%] lg:order-1"><img class="w-full" src="../../assets/img/logo.png" alt="logo du site" /></a>

@@ -13,7 +13,7 @@ $path = $_SERVER['REQUEST_URI'];
     <link href="/style.css" rel="stylesheet">
     <link href="/tailwind.css" rel="stylesheet">
 </head>
-<body>
+<body class="font-gothamBook">
     <?php if(strpos($path, 'admin/update') === 1 ) {
         include_once __DIR__ . '/../nav-admin/nav-admin.php';
     }

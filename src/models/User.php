@@ -15,9 +15,9 @@ class User
         $this->pdo = $this->database->getPdo();
     }
 
-    public function getAllUsers() : array
-    {
-        $stmt = $this->pdo->query('SELECT * FROM users');
-        return $stmt->fetchAll();
-    }
+    // public function getAllUsers() : array
+    // {
+    //     $stmt = $this->pdo->query('SELECT * FROM users');
+    //     return $stmt->fetchAll();
+    // }
 }

@@ -2,16 +2,10 @@
 
 namespace Src\Controllers;
 
-require_once __DIR__ . '/../models/User.php';
-use Src\Models\User as User;
-
 class HomeController
 {
     public function index()
     {
-        // Obtenez des données du modèle
-        $userModel = new User();
-        $users = $userModel->getAllUsers();
 
         // Chargez la vue
         ob_start();
