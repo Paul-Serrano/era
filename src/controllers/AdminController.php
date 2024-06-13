@@ -3,22 +3,39 @@
 namespace Src\Controllers;
 
 require_once __DIR__ . '/../models/Admin.php';
+require_once __DIR__ . '/../models/Article.php';
+require_once __DIR__ . '/../models/Tag.php';
 
 use Src\Models\Admin;
+use Src\Models\Tag;
+use Src\Models\Article;
 
 class AdminController 
 {
-    private $admin;
-    private $path;
+    private Admin $admin;
+    private string $path;
+    private array $tags;
+    private array $articles;
     
     public function __construct(string $path) {
         $this->path = $path;
+        $this->tags = [];
+        $this->articles = [];
     }
     
     public function index(): string
     {
         $path = $this->getPath();
-        $admin = $this->admin;
+        $this->findAllTags();
+        // $admin = $this->admin;
+        // $tags = $this->tags;
+        extract(
+            [
+                'tags' => $this->tags,
+                // 'admin' => $this->admin,
+                'articles' => $this->articles
+            ]
+        );
         switch ($path) {
             case '/wrongMethodAdmin':
                 header('Location: /admin');
@@ -68,9 +85,6 @@ class AdminController
         $mailFound = false;
         foreach ($admins as $admin) {
             if ($admin['mail'] === $data['mail']) {
-                // var_dump(password_verify($data['pass'], $admin['pass']));
-                // die();
-                // password_verify($data['pass'], $admin['pass']);
                 if ($data['pass'] == $admin['pass']) { // Utiliser password_verify pour vérifier le mot de passe
                     $this->admin = new Admin($data['mail']);
                     $mailFound = true;
@@ -83,5 +97,22 @@ class AdminController
         }
         !$mailFound ? header("Location: /../../admin?error=wrongMail") : null;
         return null;
+    }
+
+    public function findAllTags(): array {
+        // Récupérer tous les tags depuis la base de données
+        $data = Tag::findAll();
+        $tags = [];
+        foreach($data as $tagData) {
+            $tags[] = new Tag($tagData['name']);
+        }
+
+        $this->tags = $tags;
+        return $this->tags;
+    }
+
+    public function saveArticle(array $data) {
+        $article = new Article($data['title'], $data['content'], $data['tags']);
+        $article->save();
     }
 }

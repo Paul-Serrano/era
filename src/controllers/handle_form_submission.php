@@ -30,7 +30,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: /admin/update/general");
             exit();
         }
+    } else if(isset($_POST['tagSubmit'])) {
+        
+    } else if(isset($_POST['articleSubmit'])) {
+        $articleData = [
+            'title' => $_POST['articleTitle'],
+            'content' => $_POST['articleContent'],
+            'tags' => $_POST['selectedTags'],
+        ];
+        $controller->saveArticle($articleData);
     }
+    
     else {
         // Gérer les cas où les données du formulaire sont manquantes
         echo "Erreur : Données du formulaire manquantes.";

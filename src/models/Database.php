@@ -43,4 +43,11 @@ class Database {
         }
         return self::$pdo;
     }
+
+    public function query($sql, $params = []) {
+        // Exécution de la requête préparée
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+        return $stmt;
+    }
 }

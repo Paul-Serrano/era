@@ -5,15 +5,17 @@ require_once __DIR__ . '/../src/controllers/AdminController.php';
 require_once __DIR__ . '/../src/controllers/BlogController.php';
 require_once __DIR__ . '/../src/controllers/OfferController.php';
 require_once __DIR__ . '/../src/controllers/CartController.php';
+require_once __DIR__ . '/../src/controllers/UserController.php';
 
 use Src\Controllers\HomeController;
 use Src\Controllers\AdminController;
 use Src\Controllers\BlogController;
 use Src\Controllers\CartController;
 use Src\Controllers\OfferController;
+use Src\Models\UserController;
 
-// !isset($_SESSION['admin']) && strpos($_SERVER['REQUEST_URI'], 'admin/update') ? $requestUri = '/wrongMethodAdmin' : $requestUri = $_SERVER['REQUEST_URI'];
-$requestUri = $_SERVER['REQUEST_URI'];
+$requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); // Pour gérer les paramètres de requête
+
 switch ($requestUri) {
     case '/':
         $controller = new HomeController();
@@ -46,6 +48,14 @@ switch ($requestUri) {
     case '/cart':
         $controller = new CartController();
         echo $controller->index();
+        break;
+    case '/login': // Ajout de la route de connexion
+        $controller = new UserController();
+        echo $controller->login();
+        break;
+    case '/register': // Ajout de la route d'inscription
+        $controller = new UserController();
+        echo $controller->register();
         break;
     case '/wrongMethodAdmin': 
         $controller = new AdminController($requestUri);
