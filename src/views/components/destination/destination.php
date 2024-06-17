@@ -1,7 +1,7 @@
 <div>
     <h3 class="font-bold text-2xl leading-8 mt-20">Une multitudes de destinations vous attend !</h3>
     <div class="flex flex-col justify-evenly items-center my-10">
-        <a href="" class="bg-primary p-4 flex justify-between items-start rounded-2xl">
+        <a href="" class="bg-destOne p-4 flex justify-between items-start rounded-2xl">
             <div class="flex flex-col w-7/8">
                 <h4 class="text-white font-bold text-lg">Thaïlande</h4>
                 <p class="text-white text-md">Lorem ipsum dolor sit amet.</p>
@@ -10,7 +10,7 @@
                 <img class="-rotate-45" src="../../assets/img/arrow-button.png" alt="">
             </div>
         </a>
-        <a href="" class="bg-primary p-4 flex justify-between items-start rounded-2xl  my-10">
+        <a href="" class="bg-destTwo p-4 flex justify-between items-start rounded-2xl  my-10">
             <div class="flex flex-col w-7/8">
                 <h4 class="text-white font-bold text-lg">Italie</h4>
                 <p class="text-white text-md">Lorem ipsum dolor sit amet.</p>
@@ -19,7 +19,7 @@
                 <img class="-rotate-45" src="../../assets/img/arrow-button.png" alt="">
             </div>
         </a>
-        <a href="" class="bg-primary p-4 flex justify-between items-start rounded-2xl">
+        <a href="" class="bg-destThree p-4 flex justify-between items-start rounded-2xl">
             <div class="flex flex-col w-7/8">
                 <h4 class="text-white font-bold text-lg">Brésil</h4>
                 <p class="text-white text-md">Lorem ipsum dolor sit amet.</p>

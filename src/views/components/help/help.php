@@ -6,7 +6,7 @@
         <div class="carousel-help-inner flex transition-transform duration-300 h-full">
             <div class="carousel-help-item w-full flex-shrink-0 flex justify-center">
                 <div class="flex flex-col bg-white px-5">
-                    <img class="my-4" src="../../assets/img/nomad-picture.png" alt="">
+                    <img class="my-4" src="../../assets/img/pola-ted.png" alt="">
                     <h4 class="text-xl font-bold">Responsable marketing</h4>
                     <p class="font-light leading-6 text-xl text-justify my-6">Hey, cela fait 2 ans que je suis digital nomade à Bali. 
                     Je pratique le surf et passe mon temps en after work organisé par Mouv’up ! </p>
@@ -21,25 +21,21 @@
             </div>
             <div class="carousel-help-item w-full flex-shrink-0 flex justify-center">
                 <div class="flex flex-col bg-white px-5">
-                    <img class="my-4" src="../../assets/img/nomad-picture.png" alt="">
-                    <h4 class="text-xl font-bold">Responsable marketing</h4>
-                    <p class="font-light leading-6 text-xl text-justify my-6">Hey, cela fait 2 ans que je suis digital nomade à Bali. 
-                    Je pratique le surf et passe mon temps en after work organisé par Mouv’up ! </p>
+                    <img class="my-4" src="../../assets/img/pola-charlot.png" alt="">
+                    <h4 class="text-xl font-bold">Directrice artistique</h4>
+                    <p class="font-light leading-6 text-xl text-justify my-6">Hello, Je suis passionnée d’arts et a pour passe temps la photographie ! Je fais partie d’une association qui apprend la photographie à des locaux vietnamien.</p>
                     <div class="flex items-center justify-between">
                         <span>Français</span>
                         <span>&#8226;</span>
                         <span>Anglais</span>
-                        <span>&#8226;</span>
-                        <span>Chinois</span>
                     </div>
                 </div>
             </div>
             <div class="carousel-help-item w-full flex-shrink-0 flex justify-center">
                 <div class="flex flex-col bg-white px-5">
-                    <img class="my-4" src="../../assets/img/nomad-picture.png" alt="">
-                    <h4 class="text-xl font-bold">Responsable marketing</h4>
-                    <p class="font-light leading-6 text-xl text-justify my-6">Hey, cela fait 2 ans que je suis digital nomade à Bali. 
-                    Je pratique le surf et passe mon temps en after work organisé par Mouv’up ! </p>
+                    <img class="my-4" src="../../assets/img/pola-mia.png" alt="">
+                    <h4 class="text-xl font-bold">Designer UI/UX</h4>
+                    <p class="font-light leading-6 text-xl text-justify my-6">Bonjour, je travaille depuis mon ordi en Australie ! Je fais des rencontres tous les jours et je pars souvent en expéditions dans des paysages incroyables !</p>
                     <div class="flex items-center justify-between">
                         <span>Français</span>
                         <span>&#8226;</span>

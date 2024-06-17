@@ -4,33 +4,36 @@
     <form action="" method="POST" class="flex flex-col justify-evenly items-center w-full relative z-2">
         <div class="formRow flex items-center justify-between w-full my-2">
             <div class="formGroup w-[47.5%] mr-[2.5%]">
-                <label for="" class="hidden"></label>
-                <input name="" type="text" class="border-black border-2 rounded-full w-full p-2" placeholder="Nom">
+                <label for="quotLastname" class="hidden"></label>
+                <input name="quotLastname" type="text" class="border-black border-2 rounded-xl w-full p-2" placeholder="Nom">
             </div>
             <div class="formGroup w-[47.5%] ml-[2.5%]">
-                <label for="" class="hidden"></label>
-                <input name="" type="text" class="border-black border-2 rounded-full w-full p-2" placeholder="Prénom">
+                <label for="quotSurname" class="hidden"></label>
+                <input name="quotSurname" type="text" class="border-black border-2 rounded-xl w-full p-2" placeholder="Prénom">
             </div>
         </div>
         <div class="formRow flex items-center w-full my-2">
             <div class="formGroup w-full">
-                <label for="" class="hidden"></label>
-                <input name="" type="text" class="border-black border-2 rounded-full w-full p-2" placeholder="E-mail">
+                <label for="quotMail" class="hidden"></label>
+                <input name="quotMail" type="text" class="border-black border-2 rounded-xl w-full p-2" placeholder="E-mail">
             </div>
         </div>
         <div class="formRow flex items-center w-full my-2">
             <div class="formGroup w-full">
-                <label for="" class="hidden"></label>
-                <input name="" type="text" class="border-black border-2 rounded-full w-full p-2" placeholder="N° Téléphone">
+                <label for="quotTel" class="hidden"></label>
+                <input name="quotTel" type="text" class="border-black border-2 rounded-xl w-full p-2" placeholder="N° Téléphone">
             </div>
         </div>
         <div class="formRow flex items-center w-full my-2">
             <div class="formGroup w-full">
-                <label for="" class="hidden"></label>
-                <input name="" type="textarea" class="border-black border-2 rounded-full w-full p-2" placeholder="Description">
+                <label for="quotDesc" class="hidden"></label>
+                <input name="quotDesc" type="textarea" class="border-black border-2 rounded-xl w-full p-2" placeholder="Description">
             </div>
         </div>
-        <button type="submit"></button>
+        <button class="w-2/3 flex justify-evenly items-center bg-black rounded-full px-4 py-3" type="submit" name="quotSubmit">
+            <p class="text-white font-light">Envoyer</p>
+            <img src="../../assets/img/arrow-button.png" alt="envoyer">
+        </button>
     </form>
     <img class="overflow-hidden origin-top-left w-full h-full absolute right-0 bottom-0 z-[1]" src="../../assets/img/quotation-net.png" alt="">
 </div>

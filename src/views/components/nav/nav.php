@@ -1,17 +1,17 @@
 <!-- public/components/nav/nav.php -->
-<nav class="bg-white py-6 px-10 lg:border-secondary relative">
+<nav class="bg-white py-6 px-10 lg:p-12 lg:border-secondary relative">
     <div class="container mx-auto flex justify-between items-center max-w-full">
         <!-- Logo for mobile and desktop -->
-        <a href="#" class="w-[20%] lg:order-1"><img class="w-full" src="../../assets/img/logo.png" alt="logo du site" /></a>
+        <a href="#" class="w-[20%] lg:order-1"><img class="w-full lg:w-1/3" src="../../assets/img/logo.png" alt="logo du site" /></a>
         
         <!-- Menu for desktop -->
         <ul class="hidden lg:flex lg:order-2 lg:w-[60%] lg:justify-evenly space-x-4">
-            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic">Destinations</a> <img src="../../assets/img/drop-down-arrow.png" alt="fleche menu déroulent" /></li>
-            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic">Blog</a></li>
-            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic">Offres</a></li>
-            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic">Contact</a></li>
-            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary"><img src="../../assets/img/cart.png" alt="panier" /></a></li>
-            <button class="rounded-lg flex items-center bg-secondary w-[25%] py-2 px-5"><p class="uppercase italic text-center w-full">Se Connecter</p></button>
+            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos solutions</a> <img src="../../assets/img/drop-down-arrow.png" alt="fleche menu déroulent" /></li>
+            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Blog</a></li>
+            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos tarifs</a></li>
+            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Contact</a></li>
+            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary"><img class="lg:w-2/3 lg:ml-2" src="../../assets/img/cart.png" alt="panier" /></a></li>
+            <button class="rounded-lg flex items-center bg-secondary w-[25%] py-2 px-5 lg:rounded-2xl lg:py-3"><p class="uppercase italic text-center w-full lg:text-white lg:not-italic lg:font-bold">Se Connecter</p></button>
         </ul>
         
         <!-- Burger menu for mobile -->

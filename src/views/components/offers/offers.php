@@ -6,10 +6,10 @@
         <div class="carousel-offer-inner flex transition-transform duration-300 h-full">
             <div class="carousel-offer-item w-full flex-shrink-0 flex justify-center">
                 <div class="flex flex-col py-8 px-20">
-                    <h4 class="text-white text-2xl font-bold">Offre Classique</h4>
+                    <h4 class="text-white text-2xl font-bold">Offre Freemium</h4>
                     <p class="text-white font-light">Nos services à partir de</p>
-                    <p class="text-white text-4xl font-bold">2 500€</p>
-                    <p class="text-white font-light py-5">Inclut l’offre freemium avec, en supplément, l’organisation du voyage (choix du transport), des relations avec les locaux, logement, support sur place, un réseau professionnel avec des offres de travail hebdomadaires, un suivi post-voyage complet, et des informations sur les destinations.</p>
+                    <p class="text-white text-4xl font-bold">10€ <span class="text-lg">/ mois</span></p>
+                    <p class="text-white font-light py-5">Une approche écoresponsable avec une journée de bénévolat écologique, accès au blog, et un suivi post-voyage réduit incluant un appel téléphonique pour recueillir les retours d’expérience avec un psychologue.</p>
                     <button class="text-white font-light border-2 border-white w-2/3 flex items-center justify-evenly rounded-full py-2 px-4">
                         <p>Voir plus</p>
                         <img src="../../assets/img/arrow-button.png" alt="why digital nomad">
@@ -20,7 +20,7 @@
                 <div class="flex flex-col py-8 px-20">
                     <h4 class="text-white text-2xl font-bold">Offre Classique</h4>
                     <p class="text-white font-light">Nos services à partir de</p>
-                    <p class="text-white text-4xl font-bold">2 500€</p>
+                    <p class="text-white text-4xl font-bold">20€ <span class="text-lg">/ mois</p>
                     <p class="text-white font-light py-5">Inclut l’offre freemium avec, en supplément, l’organisation du voyage (choix du transport), des relations avec les locaux, logement, support sur place, un réseau professionnel avec des offres de travail hebdomadaires, un suivi post-voyage complet, et des informations sur les destinations.</p>
                     <button class="text-white font-light border-2 border-white w-2/3 flex items-center justify-evenly rounded-full py-2 px-4">
                         <p>Voir plus</p>
@@ -30,10 +30,10 @@
             </div>
             <div class="carousel-offer-item w-full flex-shrink-0 flex justify-center">
                 <div class="flex flex-col py-8 px-20">
-                    <h4 class="text-white text-2xl font-bold">Offre Classique</h4>
+                    <h4 class="text-white text-2xl font-bold">Offre Premium</h4>
                     <p class="text-white font-light">Nos services à partir de</p>
-                    <p class="text-white text-4xl font-bold">2 500€</p>
-                    <p class="text-white font-light py-5">Inclut l’offre freemium avec, en supplément, l’organisation du voyage (choix du transport), des relations avec les locaux, logement, support sur place, un réseau professionnel avec des offres de travail hebdomadaires, un suivi post-voyage complet, et des informations sur les destinations.</p>
+                    <p class="text-white text-4xl font-bold">30€ <spans class="text-lg">/ mois</spans></p>
+                    <p class="text-white font-light py-5">Tout de l’offre classique et freemium, plus un accompagnement psychologique hebdomadaire, des activités sociales bihebdomadaires, et un accompagnement pré-voyage.</p>
                     <button class="text-white font-light border-2 border-white w-2/3 flex items-center justify-evenly rounded-full py-2 px-4">
                         <p>Voir plus</p>
                         <img src="../../assets/img/arrow-button.png" alt="why digital nomad">
