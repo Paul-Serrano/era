@@ -2,3 +2,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes dropdown {
+    0% {
+        max-height: 0;
+        opacity: 0;
+    }
+    100% {
+        max-height: 1000px;
+        opacity: 1;
+    }
+}
+
+.dropdownContent {
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+}
+
+.dropdownContent.active {
+    animation: dropdown 0.3s forwards;
+    max-height: 1000px; /* Adjust as needed */
+    opacity: 1;
+}
+

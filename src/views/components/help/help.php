@@ -7,7 +7,7 @@
             <div class="carousel-help-item w-full flex-shrink-0 flex justify-center lg:w-[20%]">
                 <div class="flex flex-col bg-white px-5 lg:justify-between lg:px-0">
                     <div>
-                        <img class="my-4 lg:w-2/3 lg:mx-auto lg:my-4" src="../../assets/img/pola-ted.png" alt="">
+                        <img class="my-4 w-2/3 m-auto lg:mx-auto lg:my-4" src="../../assets/img/pola-ted.png" alt="">
                         <h4 class="text-xl font-bold">Responsable marketing</h4>
                         <p class="font-light leading-6 text-xl text-justify my-6 lg:text-md lg:text-start">Hey, cela fait 2 ans que je suis digital nomade à Bali. 
                         Je pratique le surf et passe mon temps en after work organisé par Mouv’up ! </p>
@@ -25,7 +25,7 @@
             <div class="carousel-help-item w-full flex-shrink-0 flex justify-center lg:w-[20%]">
                 <div class="flex flex-col bg-white px-5 lg:justify-between lg:px-0">
                     <div>
-                        <img class="my-4 lg:w-2/3 lg:mx-auto lg:my-4" src="../../assets/img/pola-charlot.png" alt="">
+                        <img class="my-4 w-2/3 m-auto lg:mx-auto lg:my-4" src="../../assets/img/pola-charlot.png" alt="">
                         <h4 class="text-xl font-bold">Directrice artistique</h4>
                         <p class="font-light leading-6 text-xl text-justify my-6 lg:text-md lg:text-start">Hello, Je suis passionnée d’arts et a pour passe temps la photographie ! Je fais partie d’une association qui apprend la photographie à des locaux vietnamien.</p>
                     </div>
@@ -39,7 +39,7 @@
             <div class="hidden lg:flex lg:w-[2px] lg:h-full lg:bg-black lg:border-black lg:border lg:m-0"></div>
             <div class="carousel-help-item w-full flex-shrink-0 flex justify-center lg:w-[20%]">
                 <div class="flex flex-col bg-white px-5 lg:justify-between lg:px-0">
-                    <img class="my-4 lg:w-2/3 lg:mx-auto lg:my-4" src="../../assets/img/pola-mia.png" alt="">
+                    <img class="my-4 w-2/3 m-auto lg:mx-auto lg:my-4" src="../../assets/img/pola-mia.png" alt="">
                     <h4 class="text-xl font-bold">Designer UI/UX</h4>
                     <p class="font-light leading-6 text-xl text-justify my-6 lg:text-md lg:text-start">Bonjour, je travaille depuis mon ordi en Australie ! Je fais des rencontres tous les jours et je pars souvent en expéditions dans des paysages incroyables !</p>
                     <div class="flex items-center justify-between lg:justify-start">

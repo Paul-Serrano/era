@@ -50,7 +50,7 @@
         <button class="prev-carousel-offer absolute left-0 top-1/2 transform -translate-y-1/2 bg-white hidden">Prev</button>
         <button class="next-carousel-offer absolute right-0 top-1/2 transform -translate-y-1/2 bg-white hidden">Next</button>
     </div>
-    <hr class="bg-white border-white border-5 w-full" />
+    <hr class="bg-white border-white border-5 w-full lg:hidden" />
     <div class="carousel-offer-indicators flex justify-center space-x-2 py-12 lg:hidden">
         <div class="offer-indicator-item w-3 h-3 bg-secondary opacity-50 rounded-full"></div>
         <div class="offer-indicator-item w-3 h-3 bg-secondary opacity-50 rounded-full"></div>
