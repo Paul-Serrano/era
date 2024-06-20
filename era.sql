@@ -60,10 +60,10 @@ CREATE TABLE `article` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `article_tag`
+-- Structure de la table `article_tags`
 --
 
-CREATE TABLE `article_tag` (
+CREATE TABLE `article_tags` (
   `article_id` int NOT NULL,
   `tag_name` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -199,9 +199,9 @@ ALTER TABLE `article`
   ADD KEY `admin_mail` (`admin_mail`);
 
 --
--- Index pour la table `article_tag`
+-- Index pour la table `article_tags`
 --
-ALTER TABLE `article_tag`
+ALTER TABLE `article_tags`
   ADD PRIMARY KEY (`article_id`,`tag_name`),
   ADD UNIQUE KEY `article_id` (`article_id`),
   ADD UNIQUE KEY `tag_name` (`tag_name`);

@@ -122,4 +122,20 @@ class AdminController
         $article->save();
         header('Location: admin?success=addArticle');
     }
+
+    public function deleteArticle(array $data): void {
+        $articleTitle = $data['articleTitle'];
+
+        // Trouver l'article par le titre
+        $article = Article::findByTitle($articleTitle);
+
+        if ($article) {
+            $article->delete($article);
+            header('Location: /admin?success=deleteArticle');
+            exit;
+        } else {
+            echo "Erreur lors de la suppression de l'article.";
+            exit;
+        }
+    }
 }

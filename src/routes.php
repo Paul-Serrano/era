@@ -75,6 +75,10 @@ switch ($requestUri) {
         $controller = new AdminController();
         $controller->saveArticle($_POST);
         break;
+    case '/deleteArticle': 
+        $controller = new AdminController();
+        echo $controller->deleteArticle($_POST);
+        break;
     default:
         http_response_code(404);
         echo "Page not found";

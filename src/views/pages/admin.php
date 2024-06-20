@@ -41,7 +41,7 @@ if(!$user || !$user->isAdmin()) {
 
             <div class="formGroup">
                 <label for="articleContent">Content</label>
-                <input class="border-black border-2 rounded-xl px-4 py-1" name="articleContent" value="" type="text" />
+                <textarea class="border-black border-2 rounded-xl px-4 py-1" name="articleContent" value="" type="textarea" id="contentArticleTextarea"></textarea>
             </div>
 
             <div class="formGroup">
@@ -60,23 +60,26 @@ if(!$user || !$user->isAdmin()) {
 
             <button type="submit" name="articleSubmit" value="yes">Update</button>
         </div>
-        <h2 class="px-5 py-2 bg-black text-white my-5">Articles Existants</h2>
-        <ul class="grid grid-cols-3 space-x-2 space-y-2">
-            <?php foreach ($data['articles'] as $article): ?>
-            <li class="border-black border-2 p-2">
-                <h2><?= htmlspecialchars($article->getTitle()) ?></h2>
-                <p><?= htmlspecialchars($article->getAutor()) ?></p>
-                <div>
-                    <?php foreach ($article->getTags() as $tag):?>
-                        <span class="bg-black text-white rounded-xl p-2"><?= htmlspecialchars($tag) ;?></span>
-                    <?php endforeach; ?>
-                </div>
-            </li>
-            <?php endforeach; ?>
-        </ul>
     </form>
+
+    <h2 class="px-5 py-2 bg-black text-white my-5">Articles Existants</h2>
+    <ul class="grid grid-cols-3 space-x-2 space-y-2">
+        <?php foreach ($data['articles'] as $article): ?>
+        <li class="border-black border-2 p-2">
+            <h2><?= htmlspecialchars($article->getTitle()) ?></h2>
+            <p><?= htmlspecialchars($article->getAutor()) ?></p>
+            <div class="flex justify-evenly items-center w-full my-2">
+                <?php foreach ($article->getTags() as $tag): ?>
+                    <span class="bg-black text-white rounded-xl p-2"><?= htmlspecialchars($tag) ;?></span>
+                <?php endforeach; ?>
+            </div>
+            <form action="/deleteArticle" method="POST" class="mt-2">
+                <input type="hidden" name="articleTitle" value="<?= htmlspecialchars($article->getTitle()) ?>" />
+                <button class="text-[#ff0000]" type="submit" name="deleteArticleSubmit" value="yes">Supprimer</button>
+            </form>
+        </li>
+        <?php endforeach; ?>
+    </ul>
 </section>
+
 <script src="/src/views/scripts/admin.js"></script>
-
-
-
