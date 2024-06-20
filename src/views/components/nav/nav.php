@@ -1,8 +1,12 @@
+<?php
+$user = $_SESSION['user'] ?? null;
+?>
+
 <!-- public/components/nav/nav.php -->
 <nav class="bg-white py-6 px-10 lg:p-12 lg:border-secondary relative">
     <div class="container mx-auto flex justify-between items-center max-w-full">
         <!-- Logo for mobile and desktop -->
-        <a href="#" class="w-[20%] lg:order-1"><img class="w-full lg:w-1/3" src="../../assets/img/logo.png" alt="logo du site" /></a>
+        <a href="/" class="w-[20%] lg:order-1"><img class="w-full lg:w-1/3" src="../../assets/img/logo.png" alt="logo du site" /></a>
         
         <!-- Menu for desktop -->
         <ul class="hidden lg:flex lg:order-2 lg:w-[60%] lg:justify-evenly space-x-4">
@@ -11,7 +15,24 @@
             <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos tarifs</a></li>
             <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Contact</a></li>
             <li class="flex items-center m-0"><a href="#" class="hover:text-secondary"><img class="lg:w-2/3 lg:ml-2" src="../../assets/img/cart.png" alt="panier" /></a></li>
-            <button class="rounded-lg flex items-center bg-secondary w-[25%] py-2 px-5 lg:rounded-2xl lg:py-3"><p class="uppercase italic text-center w-full lg:text-white lg:not-italic lg:font-bold">Se Connecter</p></button>
+            
+            <?php if($user) : ?>
+                <!-- Bouton Mon Compte avec déconnexion -->
+                <div class="relative">
+                    <ul class="bg-white border border-secondary rounded-lg py-2 px-4 shadow-lg">
+                        <li><a href="/account">Mon Compte</a></li>
+                        <li><a href="/signout">Déconnexion</a></li>
+                        <?php if($user->isAdmin()) : ?>
+                        <li><a href="/admin">Panel admin</a></li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            <?php else : ?>
+                <!-- Bouton Se Connecter -->
+                <a href="/login" class="rounded-lg flex items-center bg-secondary w-[25%] py-2 px-5 lg:rounded-2xl lg:py-3">
+                    <p class="uppercase italic text-center w-full lg:text-white lg:not-italic lg:font-bold">Se Connecter</p>
+                </a>
+            <?php endif; ?>
         </ul>
         
         <!-- Burger menu for mobile -->
@@ -31,7 +52,11 @@
         <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Offres</a></li>
         <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Contact</a></li>
         <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark"><img src="../../assets/img/cart.png" alt="panier" /></a></li>
-        <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Se Connecter</a></li>
+        <?php if($user) : ?>
+            <li class="w-3/4"><a href="/signout" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Déconnexion</a></li>
+        <?php else : ?>
+            <li class="w-3/4"><a href="/login" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Se Connecter</a></li>
+        <?php endif; ?>
     </ul>
 </nav>
 <script src="/src/views/components/nav/nav.js"></script>

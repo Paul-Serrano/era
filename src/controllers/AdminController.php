@@ -2,101 +2,30 @@
 
 namespace Src\Controllers;
 
-require_once __DIR__ . '/../models/Admin.php';
 require_once __DIR__ . '/../models/Article.php';
 require_once __DIR__ . '/../models/Tag.php';
 
-use Src\Models\Admin;
 use Src\Models\Tag;
 use Src\Models\Article;
 
 class AdminController 
 {
-    private Admin $admin;
-    private string $path;
     private array $tags;
     private array $articles;
     
-    public function __construct(string $path) {
-        $this->path = $path;
-        $this->tags = [];
-        $this->articles = [];
+    public function __construct() {
+        $this->tags = $this->findAllTags();
+        $this->articles = $this->findAllArticles();
     }
     
     public function index(): string
     {
-        $path = $this->getPath();
-        $this->findAllTags();
-        // $admin = $this->admin;
-        // $tags = $this->tags;
-        extract(
-            [
-                'tags' => $this->tags,
-                // 'admin' => $this->admin,
-                'articles' => $this->articles
-            ]
-        );
-        switch ($path) {
-            case '/wrongMethodAdmin':
-                header('Location: /admin');
-                break;
-            case '/admin/update/general':
-                $component = __DIR__ . '../../../src/views/components/general-admin/general-admin.php';
-                break;
-            case '/admin/update/blog':
-                $component = __DIR__ . '../../../src/views/components/blog-admin/blog-admin.php';
-                break;
-            default:
-                break;
-        }
+        $data = $this->getDataForView();
         ob_start();
         require __DIR__ . '/../views/components/header/header.php';
         require __DIR__ . '/../views/pages/admin.php';
+        require __DIR__ . '/../views/components/footer/footer.php';
         return ob_get_clean();
-    }
-
-    public function getPath(): string {
-        return $this->path;
-    }
-
-    public function setPath(string $path): void {
-        $this->path = $path; 
-    }
-
-    public function getAdmin(): Admin {
-        return $this->admin;
-    }
-
-    public function setAdmin(Admin $admin) : void {
-        $this->admin = $admin;
-    }
-
-    public function updateAdmin(array $data): void {
-        $this->admin = new Admin($data['mail']);
-        $this->admin->setMail($data['mail']);
-        $this->admin->setPass($data['pass']);
-        header("Location: /../../admin/update");
-        exit();
-        // Message de confirmation de mise à jour
-    }
-
-    public function checkAdminInfos(array $data): ?Admin {
-        $admins = Admin::findAll();
-        $mailFound = false;
-        foreach ($admins as $admin) {
-            if ($admin['mail'] === $data['mail']) {
-                if ($data['pass'] == $admin['pass']) { // Utiliser password_verify pour vérifier le mot de passe
-                    $this->admin = new Admin($data['mail']);
-                    $mailFound = true;
-                    return $this->admin;
-                } else {
-                    header("Location: /../../admin?error=wrongPass");
-                    return null;
-                }
-            }
-        }
-        !$mailFound ? header("Location: /../../admin?error=wrongMail") : null;
-        return null;
     }
 
     public function findAllTags(): array {
@@ -111,8 +40,86 @@ class AdminController
         return $this->tags;
     }
 
-    public function saveArticle(array $data) {
-        $article = new Article($data['title'], $data['content'], $data['tags']);
+    public function findAllArticles(): array {
+        // Récupérer tous les tags depuis la base de données
+        $data = Article::findAll();
+
+        $articles = [];
+        foreach($data as $articleData) {
+            $articles[] = new Article($articleData['title'], $articleData['content'], $articleData['user_mail']);
+        }
+
+        $this->articles = $articles;
+        return $this->articles;
+    }
+
+    private function getDataForView(): array {
+        return [
+            'tags' => $this->tags,
+            'articles' => $this->articles,
+        ];
+    }
+
+    public function saveTag(array $data): void
+    {
+        // Vérifier si le tag existe déjà
+        $existingTag = Tag::findByName($data['addTag']);
+
+        if ($existingTag) {
+            // Rediriger avec un message d'erreur si le tag existe déjà
+            header('Location: /admin?error=tagTaken');
+            exit;
+        }
+
+        // Créer un nouveau tag
+        $tag = new Tag($data['addTag']);
+
+        // Sauvegarder le tag en base de données
+        $tag->save();
+
+        // Rediriger avec un message de succès
+        header('Location: /admin?success=addtag');
+        exit;
+    }
+
+    public function deleteTag(array $data): void
+    {
+        $tagName = $data['tagToDelete'];
+
+        // Créer une instance de Tag avec le nom du tag à supprimer
+        $tag = new Tag($tagName);
+
+        // Appeler la méthode delete pour supprimer le tag
+        $success = $tag->delete();
+
+        if ($success) {
+            // Redirection avec message de succès
+            header('Location: /admin?success=deleteTag');
+            exit;
+        } else {
+            // Gérer les erreurs de suppression ici
+            echo "Erreur lors de la suppression du tag.";
+            exit;
+        }
+    }
+
+    public function saveArticle(array $data): void {
+        session_start();
+        $existingArticle = Article::findByTitle($data['articleTitle']);
+
+        if($existingArticle) {
+            header('Location: /admin?error=titleTaken');
+            exit;
+        }
+
+        $userMail = $_SESSION['user']->getEmail();
+        $title = $data['articleTitle'];
+        $content = $data['articleContent'];
+        $tags = $data['selectedTags'];
+
+        $article = new Article($title, $content, $userMail);
+        $article->setTags($tags);
         $article->save();
+        header('Location: admin?success=addArticle');
     }
 }

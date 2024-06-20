@@ -8,7 +8,6 @@ use PDO;
 use Src\Models\Database;
 
 class User {
-    private int $id;
     private string $email;
     private string $password;
     private string $firstname;
@@ -16,16 +15,7 @@ class User {
     private string $job;
     private string $description;
     private string $img_path;
-    private bool $admin;
-
-    public function getId(): string {
-        return $this->id;
-    }
-
-    public function setId(string $id): self {
-        $this->id = $id;
-        return $this;
-    }
+    private int $admin;
 
     public function getEmail(): string {
         return $this->email;
@@ -91,29 +81,35 @@ class User {
         return $this;
     }
 
-    public function isAdmin(): bool {
+    public function isAdmin(): int {
         return $this->admin;
     }
 
-    private function exists() {
+    public function setAdmin(int $admin): self {
+        $this->admin = $admin;
+        return $this;
+    }
+
+    public static function exists(string $mail) {
         $db = new Database();
-        $result = $db->query("SELECT * FROM users WHERE email = ?", [$this->getEmail()])->fetch(PDO::FETCH_ASSOC);
+        $result = $db->query("SELECT * FROM user WHERE mail = ?", [$mail])->fetch(PDO::FETCH_ASSOC);
         return !empty($result);
     }
 
     public static function findByEmail($email) {
         $db = new Database();
-        $result = $db->query("SELECT * FROM users WHERE email = ?", [$email])->fetch(PDO::FETCH_ASSOC);
+        $result = $db->query("SELECT * FROM user WHERE mail = ?", [$email])->fetch(PDO::FETCH_ASSOC);
 
         if ($result) {
             $user = new User();
             $user
-                ->setEmail($result['email'])
-                ->setPassword($result['password'])
+                ->setEmail($result['mail'])
+                ->setPassword($result['pass'])
                 ->setFirstname($result['firstname'])
                 ->setLastname($result['lastname'])
                 ->setJob($result['job'])
                 ->setDescription($result['description'])
+                ->setAdmin($result['admin'])
                 ->setImgPath($result['img_path']);
             return $user;
         }
@@ -123,28 +119,29 @@ class User {
 
     public function save() {
         $db = new Database();
-
-        if ($this->exists()) {
+        if (self::exists($this->getEmail())) {
             // Update
-            $db->query("UPDATE users SET password = ?, firstname = ?, lastname = ?, job = ?, description = ?, img_path = ?, admin = ? WHERE email = ?", [
+            $db->query("UPDATE user SET pass = ?, firstname = ?, lastname = ?, job = ?, description = ?, img_path = ?, admin = ? WHERE mail = ?", [
                 $this->getPassword(),
                 $this->getFirstname(),
                 $this->getLastname(),
                 $this->getJob(),
                 $this->getDescription(),
-                $this->getImgPath(),
+                '',
+                0,
                 $this->getEmail()
             ]);
         } else {
             // Insert
-            $db->query("INSERT INTO users (email, password, firstname, lastname, job, description, img_path, admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [
+            $db->query("INSERT INTO user (mail, pass, firstname, lastname, job, description, img_path, admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [
                 $this->getEmail(),
                 $this->getPassword(),
                 $this->getFirstname(),
                 $this->getLastname(),
                 $this->getJob(),
                 $this->getDescription(),
-                $this->getImgPath(),
+                '',
+                0
             ]);
         }
     }

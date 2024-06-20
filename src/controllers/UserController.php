@@ -4,7 +4,7 @@ namespace Src\Models;
 
 use Src\Models\User;
 
-require_once __DIR__ . '/../models//User.php';
+require_once __DIR__ . '/../models/User.php';
 
 class UserController {
     public function index() {
