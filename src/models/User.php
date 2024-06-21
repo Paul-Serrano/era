@@ -117,6 +117,14 @@ class User {
         return null;
     }
 
+    public static function findAllAuthors(): array {
+        $db = new Database();
+        $sql = "SELECT DISTINCT u.* FROM user u JOIN article a ON u.mail = a.user_mail";
+        $stmt = $db->query($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function save() {
         $db = new Database();
         if (self::exists($this->getEmail())) {

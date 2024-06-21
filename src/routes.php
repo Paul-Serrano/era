@@ -35,6 +35,10 @@ switch ($requestUri) {
         $controller = new BlogController();
         echo $controller->index();
         break;
+    case '/article':
+        $controller = new BlogController();
+        echo $controller->viewArticle($_GET['id']);
+        break;
     case '/offer':
         $controller = new OfferController();
         echo $controller->index();
@@ -64,7 +68,7 @@ switch ($requestUri) {
         echo $controller->signout();
         break;
     case '/postTag': 
-        $controller = new AdminController($requestUri);
+        $controller = new AdminController();
         echo $controller->saveTag($_POST);
         break;
     case '/deleteTag': 

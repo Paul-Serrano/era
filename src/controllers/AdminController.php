@@ -46,7 +46,7 @@ class AdminController
 
         $articles = [];
         foreach($data as $articleData) {
-            $articles[] = new Article($articleData['title'], $articleData['content'], $articleData['user_mail']);
+            $articles[] = new Article($articleData->getTitle(), $articleData->getContent(), $articleData->getUserMail(), $articleData->getId());
         }
 
         $this->articles = $articles;
@@ -117,7 +117,7 @@ class AdminController
         $content = $data['articleContent'];
         $tags = $data['selectedTags'];
 
-        $article = new Article($title, $content, $userMail);
+        $article = new Article($title, $content, $userMail, 0);
         $article->setTags($tags);
         $article->save();
         header('Location: admin?success=addArticle');

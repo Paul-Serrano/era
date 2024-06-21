@@ -11,7 +11,7 @@ $user = $_SESSION['user'] ?? null;
         <!-- Menu for desktop -->
         <ul class="hidden lg:flex lg:order-2 lg:w-[60%] lg:justify-evenly space-x-4">
             <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos solutions</a> <img src="../../assets/img/drop-down-arrow.png" alt="fleche menu déroulent" /></li>
-            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Blog</a></li>
+            <li class="flex items-center m-0"><a href="/blog" class="hover:text-secondary italic lg:not-italic lg:font-bold">Blog</a></li>
             <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos tarifs</a></li>
             <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Contact</a></li>
             <li class="flex items-center m-0"><a href="#" class="hover:text-secondary"><img class="lg:w-2/3 lg:ml-2" src="../../assets/img/cart.png" alt="panier" /></a></li>
@@ -48,12 +48,14 @@ $user = $_SESSION['user'] ?? null;
     <!-- Mobile navigation links -->
     <ul id="mobile-nav-links" class="bg-white lg:hidden hidden flex-col items-center space-y-2 mt-4 absolute left-0 w-full z-50">
         <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Destinations</a></li>
-        <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Blog</a></li>
+        <li class="w-3/4"><a href="/blog" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Blog</a></li>
         <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Offres</a></li>
         <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Contact</a></li>
         <li class="w-3/4"><a href="#" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark"><img src="../../assets/img/cart.png" alt="panier" /></a></li>
         <?php if($user) : ?>
+            <li class="w-3/4"><a href="" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Mon Compte</a></li>
             <li class="w-3/4"><a href="/signout" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Déconnexion</a></li>
+            <?php if($user->isAdmin()): ?><li class="w-3/4"><a href="/admin" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Panel Admin</a></li><?php endif;?>
         <?php else : ?>
             <li class="w-3/4"><a href="/login" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark">Se Connecter</a></li>
         <?php endif; ?>
