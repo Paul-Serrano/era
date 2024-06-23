@@ -84,9 +84,9 @@ if(!$user || !$user->isAdmin()) {
         <?php endforeach; ?>
     </ul>
 
-    <form action="/updateArticle" method="POST" class="hidden" id="updateArticleForm">
+    <form action="/updateArticle" method="POST" class="hidden w-full" id="updateArticleForm">
         <input type="hidden" name="newArticleId" id="newArticleId">
-        <div>
+        <div class="w-full">
             <div class="formGroup">
                 <label for="newArticleTitle">Title</label>
                 <input id="newArticleTitle" class="border-black border-2 rounded-xl px-4 py-1" name="newArticleTitle" value="" type="text" />

@@ -21,43 +21,40 @@ function displayErrorMessage($error) {
     }
 }
 
-?>
-
-<h2>Inscription</h2>
-<?php 
 // Afficher le message d'erreur s'il y en a un
 if (!empty($error)) {
     displayErrorMessage($error);
 }
 ?>
-<form action="/register" method="POST">
+<form action="/register" method="POST" class="w-3/4 m-auto">
+    <h2>Inscription</h2>
     <div>
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input class="border-2 border-black my-2" type="email" id="email" name="email" required>
     </div>
     <div>
         <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="password" required>
+        <input class="border-2 border-black my-2" type="password" id="password" name="password" required>
     </div>
     <div>
         <label for="passwordVerif">Répétez mot de passe svp</label>
-        <input type="password" id="passwordVerif" name="passwordVerif" required>
+        <input class="border-2 border-black my-2" type="password" id="passwordVerif" name="passwordVerif" required>
     </div>
     <div>
         <label for="firstname">Prénom</label>
-        <input type="text" id="firstname" name="firstname" required>
+        <input class="border-2 border-black my-2" type="text" id="firstname" name="firstname" required>
     </div>
     <div>
         <label for="lastname">Nom de famille</label>
-        <input type="text" id="lastname" name="lastname" required>
+        <input class="border-2 border-black my-2" type="text" id="lastname" name="lastname" required>
     </div>
     <div>
         <label for="job">Secteur d'activité</label>
-        <input type="text" id="job" name="job" required>
+        <input class="border-2 border-black my-2" type="text" id="job" name="job" required>
     </div>
     <div>
         <label for="description">Description</label>
-        <input type="textarea" id="description" name="description" required>
+        <input class="border-2 border-black my-2" type="textarea" id="description" name="description" required>
     </div>
     <div>
         <label for="lang">Languages</label>
@@ -66,8 +63,8 @@ if (!empty($error)) {
         </select>
     </div>
     <div>
-        <button type="submit">Inscription</button>
+        <button type="submit" class="bg-black text-white p-2 my-2">Inscription</button>
     </div>
+    <a href="/login" class="underline font-bold">Déjà un compte ? connectez vous !</a>
 </form>
-<a href="/login">Déjà un compte ? connectez vous !</a>
 
