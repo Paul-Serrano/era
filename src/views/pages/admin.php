@@ -78,13 +78,14 @@ if(!$user || !$user->isAdmin()) {
                     <input type="hidden" name="articleTitle" value="<?= htmlspecialchars($article->getTitle()) ?>" />
                     <button class="text-[#ff0000]" type="submit" name="deleteArticleSubmit" value="yes">Supprimer</button>
                 </form>
-                <button class="text-[#0000ff] mt-2" onclick='editArticle(<?= htmlspecialchars(json_encode($article->getTitle())) ?>, <?= htmlspecialchars(json_encode($article->getContent())) ?>, <?= htmlspecialchars(json_encode($article->getTags())) ?>)'>Modifier</button>
+                <button class="text-[#0000ff] mt-2" onclick='editArticle(<?= htmlspecialchars(json_encode($article->getTitle())) ?>, <?= htmlspecialchars(json_encode($article->getContent())) ?>, <?= htmlspecialchars(json_encode($article->getTags())) ?>, <?= htmlspecialchars(json_encode($article->getId())) ?>)'>Modifier</button>
             </div>
         </li>
         <?php endforeach; ?>
     </ul>
 
     <form action="/updateArticle" method="POST" class="hidden" id="updateArticleForm">
+        <input type="hidden" name="newArticleId" id="newArticleId">
         <div>
             <div class="formGroup">
                 <label for="newArticleTitle">Title</label>
@@ -98,7 +99,7 @@ if(!$user || !$user->isAdmin()) {
 
             <div class="formGroup">
                 <label for="newArticleTags">Tags</label>
-                <select name="newArticleTag" id="newArticleTag">
+                <select name="newArticleTags" id="newArticleTags">
                     <option value="">--- Choisissez un tag pour votre article ---</option>
                     <?php foreach ($data['tags'] as $tag): ?>
                         <option value="<?= htmlspecialchars($tag->getName()) ?>"><?= htmlspecialchars($tag->getName()) ?></option>

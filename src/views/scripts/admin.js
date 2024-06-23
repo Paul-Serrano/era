@@ -115,9 +115,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-function editArticle(title, content, tags) {
+function editArticle(title, content, tags, id) {
     document.getElementById('updateArticleForm').style.display = 'flex';
     tinymce.get('newContentArticleTextarea').setContent(content);
+    document.getElementById('newArticleTitle').value = title;
+    document.getElementById('newArticleId').value = id;
     const selectedTags = document.getElementById('new-selected-tags');
     const newSelectedTagsContainer = document.getElementById('new-selected-tags');
     const newHiddenFieldsContainer = document.getElementById('new-hidden-fields-container');
@@ -126,9 +128,6 @@ function editArticle(title, content, tags) {
         const savedTagElement = document.createElement('span');
         savedTagElement.className = 'new-selected-tag';
         savedTagElement.textContent = tag + ' ';
-
-        console.log(tag);
-        console.log(savedTagElement);
 
         const newRremoveButton = document.createElement('button');
         newRremoveButton.textContent = 'x';
@@ -142,8 +141,6 @@ function editArticle(title, content, tags) {
     );
     newUpdateHiddenFields();
 
-    document.getElementById('newArticleTitle').value = title;
-
 }
 
 function newUpdateHiddenFields() {
@@ -155,7 +152,6 @@ function newUpdateHiddenFields() {
         const newHiddenField = document.createElement('input');
         newHiddenField.type = 'hidden';
         newHiddenField.name = 'newSelectedTags[]';
-        console.log(newTagName);
         newHiddenField.value = newTagName;
         newHiddenFieldsContainer.appendChild(newHiddenField);
     });
@@ -163,7 +159,7 @@ function newUpdateHiddenFields() {
     return newHiddenField;
 }
 
-const newArticleTagSelect = document.getElementById('newArticleTag');
+const newArticleTagSelect = document.getElementById('newArticleTags');
 const newSelectedTagsContainer = document.getElementById('new-selected-tags');
 const newHiddenFieldsContainer = document.getElementById('new-hidden-fields-container');
 

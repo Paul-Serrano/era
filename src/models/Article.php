@@ -69,7 +69,6 @@ class Article {
         $stmt->bindParam(':title', $title, PDO::PARAM_STR);
         $stmt->execute();
         $articleData = $stmt->fetch(PDO::FETCH_ASSOC);
-        
         if ($articleData) {
             $article = new self(
                 $articleData['title'],
@@ -253,6 +252,46 @@ class Article {
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':title', $this->title, PDO::PARAM_STR);
             $stmt->execute();
+    
+            // Valider la transaction
+            $db->commit();
+        } catch (\PDOException $e) {
+            // Annuler la transaction en cas d'erreur
+            $db->rollBack();
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
+    public function update(): void {
+        $db = self::$db;
+    
+        try {
+            // Commencer une transaction
+            $db->beginTransaction();
+    
+            // Mettre à jour l'article dans la table article
+            $sql = "UPDATE article SET title = :title, content = :content, user_mail = :userMail WHERE id = :id";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':title', $this->title);
+            $stmt->bindParam(':content', $this->content);
+            $stmt->bindParam(':userMail', $this->userMail);
+            $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
+            $stmt->execute();
+    
+            // Supprimer les associations article-tag existantes dans la table article_tags
+            $sql = "DELETE FROM article_tags WHERE article_title = :title";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':title', $this->title, PDO::PARAM_STR);
+            $stmt->execute();
+    
+            // Insérer les nouvelles associations article-tag dans la table article_tags
+            $sql = "INSERT INTO article_tags (article_title, tag_name) VALUES (:articleTitle, :tagName)";
+            $stmt = $db->prepare($sql);
+            foreach ($this->tags as $tag) {
+                $stmt->bindParam(':articleTitle', $this->title, PDO::PARAM_STR);
+                $stmt->bindParam(':tagName', $tag, PDO::PARAM_STR);
+                $stmt->execute();
+            }
     
             // Valider la transaction
             $db->commit();

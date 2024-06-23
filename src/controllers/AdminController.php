@@ -140,18 +140,14 @@ class AdminController
     }
 
     public function updateArticle(array $data) {
-        
-        $articleTitle = $data['articleTitle'];
-        $article = Article::findByTitle($articleTitle);
-        var_dump($article);
-        die();
-
+        $articleId = $data['newArticleId'];
+        $article = Article::findById($articleId);
         if ($article) {
-            $article->setTitle($data['articleTitle']);
-            $article->setContent($data['articleContent']);
-            $article->setTags(explode(', ', $data['articleTags']));
-            $article->save();
-            header('Location: /admin?success=updateArticle');
+            $article->setTitle($data['newArticleTitle']);
+            $article->setContent($data['newArticleContent']);
+            $article->setTags($data['newSelectedTags']);
+            $article->update();
+            header('Location: /admin');
             exit;
         }
     }
