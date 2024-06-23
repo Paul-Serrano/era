@@ -75,13 +75,17 @@ switch ($requestUri) {
         $controller = new AdminController();
         echo $controller->deleteTag($_POST);
         break;
-    case '/postArticle': 
+    case '/saveArticle': 
         $controller = new AdminController();
         $controller->saveArticle($_POST);
         break;
     case '/deleteArticle': 
         $controller = new AdminController();
         echo $controller->deleteArticle($_POST);
+        break;
+    case '/updateArticle': 
+        $controller = new AdminController();
+        echo $controller->updateArticle($_POST);
         break;
     default:
         http_response_code(404);

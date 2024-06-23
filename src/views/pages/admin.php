@@ -32,11 +32,11 @@ if(!$user || !$user->isAdmin()) {
         </ul>
     </form>
     <hr class="w-full bg-black h-2 my-5" />
-    <form action="/postArticle" method="POST">
+    <form action="/saveArticle" method="POST">
         <div>
             <div class="formGroup">
                 <label for="articleTitle">Title</label>
-                <input class="border-black border-2 rounded-xl px-4 py-1" name="articleTitle" value="" type="text" />
+                <input id="articleTitle" class="border-black border-2 rounded-xl px-4 py-1" name="articleTitle" value="" type="text" />
             </div>
 
             <div class="formGroup">
@@ -73,13 +73,46 @@ if(!$user || !$user->isAdmin()) {
                     <span class="bg-black text-white rounded-xl p-2"><?= htmlspecialchars($tag) ;?></span>
                 <?php endforeach; ?>
             </div>
-            <form action="/deleteArticle" method="POST" class="mt-2">
-                <input type="hidden" name="articleTitle" value="<?= htmlspecialchars($article->getTitle()) ?>" />
-                <button class="text-[#ff0000]" type="submit" name="deleteArticleSubmit" value="yes">Supprimer</button>
-            </form>
+            <div class="flex items-center justify-between">
+                <form action="/deleteArticle" method="POST" class="mt-2" id="editArticleForm">
+                    <input type="hidden" name="articleTitle" value="<?= htmlspecialchars($article->getTitle()) ?>" />
+                    <button class="text-[#ff0000]" type="submit" name="deleteArticleSubmit" value="yes">Supprimer</button>
+                </form>
+                <button class="text-[#0000ff] mt-2" onclick='editArticle(<?= htmlspecialchars(json_encode($article->getTitle())) ?>, <?= htmlspecialchars(json_encode($article->getContent())) ?>, <?= htmlspecialchars(json_encode($article->getTags())) ?>)'>Modifier</button>
+            </div>
         </li>
         <?php endforeach; ?>
     </ul>
+
+    <form action="/updateArticle" method="POST" class="hidden" id="updateArticleForm">
+        <div>
+            <div class="formGroup">
+                <label for="newArticleTitle">Title</label>
+                <input id="newArticleTitle" class="border-black border-2 rounded-xl px-4 py-1" name="newArticleTitle" value="" type="text" />
+            </div>
+
+            <div class="formGroup">
+                <label for="newArticleContent">Content</label>
+                <textarea class="border-black border-2 rounded-xl px-4 py-1" name="newArticleContent" value="" type="textarea" id="newContentArticleTextarea"></textarea>
+            </div>
+
+            <div class="formGroup">
+                <label for="newArticleTags">Tags</label>
+                <select name="newArticleTag" id="newArticleTag">
+                    <option value="">--- Choisissez un tag pour votre article ---</option>
+                    <?php foreach ($data['tags'] as $tag): ?>
+                        <option value="<?= htmlspecialchars($tag->getName()) ?>"><?= htmlspecialchars($tag->getName()) ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <div id="new-selected-tags"></div>
+
+            <div id="new-hidden-fields-container"></div>
+
+            <button type="submit" name="newArticleSubmit" value="yes">Update</button>
+        </div>
+    </form>
 </section>
 
 <script src="/src/views/scripts/admin.js"></script>
