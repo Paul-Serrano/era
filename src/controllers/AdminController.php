@@ -147,7 +147,7 @@ class AdminController
             $article->setContent($data['newArticleContent']);
             $article->setTags($data['newSelectedTags']);
             $article->update();
-            header('Location: /admin');
+            header('Location: /admin?success=updateArticle');
             exit;
         }
     }
