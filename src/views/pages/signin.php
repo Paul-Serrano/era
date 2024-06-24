@@ -26,45 +26,51 @@ if (!empty($error)) {
     displayErrorMessage($error);
 }
 ?>
-<form action="/register" method="POST" class="w-3/4 m-auto">
-    <h2>Inscription</h2>
-    <div>
-        <label for="email">Email</label>
-        <input class="border-2 border-black my-2" type="email" id="email" name="email" required>
+<div class="w-[80%] mx-auto my-10 flex flex-col">
+    <form action="/register" method="POST">
+        <h2 class="ml-5 font-bold text-xl text-secondary my-5">Inscription</h2>
+        <div class="flex flex-col my-5">
+            <label for="email">Email</label>
+            <input class="border-2 border-black my-2 rounded-md p-2" type="email" id="email" name="email" required>
+        </div>
+        <div class="flex flex-col my-5">
+            <label for="password">Mot de passe</label>
+            <input class="border-2 border-black my-2 rounded-md p-2" type="password" id="password" name="password" required>
+        </div>
+        <div class="flex flex-col my-5">
+            <label for="passwordVerif">Répétez mot de passe svp</label>
+            <input class="border-2 border-black my-2 rounded-md p-2" type="password" id="passwordVerif" name="passwordVerif" required>
+        </div>
+        <div class="flex flex-col my-5">
+            <label for="firstname">Prénom</label>
+            <input class="border-2 border-black my-2 rounded-md p-2" type="text" id="firstname" name="firstname" required>
+        </div>
+        <div class="flex flex-col my-5">
+            <label for="lastname">Nom de famille</label>
+            <input class="border-2 border-black my-2 rounded-md p-2" type="text" id="lastname" name="lastname" required>
+        </div>
+        <div class="flex flex-col my-5">
+            <label for="job">Secteur d'activité</label>
+            <input class="border-2 border-black my-2 rounded-md p-2" type="text" id="job" name="job" required>
+        </div>
+        <div class="flex flex-col my-5">
+            <label for="description">Description</label>
+            <input class="border-2 border-black my-2 rounded-md p-2" id="description" name="description" type="textarea" required>
+        </div>
+        <div class="flex flex-col my-5">
+            <label for="lang">Languages</label>
+            <select name="lang" id="lang">
+                <option value="">Choissez les langues parlées</option>
+            </select>
+        </div>
+        <div class="">
+            <button type="submit" class="bg-secondary font-bold text-white px-2 py-4 my-2 w-full rounded-full">Inscription</button>
+        </div>
+    </form>
+    <div class="flex flex-col">
+        <a href="/login" class="bg-secondary font-bold text-white px-2 py-4 my-10 w-full rounded-full text-center">Déjà un compte ? connectez vous !</a>
     </div>
-    <div>
-        <label for="password">Mot de passe</label>
-        <input class="border-2 border-black my-2" type="password" id="password" name="password" required>
-    </div>
-    <div>
-        <label for="passwordVerif">Répétez mot de passe svp</label>
-        <input class="border-2 border-black my-2" type="password" id="passwordVerif" name="passwordVerif" required>
-    </div>
-    <div>
-        <label for="firstname">Prénom</label>
-        <input class="border-2 border-black my-2" type="text" id="firstname" name="firstname" required>
-    </div>
-    <div>
-        <label for="lastname">Nom de famille</label>
-        <input class="border-2 border-black my-2" type="text" id="lastname" name="lastname" required>
-    </div>
-    <div>
-        <label for="job">Secteur d'activité</label>
-        <input class="border-2 border-black my-2" type="text" id="job" name="job" required>
-    </div>
-    <div>
-        <label for="description">Description</label>
-        <input class="border-2 border-black my-2" type="textarea" id="description" name="description" required>
-    </div>
-    <div>
-        <label for="lang">Languages</label>
-        <select name="lang" id="lang">
-            <option value="">Choissez les langues parlées</option>
-        </select>
-    </div>
-    <div>
-        <button type="submit" class="bg-black text-white p-2 my-2">Inscription</button>
-    </div>
-    <a href="/login" class="underline font-bold">Déjà un compte ? connectez vous !</a>
-</form>
+</div>
+
+
 

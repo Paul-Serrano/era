@@ -43,7 +43,8 @@ class SigninController
                 ->save();
 
             $user->save();
-            header('Location: /?success=signedIn');
+            header('Location: /login?success=signedIn&mail='.$_POST['email'].'');
+            exit;
         } else {
             // Rediriger vers la page d'inscription si la méthode HTTP n'est pas POST
             header('Location: /inscription');
