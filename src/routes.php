@@ -9,6 +9,7 @@ require_once __DIR__ . '/../src/controllers/BlogController.php';
 require_once __DIR__ . '/../src/controllers/OfferController.php';
 require_once __DIR__ . '/../src/controllers/CartController.php';
 require_once __DIR__ . '/../src/controllers/UserController.php';
+require_once __DIR__ . '/../src/controllers/PanelUserController.php';
 
 use Src\Controllers\HomeController;
 use Src\Controllers\AdminController;
@@ -18,7 +19,7 @@ use Src\Controllers\LoginController;
 use Src\Controllers\OfferController;
 use Src\Controllers\SigninController;
 use Src\Controllers\SignoutController;
-use Src\Models\UserController;
+use Src\Controllers\PanelUserController;
 
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); // Pour gérer les paramètres de requête
 
@@ -86,6 +87,10 @@ switch ($requestUri) {
     case '/updateArticle': 
         $controller = new AdminController();
         echo $controller->updateArticle($_POST);
+        break;
+    case '/panelUser':
+        $controller = new PanelUserController();
+        echo $controller->index();
         break;
     default:
         http_response_code(404);

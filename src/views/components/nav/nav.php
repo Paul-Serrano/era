@@ -22,7 +22,9 @@ $user = $_SESSION['user'] ?? null;
                         <li><a href="/account">Mon Compte</a></li>
                         <li><a href="/signout">Déconnexion</a></li>
                         <?php if($user->isAdmin()) : ?>
-                        <li><a href="/admin">Panel admin</a></li>
+                            <li><a href="/admin">Panel Admin</a></li>
+                        <?php else : ?>
+                            <li><a href="/panelUser">Panel User</a></li>
                         <?php endif; ?>
                     </ul>
                 </div>
@@ -53,7 +55,11 @@ $user = $_SESSION['user'] ?? null;
         <?php if($user) : ?>
             <li class="w-3/4 flex"><a href="" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Mon Compte</a></li>
             <li class="w-3/4 flex"><a href="/signout" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark text-xl w-2/3">Déconnexion</a></li>
-            <?php if($user->isAdmin()): ?><li class="w-3/4 flex"><a href="/admin" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark text-xl w-2/3">Panel Admin</a></li><?php endif;?>
+            <?php if($user->isAdmin()): ?>
+                <li class="w-3/4 flex"><a href="/admin" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark text-xl w-2/3">Panel Admin</a></li>
+            <?php else : ?>
+                <li class="w-3/4 flex"><a href="/panelUser" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark text-xl w-2/3">Panel User</a></li>
+            <?php endif; ?>
         <?php else : ?>
             <li class="w-3/4 flex"><a href="/login" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark text-xl w-2/3">Se Connecter</a></li>
         <?php endif; ?>

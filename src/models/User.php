@@ -16,6 +16,21 @@ class User {
     private string $description;
     private string $img_path;
     private int $admin;
+    private static $db;
+
+    public function __construct(string $email, string $firstname, string $lastname, string $job, string $description){
+        $this->email = $email;
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
+        $this->job = $job;
+        $this->description = $description;
+    }
+
+    public static function initializeDatabase() {
+        if (!self::$db) {
+            self::$db = Database::getPdo();
+        }
+    }
 
     public function getEmail(): string {
         return $this->email;
@@ -101,14 +116,15 @@ class User {
         $result = $db->query("SELECT * FROM user WHERE mail = ?", [$email])->fetch(PDO::FETCH_ASSOC);
 
         if ($result) {
-            $user = new User();
+            $user = new User(
+                $result['mail'],
+                $result['firstname'],
+                $result['lastname'],
+                $result['job'],
+                $result['description']
+            );
             $user
-                ->setEmail($result['mail'])
                 ->setPassword($result['pass'])
-                ->setFirstname($result['firstname'])
-                ->setLastname($result['lastname'])
-                ->setJob($result['job'])
-                ->setDescription($result['description'])
                 ->setAdmin($result['admin'])
                 ->setImgPath($result['img_path']);
             return $user;
@@ -152,5 +168,26 @@ class User {
                 0
             ]);
         }
+    }
+
+    public static function findAll(): array {
+        self::initializeDatabase();
+        $sql = "SELECT * FROM user WHERE admin = 0";
+        $stmt = self::$db->prepare($sql);
+        $stmt->execute();
+        $dataUsers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $users = [];
+        foreach ($dataUsers as $dataUser) {
+            $user = new self(
+                $dataUser['mail'],
+                $dataUser['firstname'],
+                $dataUser['lastname'],
+                $dataUser['job'],
+                $dataUser['description']
+            );
+            $users[] = $user;
+        }
+        return $users;
     }
 }

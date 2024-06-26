@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const sectionSelect = document.getElementById('sectionSelect');
+            const userSection = document.getElementById('userSection');
+            const blogSection = document.getElementById('blogSection');
+
+            sectionSelect.addEventListener('change', function() {
+                if (sectionSelect.value === 'user') {
+                    userSection.classList.remove('hidden');
+                    blogSection.classList.add('hidden');
+                } else if (sectionSelect.value === 'blog') {
+                    blogSection.classList.remove('hidden');
+                    userSection.classList.add('hidden');
+                }
+            });
+
+            // Afficher la section "User" par défaut au chargement
+            userSection.classList.remove('hidden');
+            blogSection.classList.add('hidden');
+
     const articleTagSelect = document.getElementById('articleTag');
     const selectedTagsContainer = document.getElementById('selected-tags');
     const hiddenFieldsContainer = document.getElementById('hidden-fields-container');
@@ -20,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!tagAlreadySelected) {
                     // Créer un élément pour afficher le tag sélectionné
                     const tagElement = document.createElement('span');
-                    tagElement.className = 'selected-tag';
+                    tagElement.className = 'selected-tag bg-secondary p-2 rounded-xl text-white font-bold';
                     tagElement.textContent = selectedTag + ' ';
                     
                     // Ajouter un bouton pour supprimer le tag sélectionné
@@ -126,7 +144,7 @@ function editArticle(title, content, tags, id) {
     selectedTags.replaceChildren('');
     tags.forEach((tag) => {
         const savedTagElement = document.createElement('span');
-        savedTagElement.className = 'new-selected-tag';
+        savedTagElement.className = 'new-selected-tag bg-secondary p-2 rounded-xl text-white font-bold';
         savedTagElement.textContent = tag + ' ';
 
         const newRremoveButton = document.createElement('button');
@@ -180,7 +198,7 @@ if (newArticleTagSelect && newSelectedTagsContainer && newHiddenFieldsContainer)
             if (!newTagAlreadySelected) {
                 // Créer un élément pour afficher le tag sélectionné
                 const newTagElement = document.createElement('span');
-                newTagElement.className = 'new-selected-tag';
+                newTagElement.className = 'new-selected-tag bg-secondary p-2 rounded-xl text-white font-bold';
                 newTagElement.textContent = newSelectedTag + ' ';
                 
                 // Ajouter un bouton pour supprimer le tag sélectionné
@@ -229,4 +247,6 @@ if (newArticleTagSelect && newSelectedTagsContainer && newHiddenFieldsContainer)
 } else {
     console.error('Required elements are missing from the DOM.');
 }
+
+
 

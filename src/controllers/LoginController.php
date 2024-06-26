@@ -39,7 +39,9 @@ class LoginController
                 // Enregistrez les informations de l'utilisateur dans la session ou un autre mécanisme d'authentification
                 session_start();
                 $_SESSION['user'] = $user;
-                header('Location: /?success=logIn'); // Redirection vers la page d'accueil après connexion réussie
+                $user->isAdmin() ?
+                header('Location: /admin?success=logIn') :
+                header('Location: /panelUser?success=logIn'); // Redirection vers la page d'accueil après connexion réussie
                 exit;
             } else {
                 // Mauvaises informations de connexion

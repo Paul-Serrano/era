@@ -7,15 +7,18 @@ require_once __DIR__ . '/../models/Tag.php';
 
 use Src\Models\Tag;
 use Src\Models\Article;
+use Src\Models\User;
 
 class AdminController 
 {
     private array $tags;
     private array $articles;
+    private array $users;
     
     public function __construct() {
         $this->tags = $this->findAllTags();
         $this->articles = $this->findAllArticles();
+        $this->users = $this->findAllUsers();
     }
     
     public function index(): string
@@ -53,10 +56,19 @@ class AdminController
         return $this->articles;
     }
 
+    public function findAllUsers(): array {
+        // Récupérer tous les tags depuis la base de données
+        $users = User::findAll();
+
+        $this->users = $users;
+        return $this->users;
+    }
+
     private function getDataForView(): array {
         return [
             'tags' => $this->tags,
             'articles' => $this->articles,
+            'users' => $this->users
         ];
     }
 

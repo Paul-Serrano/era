@@ -18,9 +18,6 @@ class Article {
     private string $autor;
 
     public function __construct(string $title, string $content, string $userMail, int $id) {
-        if (!self::$db) {
-            self::$db = Database::getPdo();
-        }
         $this->id = $id;
         $this->title = $title;
         $this->content = $content;

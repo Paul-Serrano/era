@@ -31,14 +31,15 @@ class SigninController
             }
 
             // Créer un nouvel utilisateur
-            $user = new User();
+            $user = new User(
+                $_POST['email'],
+                $_POST['firstname'],
+                $_POST['lastname'],
+                $_POST['job'],
+                $_POST['description'],
+            );
             $user
-                ->setEmail($_POST['email'])
                 ->setPassword(password_hash($_POST['password'], PASSWORD_BCRYPT))
-                ->setFirstname($_POST['firstname'])
-                ->setLastname($_POST['lastname'])
-                ->setJob($_POST['job'])
-                ->setDescription($_POST['description'])
                 // ->setImgPath($_POST['img_path'])
                 ->save();
 
