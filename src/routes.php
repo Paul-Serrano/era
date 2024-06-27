@@ -11,6 +11,7 @@ require_once __DIR__ . '/../src/controllers/CartController.php';
 require_once __DIR__ . '/../src/controllers/UserController.php';
 require_once __DIR__ . '/../src/controllers/PanelUserController.php';
 require_once __DIR__ . '/../src/controllers/AccountController.php';
+require_once __DIR__ . '/../src/controllers/NewsletterController.php';
 
 use Src\Controllers\AccountController;
 use Src\Controllers\HomeController;
@@ -18,6 +19,7 @@ use Src\Controllers\AdminController;
 use Src\Controllers\BlogController;
 use Src\Controllers\CartController;
 use Src\Controllers\LoginController;
+use Src\Controllers\NewsletterController;
 use Src\Controllers\OfferController;
 use Src\Controllers\SigninController;
 use Src\Controllers\SignoutController;
@@ -101,6 +103,10 @@ switch ($requestUri) {
     case '/updateUser':
         $controller = new AccountController();
         echo $controller->updateUser();
+        break;
+    case '/subscribeNewsletter':
+        $controller = new NewsletterController();
+        echo $controller->activate();
         break;
     default:
         http_response_code(404);

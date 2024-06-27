@@ -163,8 +163,4 @@ class AdminController
             exit;
         }
     }
-
-    public function saveLang(array $data) {
-
-    }
 }
