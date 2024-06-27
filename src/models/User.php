@@ -3,9 +3,11 @@
 namespace Src\Models;
 
 require_once __DIR__ . '/../models/Database.php';
+require_once __DIR__ . '/../models/Lang.php';
 
 use PDO;
 use Src\Models\Database;
+use Src\Models\Lang;
 
 class User {
     private string $email;
@@ -16,6 +18,7 @@ class User {
     private string $description;
     private string $img_path;
     private int $admin;
+    private array $languages;
     private static $db;
 
     public function __construct(string $email, string $firstname, string $lastname, string $job, string $description){
@@ -105,6 +108,25 @@ class User {
         return $this;
     }
 
+    public function getLanguages(): array {
+        return $this->languages;
+    }
+
+    public function setLanguage(Lang $lang): self {
+        $this->languages[] = $lang;
+        return $this;
+    }
+
+    public function unsetLanguage(Lang $lang): self {
+        foreach($this->languages as $key => $storedLang) {
+            if($storedLang->getName() == $lang->getName()) {
+                unset($this->languages[$key]);
+            }
+        }
+
+        return $this;
+    }
+
     public static function exists(string $mail) {
         $db = new Database();
         $result = $db->query("SELECT * FROM user WHERE mail = ?", [$mail])->fetch(PDO::FETCH_ASSOC);
@@ -144,7 +166,6 @@ class User {
     public function save() {
         $db = new Database();
         if (self::exists($this->getEmail())) {
-            // Update
             $db->query("UPDATE user SET pass = ?, firstname = ?, lastname = ?, job = ?, description = ?, img_path = ?, admin = ? WHERE mail = ?", [
                 $this->getPassword(),
                 $this->getFirstname(),
@@ -167,6 +188,10 @@ class User {
                 '',
                 0
             ]);
+        }
+
+        foreach($this->getLanguages() as $lang) {
+            $db->query("INSERT INTO user_language (user_mail, language_name) VALUES ('".$this->getEmail()."', '".$lang->getName()."')");
         }
     }
 

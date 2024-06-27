@@ -59,10 +59,18 @@ if (!empty($error)) {
         </div>
         <div class="flex flex-col my-5">
             <label for="lang">Languages</label>
-            <select name="lang" id="lang">
-                <option value="">Choissez les langues parlées</option>
+            <select class="capitalize" name="lang" id="lang">
+                <option class="capitalize" value="">Choisissez les langues parlées</option>
+                <?php foreach ($langs as $lang): ?>
+                    <option class="capitalize" value="<?= htmlspecialchars($lang->getName()) ?>"><?= htmlspecialchars($lang->getName()) ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
+
+        <div id="selected-langs"></div>
+
+        <div id="hidden-langs-container"></div>
+
         <div class="">
             <button type="submit" class="bg-secondary font-bold text-white px-2 py-4 my-2 w-full rounded-full">Inscription</button>
         </div>
@@ -71,6 +79,7 @@ if (!empty($error)) {
         <a href="/login" class="bg-secondary font-bold text-white px-2 py-4 my-10 w-full rounded-full text-center">Déjà un compte ? connectez vous !</a>
     </div>
 </div>
+<script src="/src/views/scripts/signin.js"></script>
 
 
 

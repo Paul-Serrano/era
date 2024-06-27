@@ -3,7 +3,9 @@
 namespace Src\Controllers;
 
 require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../models/Lang.php';
 
+use Src\Models\Lang;
 use Src\Models\User;
 
 class SigninController
@@ -11,6 +13,7 @@ class SigninController
     public function index()
     {
         // Chargez la vue
+        $langs = Lang::findAll();
         ob_start();
         require __DIR__ . '/../views/components/header/header.php';
         require __DIR__ . '/../views/pages/signin.php';
@@ -30,6 +33,8 @@ class SigninController
                 exit;
             }
 
+            $userLang = [];
+
             // Créer un nouvel utilisateur
             $user = new User(
                 $_POST['email'],
@@ -39,9 +44,13 @@ class SigninController
                 $_POST['description'],
             );
             $user
-                ->setPassword(password_hash($_POST['password'], PASSWORD_BCRYPT))
+                ->setPassword(password_hash($_POST['password'], PASSWORD_BCRYPT));
                 // ->setImgPath($_POST['img_path'])
-                ->save();
+
+            foreach($_POST['selectedLangs'] as $data) {
+                $lang = new Lang($data);
+                $user->setLanguage($lang);
+            }
 
             $user->save();
             header('Location: /login?success=signedIn&mail='.$_POST['email'].'');
@@ -75,6 +84,10 @@ class SigninController
 
         if (User::exists($data['email'])) {
             return "mailTaken";
+        }
+
+        if(empty($data['selectedLangs'])) {
+            return "noLangs";
         }
 
         return true; // Retourne true si toutes les validations sont passées

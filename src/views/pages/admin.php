@@ -23,4 +23,8 @@ if(!$user || !$user->isAdmin()) {
     <?php include_once __DIR__ . '/../components/Admin/blog.php' ?> 
 </section>
 
+<section class="w-3/4 m-auto my-5 hidden"  id="langSection">
+    <?php include_once __DIR__ . '/../components/Admin/lang.php' ?> 
+</section>
+
 <script src="/src/views/scripts/admin.js"></script>
