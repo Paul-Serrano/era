@@ -108,6 +108,10 @@ switch ($requestUri) {
         $controller = new NewsletterController();
         echo $controller->activate();
         break;
+    case '/deleteNewsletter':
+        $controller = new NewsletterController();
+        echo $controller->delete();
+        break;
     default:
         http_response_code(404);
         echo "Page not found";

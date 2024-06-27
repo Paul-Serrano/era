@@ -3,10 +3,12 @@
 namespace Src\Controllers;
 
 require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../repository/Tool.php';
 
 use Src\Models\User;
+use Src\Repository\Tool\Tool;
 
-class LoginController
+class LoginController extends Tool
 {
     public function index()
     {

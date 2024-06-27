@@ -4,12 +4,14 @@ namespace Src\Models;
 
 require_once __DIR__ . '/../models/Database.php';
 require_once __DIR__ . '/../models/Lang.php';
+require_once __DIR__ . '/../repository/Tool.php';
 
 use PDO;
 use Src\Models\Database;
 use Src\Models\Lang;
+use Src\Repository\Tool\Tool;
 
-class User {
+class User extends Tool {
     private string $email;
     private string $password;
     private string $firstname;

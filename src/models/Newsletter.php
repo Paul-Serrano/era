@@ -59,12 +59,31 @@ class Newsletter {
         $this->lastname = $lastname;
     }
 
+    public static function exists(string $mail): bool
+    {
+        self::initializeDatabase();
+        $stmt = self::$db->prepare('SELECT COUNT(*) FROM newsletter WHERE mail = :mail');
+        $stmt->execute(['mail' => $mail]);
+        return $stmt->fetchColumn() > 0;
+    }
+
     // Static method to find all newsletters
     public static function findAll(): array
     {
         self::initializeDatabase();
         $stmt = self::$db->query('SELECT * FROM newsletter');
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $dataNewsletter =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $newsletters = [];
+        foreach ($dataNewsletter as $dataNews) {
+            $newsletter = new self(
+                $dataNews['mail'],
+                $dataNews['firstname'],
+                $dataNews['lastname'],
+            );
+            $newsletters[] = $newsletter;
+        }
+        return $newsletters;
     }
 
     // Static method to find a newsletter by mail

@@ -1,21 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
     const sectionSelect = document.getElementById('sectionSelect');
-            const userSection = document.getElementById('userSection');
-            const blogSection = document.getElementById('blogSection');
+    const sections = document.querySelectorAll('section[id$="Section"]');
 
-            sectionSelect.addEventListener('change', function() {
-                if (sectionSelect.value === 'user') {
-                    userSection.classList.remove('hidden');
-                    blogSection.classList.add('hidden');
-                } else if (sectionSelect.value === 'blog') {
-                    blogSection.classList.remove('hidden');
-                    userSection.classList.add('hidden');
-                }
-            });
+    sectionSelect.addEventListener('change', function() {
+        sections.forEach(section => {
+            if (section.id === sectionSelect.value + 'Section') {
+                section.classList.remove('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
+        });
+    });
 
-            // Afficher la section "User" par défaut au chargement
-            userSection.classList.remove('hidden');
-            blogSection.classList.add('hidden');
+    // Afficher la section "User" par défaut au chargement
+    document.getElementById('userSection').classList.remove('hidden');
 
     const articleTagSelect = document.getElementById('articleTag');
     const selectedTagsContainer = document.getElementById('selected-tags');

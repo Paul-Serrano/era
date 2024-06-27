@@ -4,21 +4,26 @@ namespace Src\Controllers;
 
 require_once __DIR__ . '/../models/Article.php';
 require_once __DIR__ . '/../models/Tag.php';
+require_once __DIR__ . '/../repository/Tool.php';
 
 use Src\Models\Tag;
 use Src\Models\Article;
+use Src\Models\Newsletter;
 use Src\Models\User;
+use Src\Repository\Tool\Tool;
 
-class AdminController 
+class AdminController extends Tool
 {
     private array $tags;
     private array $articles;
     private array $users;
+    private array $newsletters;
     
     public function __construct() {
         $this->tags = $this->findAllTags();
         $this->articles = $this->findAllArticles();
         $this->users = $this->findAllUsers();
+        $this->newsletters = $this->findAllNewsletters();
     }
     
     public function index(): string
@@ -64,11 +69,20 @@ class AdminController
         return $this->users;
     }
 
+    public function findAllNewsletters(): array {
+        // Récupérer tous les tags depuis la base de données
+        $newsletters = Newsletter::findAll();
+
+        $this->newsletters = $newsletters;
+        return $this->newsletters;
+    }
+
     private function getDataForView(): array {
         return [
             'tags' => $this->tags,
             'articles' => $this->articles,
-            'users' => $this->users
+            'users' => $this->users,
+            'newsletters' => $this->newsletters
         ];
     }
 
