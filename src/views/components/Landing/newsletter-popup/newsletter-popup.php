@@ -26,4 +26,4 @@
     </form>
     <button class="absolute top-5 right-5 close-newsletter"><img src="../../assets/img/close-newsletter.png" alt="fermer newsletter"></button>
 </div>
-<script src="/src/views/components/newsletter-popup/newsletter-popup.js"></script>
+<script src="/src/views/components/Landing/newsletter-popup/newsletter-popup.js"></script>

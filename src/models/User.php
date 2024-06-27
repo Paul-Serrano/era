@@ -133,22 +133,30 @@ class User {
         return !empty($result);
     }
 
-    public static function findByEmail($email) {
+    public static function findByEmail($mail) {
         $db = new Database();
-        $result = $db->query("SELECT * FROM user WHERE mail = ?", [$email])->fetch(PDO::FETCH_ASSOC);
+        $resultUser = $db->query("SELECT * FROM user WHERE mail = ?", [$mail])->fetch(PDO::FETCH_ASSOC);
 
-        if ($result) {
+        $resultLanguages = $db->query("SELECT l.language_name FROM user_language AS l WHERE l.user_mail = ?", [$mail])->fetchAll(PDO::FETCH_ASSOC);
+        if ($resultUser) {
             $user = new User(
-                $result['mail'],
-                $result['firstname'],
-                $result['lastname'],
-                $result['job'],
-                $result['description']
+                $resultUser['mail'],
+                $resultUser['firstname'],
+                $resultUser['lastname'],
+                $resultUser['job'],
+                $resultUser['description']
             );
             $user
-                ->setPassword($result['pass'])
-                ->setAdmin($result['admin'])
-                ->setImgPath($result['img_path']);
+                ->setPassword($resultUser['pass'])
+                ->setAdmin($resultUser['admin'])
+                ->setImgPath($resultUser['img_path']);
+
+            if($resultLanguages) {
+                foreach($resultLanguages as $data) {
+                    $lang = new Lang($data['language_name']);
+                    $user->setLanguage($lang);
+                }
+            }
             return $user;
         }
 
@@ -161,6 +169,13 @@ class User {
         $stmt = $db->query($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function clearLanguages(): self {
+        $db = new Database();
+        $db->query("DELETE FROM user_language WHERE user_mail = ?", [$this->getEmail()]);
+        $this->languages = [];
+        return $this;
     }
 
     public function save() {

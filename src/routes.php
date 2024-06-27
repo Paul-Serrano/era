@@ -10,7 +10,9 @@ require_once __DIR__ . '/../src/controllers/OfferController.php';
 require_once __DIR__ . '/../src/controllers/CartController.php';
 require_once __DIR__ . '/../src/controllers/UserController.php';
 require_once __DIR__ . '/../src/controllers/PanelUserController.php';
+require_once __DIR__ . '/../src/controllers/AccountController.php';
 
+use Src\Controllers\AccountController;
 use Src\Controllers\HomeController;
 use Src\Controllers\AdminController;
 use Src\Controllers\BlogController;
@@ -91,6 +93,14 @@ switch ($requestUri) {
     case '/panelUser':
         $controller = new PanelUserController();
         echo $controller->index();
+        break;
+    case '/account':
+        $controller = new AccountController();
+        echo $controller->index();
+        break;
+    case '/updateUser':
+        $controller = new AccountController();
+        echo $controller->updateUser();
         break;
     default:
         http_response_code(404);

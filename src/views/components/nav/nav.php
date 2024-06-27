@@ -53,7 +53,7 @@ $user = $_SESSION['user'] ?? null;
         <li class="w-3/4 flex"><a href="#" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Offres</a></li>
         <li class="w-3/4 flex"><a href="#" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Contact</a></li>
         <?php if($user) : ?>
-            <li class="w-3/4 flex"><a href="" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Mon Compte</a></li>
+            <li class="w-3/4 flex"><a href="/account" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Mon Compte</a></li>
             <li class="w-3/4 flex"><a href="/signout" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark text-xl w-2/3">Déconnexion</a></li>
             <?php if($user->isAdmin()): ?>
                 <li class="w-3/4 flex"><a href="/admin" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark text-xl w-2/3">Panel Admin</a></li>

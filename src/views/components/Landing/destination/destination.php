@@ -77,4 +77,4 @@
     </div>
     <img class="w-full h-full absolute right-0 bottom-0 z-[-1]" src="../../assets/img/destination-net.png" alt="">
 </div>
-<script src="/src/views/components/destination/destination.js"></script>
+<script src="/src/views/components/Landing/destination/destination.js"></script>

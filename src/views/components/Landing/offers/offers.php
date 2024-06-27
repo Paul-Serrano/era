@@ -57,4 +57,4 @@
         <div class="offer-indicator-item w-3 h-3 bg-secondary opacity-50 rounded-full"></div>
     </div>
 </div>
-<script src="/src/views/components/offers/offers.js"></script>
+<script src="/src/views/components/Landing/offers/offers.js"></script>

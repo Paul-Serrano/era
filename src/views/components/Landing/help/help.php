@@ -65,4 +65,4 @@
         <img src="../../assets/img/arrow-button.png" alt="why digital nomad">
     </button>
 </div>
-<script src="/src/views/components/help/help.js"></script>
+<script src="/src/views/components/Landing/help/help.js"></script>

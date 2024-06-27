@@ -43,4 +43,4 @@
     </div>
     <img class="w-full h-full absolute right-0 bottom-0 z-[-1] md:hidden" src="../../assets/img/explainer-net.png" alt="">
 </div>
-<script src="/src/views/components/carousel/carousel.js"></script>
+<script src="/src/views/components/Landing/carousel/carousel.js"></script>
