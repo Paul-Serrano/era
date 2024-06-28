@@ -44,13 +44,9 @@ switch ($requestUri) {
         $controller = new BlogController();
         echo $controller->viewArticle($_GET['id']);
         break;
-    case '/offer':
-        $controller = new OfferController();
-        echo $controller->index();
-        break;
-    case '/cart':
-        $controller = new CartController();
-        echo $controller->index();
+    case '/feature':
+        $controller = new PanelUserController();
+        echo $controller->viewFeature($_GET['id']);
         break;
     case '/login': // Ajout de la route de connexion
         $controller = new LoginController();
@@ -99,6 +95,10 @@ switch ($requestUri) {
     case '/updateFeature': 
         $controller = new AdminController();
         echo $controller->updateFeature($_POST);
+        break;
+    case '/getFeature': 
+        $controller = new PanelUserController();
+        echo $controller->subscribeFeature($_POST);
         break;
     case '/panelUser':
         $controller = new PanelUserController();

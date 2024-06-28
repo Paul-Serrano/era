@@ -21,6 +21,7 @@ class User extends Tool {
     private string $img_path;
     private int $admin;
     private array $languages;
+    private array $features = [];
     private static $db;
 
     public function __construct(string $email, string $firstname, string $lastname, string $job, string $description){
@@ -129,6 +130,25 @@ class User extends Tool {
         return $this;
     }
 
+    public function getFeatures(): array {
+        return $this->features;
+    }
+
+    public function setFeature(Feature $feature): self {
+        $this->features[] = $feature;
+        return $this;
+    }
+
+    public function unsetFeature(Feature $feature): self {
+        foreach($this->features as $key => $sotredFeatures) {
+            if($sotredFeatures->getId() == $feature->getId()) {
+                unset($this->features[$key]);
+            }
+        }
+
+        return $this;
+    }
+
     public static function exists(string $mail) {
         $db = new Database();
         $result = $db->query("SELECT * FROM user WHERE mail = ?", [$mail])->fetch(PDO::FETCH_ASSOC);
@@ -136,10 +156,16 @@ class User extends Tool {
     }
 
     public static function findByEmail($mail) {
-        $db = new Database();
-        $resultUser = $db->query("SELECT * FROM user WHERE mail = ?", [$mail])->fetch(PDO::FETCH_ASSOC);
-
-        $resultLanguages = $db->query("SELECT l.language_name FROM user_language AS l WHERE l.user_mail = ?", [$mail])->fetchAll(PDO::FETCH_ASSOC);
+        self::initializeDatabase();
+        $stmt = self::$db->prepare("SELECT * FROM user WHERE mail = ?");
+        $stmt->execute([$mail]);
+        $resultUser = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt = self::$db->prepare("SELECT l.language_name FROM user_language AS l WHERE l.user_mail = ?");
+        $stmt->execute([$mail]);
+        $resultLanguages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt = self::$db->prepare("SELECT f.feature_id FROM user_features AS f WHERE f.user_mail = ?");
+        $stmt->execute([$mail]);
+        $resultFeatures = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if ($resultUser) {
             $user = new User(
                 $resultUser['mail'],
@@ -159,6 +185,13 @@ class User extends Tool {
                     $user->setLanguage($lang);
                 }
             }
+            if($resultFeatures) {
+                foreach($resultFeatures as $data) {
+                    $feature = Feature::findById($data['feature_id']);
+                    $user->setFeature($feature);
+                }
+            }
+            // Tool::dd($user);
             return $user;
         }
 
@@ -166,9 +199,9 @@ class User extends Tool {
     }
 
     public static function findAllAuthors(): array {
-        $db = new Database();
+        self::initializeDatabase();
         $sql = "SELECT DISTINCT u.* FROM user u JOIN article a ON u.mail = a.user_mail";
-        $stmt = $db->query($sql);
+        $stmt = self::$db->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -180,10 +213,18 @@ class User extends Tool {
         return $this;
     }
 
+    public function clearFeatures(): self {
+        self::initializeDatabase();
+        $stmt = self::$db->prepare("DELETE FROM user_features WHERE user_mail = ?");
+        $stmt->execute([$this->getEmail()]);
+        return $this;
+    }
+
     public function save() {
-        $db = new Database();
+        self::initializeDatabase();
+        self::$db = new Database();
         if (self::exists($this->getEmail())) {
-            $db->query("UPDATE user SET pass = ?, firstname = ?, lastname = ?, job = ?, description = ?, img_path = ?, admin = ? WHERE mail = ?", [
+            self::$db->query("UPDATE user SET pass = ?, firstname = ?, lastname = ?, job = ?, description = ?, img_path = ?, admin = ? WHERE mail = ?", [
                 $this->getPassword(),
                 $this->getFirstname(),
                 $this->getLastname(),
@@ -195,7 +236,7 @@ class User extends Tool {
             ]);
         } else {
             // Insert
-            $db->query("INSERT INTO user (mail, pass, firstname, lastname, job, description, img_path, admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [
+            self::$db->query("INSERT INTO user (mail, pass, firstname, lastname, job, description, img_path, admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [
                 $this->getEmail(),
                 $this->getPassword(),
                 $this->getFirstname(),
@@ -208,8 +249,25 @@ class User extends Tool {
         }
 
         foreach($this->getLanguages() as $lang) {
-            $db->query("INSERT INTO user_language (user_mail, language_name) VALUES ('".$this->getEmail()."', '".$lang->getName()."')");
+            // Vérifier si le couple user_mail/language_name existe déjà
+            if (!$this->existsUserLanguage($this->getEmail(), $lang->getName())) {
+                self::$db->query("INSERT INTO user_language (user_mail, language_name) VALUES (?, ?)", [
+                    $this->getEmail(),
+                    $lang->getName()
+                ]);
+            }
         }
+
+        foreach($this->getFeatures() as $feature) {
+            self::$db->query("INSERT INTO user_features (user_mail, feature_id) VALUES ('".$this->getEmail()."', '".$feature->getId()."')");
+        }
+    }
+
+    private function existsUserLanguage($email, $languageName) {
+        $result = self::$db->query("SELECT COUNT(*) AS count FROM user_language WHERE user_mail = ? AND language_name = ?", [$email, $languageName]);
+        $count = $result->fetchColumn();
+        
+        return $count > 0;
     }
 
     public static function findAll(): array {
