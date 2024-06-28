@@ -98,6 +98,6 @@
 
         <div id="new-hidden-fields-container"></div>
 
-        <button type="submit" name="newArticleSubmit" value="yes">Update</button>
+        <button class="p-2 bg-secondary text-white font-bold text-center rounded-xl" type="submit" name="newArticleSubmit" value="yes">Update</button>
     </div>
 </form>

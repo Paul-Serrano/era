@@ -1,4 +1,4 @@
-<div class="flex flex-col justify-evenly items-center lg:grid lg:grid-rows-3">
+<div class="flex flex-col justify-evenly items-center lg:grid lg:grid-cols-3">
     <?php foreach($data['newsletters'] as $newsletter): ?>
         <div class="flex flex-col border-secondary border-2 rounded-xl my-5 p-2 w-full">
             <p><?= htmlspecialchars($newsletter->getMail()) ?></p>

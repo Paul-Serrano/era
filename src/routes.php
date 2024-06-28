@@ -92,6 +92,14 @@ switch ($requestUri) {
         $controller = new AdminController();
         echo $controller->updateArticle($_POST);
         break;
+    case '/saveFeature': 
+        $controller = new AdminController();
+        echo $controller->saveFeature($_POST);
+        break;
+    case '/updateFeature': 
+        $controller = new AdminController();
+        echo $controller->updateFeature($_POST);
+        break;
     case '/panelUser':
         $controller = new PanelUserController();
         echo $controller->index();

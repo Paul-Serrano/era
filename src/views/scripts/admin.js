@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Afficher la section "User" par défaut au chargement
-    document.getElementById('userSection').classList.remove('hidden');
+    document.getElementById('featureSection').classList.remove('hidden');
 
     const articleTagSelect = document.getElementById('articleTag');
     const selectedTagsContainer = document.getElementById('selected-tags');
@@ -89,45 +89,48 @@ document.addEventListener('DOMContentLoaded', function() {
     tinymce.init({
         selector: '#contentArticleTextarea',
         height: 350,
+        plugins: 'link', // Inclure le plugin 'link'
+        toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link', // Configurer la barre d'outils avec le bouton de lien
         setup: (editor) => {
             editor.ui.registry.addContextToolbar('imagealignment', {
-            predicate: (node) => node.nodeName.toLowerCase() === 'img',
-            items: 'alignleft aligncenter alignright',
-            position: 'node',
-            scope: 'node'
+                predicate: (node) => node.nodeName.toLowerCase() === 'img',
+                items: 'alignleft aligncenter alignright',
+                position: 'node',
+                scope: 'node'
             });
-
+    
             editor.ui.registry.addContextToolbar('textselection', {
-            predicate: (node) => !editor.selection.isCollapsed(),
-            items: 'bold italic | blockquote',
-            position: 'selection',
-            scope: 'node'
+                predicate: (node) => !editor.selection.isCollapsed(),
+                items: 'bold italic | blockquote',
+                position: 'selection',
+                scope: 'node'
             });
         },
-        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+        content_style: 'body { font-family: Helvetica, Arial, sans-serif; font-size: 16px }'
     });
 
     tinymce.init({
         selector: '#newContentArticleTextarea',
         height: 350,
+        plugins: 'link', // Inclure le plugin 'link'
+        toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link',
         setup: (editor) => {
             editor.ui.registry.addContextToolbar('imagealignment', {
-            predicate: (node) => node.nodeName.toLowerCase() === 'img',
-            items: 'alignleft aligncenter alignright',
-            position: 'node',
-            scope: 'node'
+                predicate: (node) => node.nodeName.toLowerCase() === 'img',
+                items: 'alignleft aligncenter alignright',
+                position: 'node',
+                scope: 'node'
             });
 
             editor.ui.registry.addContextToolbar('textselection', {
-            predicate: (node) => !editor.selection.isCollapsed(),
-            items: 'bold italic | blockquote',
-            position: 'selection',
-            scope: 'node'
+                predicate: (node) => !editor.selection.isCollapsed(),
+                items: 'bold italic | blockquote',
+                position: 'selection',
+                scope: 'node'
             });
         },
         content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
     });
-
 
 });
 
@@ -145,18 +148,17 @@ function editArticle(title, content, tags, id) {
         savedTagElement.className = 'new-selected-tag bg-secondary p-2 rounded-xl text-white font-bold';
         savedTagElement.textContent = tag + ' ';
 
-        const newRremoveButton = document.createElement('button');
-        newRremoveButton.textContent = 'x';
-        newRremoveButton.addEventListener('click', function() {
+        const newRemoveButton = document.createElement('button');
+        newRemoveButton.textContent = 'x';
+        newRemoveButton.addEventListener('click', function() {
             newSelectedTagsContainer.removeChild(savedTagElement);
-            newHiddenFieldsContainer.removeChild(newUpdateHiddenFields());
-            });
-        savedTagElement.appendChild(newRremoveButton);
+            newHiddenFieldsContainer.removeChild(newHiddenField);
+            updateNewHiddenFields();
+        });
+        savedTagElement.appendChild(newRemoveButton);
         selectedTags.appendChild(savedTagElement);
-        }  
-    );
+    });
     newUpdateHiddenFields();
-
 }
 
 function newUpdateHiddenFields() {
@@ -229,16 +231,16 @@ if (newArticleTagSelect && newSelectedTagsContainer && newHiddenFieldsContainer)
     function updateNewHiddenFields() {
         // Mettre à jour les champs cachés pour refléter les tags sélectionnés actuels
         const newTags = [];
-        const newTagElements = newSelectedTagsContainer.querySelectorAll('.selected-tag');
+        const newTagElements = newSelectedTagsContainer.querySelectorAll('.new-selected-tag');
         newHiddenFieldsContainer.innerHTML = ''; // Clear existing hidden fields
-        newTagElements.forEach(function(newTagElements) {
-            const newTagName = newTagElements.textContent.slice(0, -2); // Remove the " x" part
+        newTagElements.forEach(function(newTagElement) {
+            const newTagName = newTagElement.textContent.slice(0, -2); // Remove the " x" part
             
             // Créer un champ caché pour chaque tag
             const newHiddenField = document.createElement('input');
             newHiddenField.type = 'hidden';
             newHiddenField.name = 'newSelectedTags[]';
-            newHiddenField.value = tagName;
+            newHiddenField.value = newTagName;
             newHiddenFieldsContainer.appendChild(newHiddenField);
         });
     }
@@ -246,5 +248,17 @@ if (newArticleTagSelect && newSelectedTagsContainer && newHiddenFieldsContainer)
     console.error('Required elements are missing from the DOM.');
 }
 
-
-
+function showUpdateFeatureForm(featureId, featureName, featureDescription, featurePrice, featurePosition) {
+    console.log('wesh');
+    document.getElementById('updateFeatureId').value = featureId;
+    document.getElementById('updateFeatureName').value = featureName;
+    document.getElementById('updateFeatureDescription').value = featureDescription;
+    document.getElementById('updateFeaturePrice').value = featurePrice;
+    document.getElementById('updateFeaturePosition').value = featurePosition;
+    
+    // Afficher le formulaire de modification
+    document.getElementById('updateFeatureFormContainer').style.display = 'flex';
+    
+    // Faire défiler vers le formulaire de modification
+    document.getElementById('updateFeatureFormContainer').scrollIntoView({ behavior: 'smooth' });
+}

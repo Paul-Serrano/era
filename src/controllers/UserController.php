@@ -14,14 +14,9 @@ class UserController {
 
     public function createUser(array $data) {
         // Exemple d'action pour créer un utilisateur
-        $user = new User();
+        $user = new User($data['mail'], $data['firstname'], $data['lastname'], $data['job'], $data['description']);
         $user
-            ->setEmail($data['mail'])
             ->setPassword(password_hash($data['pass'], PASSWORD_BCRYPT))
-            ->setFirstname($data['firstname'])
-            ->setLastname($data['lastname'])
-            ->setJob($data['job'])
-            ->setDescription($data['description'])
             ->setImgPath($data['img_path'])
             ->save();
     }
@@ -49,14 +44,9 @@ class UserController {
 
     public function register() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $user = new User();
+            $user = new User($_POST['email'], $_POST['firstname'], $_POST['lastname'], $_POST['job'], $_POST['description']);
             $user
-                ->setEmail($_POST['email'])
                 ->setPassword(password_hash($_POST['password'], PASSWORD_BCRYPT))
-                ->setFirstname($_POST['firstname'])
-                ->setLastname($_POST['lastname'])
-                ->setJob($_POST['job'])
-                ->setDescription($_POST['description'])
                 ->setImgPath($_POST['img_path'])
                 ->save();
 
