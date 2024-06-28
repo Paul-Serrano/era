@@ -17,15 +17,18 @@ use Src\Controllers\AccountController;
 use Src\Controllers\HomeController;
 use Src\Controllers\AdminController;
 use Src\Controllers\BlogController;
-use Src\Controllers\CartController;
 use Src\Controllers\LoginController;
 use Src\Controllers\NewsletterController;
-use Src\Controllers\OfferController;
 use Src\Controllers\SigninController;
 use Src\Controllers\SignoutController;
 use Src\Controllers\PanelUserController;
 
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); // Pour gérer les paramètres de requête
+
+function getSlug($url) {
+    $parts = explode('/', $url);
+    return end($parts);
+}
 
 switch ($requestUri) {
     case '/':
@@ -42,7 +45,7 @@ switch ($requestUri) {
         break;
     case '/article':
         $controller = new BlogController();
-        echo $controller->viewArticle($_GET['id']);
+        echo $controller->viewArticleBySlug($_GET['slug']);
         break;
     case '/feature':
         $controller = new PanelUserController();
@@ -121,7 +124,14 @@ switch ($requestUri) {
         echo $controller->delete();
         break;
     default:
-        http_response_code(404);
-        echo "Page not found";
+        // Vérifier si l'URL correspond au format /article/{slug}
+        if (preg_match('#^/article/([^/]+)$#', $requestUri, $matches)) {
+            $slug = $matches[1];
+            $controller = new BlogController();
+            echo $controller->viewArticleBySlug($slug);
+        } else {
+            http_response_code(404);
+            echo "Page not found";
+        }
         break;
 }

@@ -5,12 +5,14 @@ namespace Src\Controllers;
 require_once __DIR__ . "/../models/Article.php";
 require_once __DIR__ . "/../models/Tag.php";
 require_once __DIR__ . "/../models/User.php";
+require_once __DIR__ . "/../repository/Tool.php";
 
 use Src\Models\Article;
 use Src\Models\Tag;
 use Src\Models\User;
+use Src\Repository\Tool\Tool;
 
-class BlogController 
+class BlogController extends Tool
 {
     private array $tags;
     private array $articles;
@@ -71,15 +73,14 @@ class BlogController
         return $this->authors;
     }
 
-    public function viewArticle(int $id) {
-        if ($id) {
-            $article = Article::findById((int)$id);
-            if ($article) {
-                require_once __DIR__ . '/../views/components/header/header.php';
-                require_once __DIR__ . '/../views/pages/article.php';
-                require_once __DIR__ . '/../views/components/footer/footer.php';
-                return;
-            }
+    public function viewArticleBySlug(string $slug) {
+        // Requête SQL pour récupérer l'article par son slug
+        $article = Article::findBySlug($slug);
+        if ($article) {
+            require_once __DIR__ . '/../views/components/header/header.php';
+            require_once __DIR__ . '/../views/pages/article.php';
+            require_once __DIR__ . '/../views/components/footer/footer.php';
+            return;
         }
         // Gestion d'erreur si l'article n'est pas trouvé
         echo "Article not found";

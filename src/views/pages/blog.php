@@ -43,7 +43,7 @@
                 <!-- <div class="article-content my-5">
                     <?= substr($article->getContent(), 0, 100) ;?>
                 </div> -->
-                <a class="bg-secondary text-white py-1 w-2/3 text-center my-1" href="/article?id=<?= $article->getId();?>">Voir plus</a> 
+                <a class="bg-secondary text-white py-1 w-2/3 text-center my-1" href="/article/<?= $article->getSlug();?>">Voir plus</a> 
             </div>
             <div class="flex flex-col justify-evenly items-center my-2 w-1/3">
                 <?php foreach ($article->getTags() as $tag): ?>

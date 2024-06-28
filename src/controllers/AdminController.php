@@ -170,6 +170,13 @@ class AdminController extends Tool
         header('Location: admin?success=addArticle');
     }
 
+    function generateSlug(string $title) {
+        $slug = strtolower($title);
+        $slug = preg_replace('/[^a-z0-9\-]/', '-', $slug); // Remplace les caractères non alphanumériques par des tirets
+        $slug = trim($slug, '-'); // Supprime les tirets en début et fin de chaîne
+        return $slug;
+    }
+
     public function deleteArticle(array $data): void {
         $articleTitle = $data['articleTitle'];
 

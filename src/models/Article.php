@@ -13,6 +13,7 @@ class Article {
     private string $title;
     private string $content;
     private array $tags;
+    private string $slug;
     private string $userMail;
     private static $db;
     private string $autor;
@@ -29,6 +30,7 @@ class Article {
         }
         $this->autor = $this->getAutor();
         $this->id = $this->getId();
+        $this->slug = $this->generateSlug($this->title);
     }
 
     public static function initializeDatabase() {
@@ -36,6 +38,29 @@ class Article {
             self::$db = Database::getPdo();
         }
     }
+
+    function generateSlug(string $title) {
+        // Convertit la chaîne en minuscules
+        $slug = strtolower($title);
+        
+        // Remplace les caractères accentués par leur équivalent non accentué
+        $slug = iconv('UTF-8', 'ASCII//TRANSLIT', $slug);
+        
+        // Remplace les espaces par des tirets
+        $slug = preg_replace('/\s+/', '-', $slug);
+        
+        // Supprime tous les caractères non alphanumériques et non tirets
+        $slug = preg_replace('/[^a-z0-9\-]/', '', $slug);
+        
+        // Supprime les tirets en début et fin de chaîne
+        $slug = trim($slug, '-');
+        
+        // Remplace les tirets multiples par un seul tiret
+        $slug = preg_replace('/-+/', '-', $slug);
+        
+        return $slug;
+    }
+    
 
     public static function findAll(): array {
         self::initializeDatabase();
@@ -102,6 +127,26 @@ class Article {
         return null;
     }
 
+    public static function findBySlug(string $slug) {
+        self::initializeDatabase();
+        $stmt = self::$db->prepare("SELECT * FROM article WHERE slug = :slug");
+        $stmt->execute([$slug]);
+        $articleData =  $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($articleData) {
+            $article = new self(
+                $articleData['title'],
+                $articleData['content'],
+                $articleData['user_mail'],
+                $articleData['id']
+            );
+            $article->setTags(self::getTagsByArticleTitle($articleData['title']));
+            return $article;
+        }
+
+        return null;
+    }
+
     public static function findAllFiltered(?string $author = null, ?string $tag = null): array {
         self::initializeDatabase();
     
@@ -144,6 +189,10 @@ class Article {
     public function setId(int $id): self {
         $this->id = $id;
         return $this;
+    }
+
+    public function getSlug(): string {
+        return $this->slug;
     }
 
     public function getTitle(): string {
@@ -205,11 +254,12 @@ class Article {
             $db->beginTransaction();
 
             // Insérer l'article dans la table article
-            $sql = "INSERT INTO article (title, user_mail, content) VALUES (:title, :userMail, :content)";
+            $sql = "INSERT INTO article (title, user_mail, content, slug) VALUES (:title, :userMail, :content, :slug)";
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':title', $this->title);
             $stmt->bindParam(':userMail', $this->userMail);
             $stmt->bindParam(':content', $this->content);
+            $stmt->bindParam(':slug', $this->slug);
             $stmt->execute();
 
             $articleTitle = $this->getTitle();
