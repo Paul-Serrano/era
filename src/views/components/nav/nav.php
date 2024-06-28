@@ -3,13 +3,13 @@ $user = $_SESSION['user'] ?? null;
 ?>
 
 <!-- public/components/nav/nav.php -->
-<nav class="bg-white py-6 px-10 lg:p-12 lg:border-secondary relative">
+<nav class="bg-[#fefefe] py-6 px-10 lg:p-12 lg:border-secondary relative">
     <div class="container mx-auto flex justify-between items-center max-w-full">
         <!-- Logo for mobile and desktop -->
         <a href="/" class="w-[20%] lg:order-1"><img class="w-full lg:w-1/3" src="../../assets/img/logo.png" alt="logo du site" /></a>
         
         <!-- Menu for desktop -->
-        <ul class="hidden lg:flex lg:order-2 lg:w-[60%] lg:justify-evenly space-x-4">
+        <ul class="hidden lg:flex lg:order-2 lg:w-[60%] lg:justify-evenly space-x-4 bg-[#fefefe]">
             <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos solutions</a> <img src="../../assets/img/drop-down-arrow.png" alt="fleche menu déroulent" /></li>
             <li class="flex items-center m-0"><a href="/blog" class="hover:text-secondary italic lg:not-italic lg:font-bold">Blog</a></li>
             <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos tarifs</a></li>
@@ -18,14 +18,13 @@ $user = $_SESSION['user'] ?? null;
             <?php if($user) : ?>
                 <!-- Bouton Mon Compte avec déconnexion -->
                 <div class="relative">
-                    <ul class="bg-white border border-secondary rounded-lg py-2 px-4 shadow-lg">
+                    <ul class="bg-[#fefefe] border border-secondary rounded-lg py-2 px-4 shadow-lg">
                         <li><a href="/account">Mon Compte</a></li>
                         <li><a href="/signout">Déconnexion</a></li>
                         <?php if($user->isAdmin()) : ?>
                             <li><a href="/admin">Panel Admin</a></li>
-                        <?php else : ?>
-                            <li><a href="/panelUser">Panel User</a></li>
                         <?php endif; ?>
+                        <li><a href="/panelUser">Panel User</a></li>
                     </ul>
                 </div>
             <?php else : ?>

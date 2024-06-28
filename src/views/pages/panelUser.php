@@ -3,29 +3,23 @@
 ?>
 
 <div>
+    <section class="w-3/4 m-auto my-5" id="purchaseSection">
+        <?php include_once __DIR__ . '/../components/User/purchase.php' ?> 
+    </section>
+
+    <section class="w-3/4 m-auto my-5 hidden" id="featureSection">
+        <?php include_once __DIR__ . '/../components/User/feature.php' ?> 
+    </section>
+
+    <section class="w-3/4 m-auto my-5 hidden" id="forumSection">
+        <?php include_once __DIR__ . '/../components/User/forum.php' ?> 
+    </section>
+
     <div>
-        <h2>Bonjour <?= $user->getFirstname() ?></h2>
-        <p>Welcome back and let's create your next grand adventure!</p>
-    </div>
-    <div>
-    <?php if ($features): ?>
-        <div class="list-disc pl-5">
-            <?php foreach ($features as $feature): ?>
-                <div class="my-3">
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <strong>Nom :</strong> <?= htmlspecialchars($feature->getName()) ?><br>
-                            <strong>Description :</strong> <?= htmlspecialchars($feature->getDescription()) ?><br>
-                            <strong>Prix :</strong> <?= htmlspecialchars($feature->getPrice()) ?> €<br>
-                            <strong>Position :</strong> <?= htmlspecialchars($feature->getPosition()) ?>
-                        </div>
-                        <a class="bg-secondary text-white py-1 w-2/3 text-center my-1" href="/feature?id=<?= $feature->getId();?>">Voir plus</a>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    <?php else: ?>
-        <p>Aucune fonctionnalité trouvée.</p>
-    <?php endif; ?>
+        <button id="homeButton">home</button>
+        <button id="toolsButton">mes outils</button>
+        <button id="forumButton">forum</button>
     </div>
 </div>
+
+<script src="/src/views/scripts/panelUser.js"></script>

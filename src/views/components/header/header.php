@@ -29,7 +29,7 @@ $user = $_SESSION['user'] ?? null;
 
   gtag('config', 'G-N3BZV51CXL');
 </script>
-<body class="font-gothamBook">
+<body class="font-gothamBook bg-[#fefefe]">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8ZFFB4C"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <?php include_once __DIR__. '/../nav/nav.php';

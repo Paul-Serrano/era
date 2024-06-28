@@ -23,6 +23,7 @@ class PanelUserController extends Tool
         session_start();
         $user = $_SESSION['user'];
         $features = $this->features;
+        $userFeatures = $this->findFeatureByUser($user->getEmail());
         // Chargez la vue
         ob_start();
         require __DIR__ . '/../views/components/header/header.php';
@@ -45,18 +46,37 @@ class PanelUserController extends Tool
         return $this->features;
     }
 
+    public function findFeatureByUser($userEmail) {
+        $user = User::findByEmail($userEmail);
+        $features = $user->getFeatures();
+        return $features;
+    }
+
     public function viewFeature(int $id) {
         if ($id) {
             $feature = Feature::findById((int)$id);
             if ($feature) {
                 require_once __DIR__ . '/../views/components/header/header.php';
                 require_once __DIR__ . '/../views/pages/feature.php';
-                require_once __DIR__ . '/../views/components/footer/footer.php';
                 return;
             }
         }
-        // Gestion d'erreur si l'article n'est pas trouvé
-        echo "Article not found";
+        echo "Feature not found";
+    }
+
+    public function viewUserFeature(int $id) {
+        if ($id && $id == 1) {
+            $feature = Feature::findById((int)$id);
+            if ($feature) {
+                require_once __DIR__ . '/../views/components/header/header.php';
+                require_once __DIR__ . '/../views/pages/userFeature.php';
+                return;
+            }
+        }
+        else {
+            header('Location: /panelUser?error=featureNotFinished');
+        }
+        echo "Feature not found";
     }
 
     public function subscribeFeature(array $data)
