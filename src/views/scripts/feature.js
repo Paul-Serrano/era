@@ -85,17 +85,29 @@ document.addEventListener('DOMContentLoaded', function() {
         radio.addEventListener('change', function() {
             labels.forEach(label => {
                 label.classList.remove('bg-primary');
+                label.classList.add('border');
+                label.classList.remove('text-white');
+                label.classList.add('text-featureInput');
             });
-            this.parentElement.classList.add('bg-primary');
+            this.parentElement.parentElement.classList.add('bg-primary');
+            this.parentElement.parentElement.classList.remove('border');
+            this.parentElement.parentElement.classList.add('text-white');
+            this.parentElement.parentElement.classList.remove('text-featureInput');
         });
     });
 
     checkButtons.forEach(check => {
         check.addEventListener('change', function() {
             if (this.checked) {
-                this.parentElement.classList.add('bg-primary');
+                this.parentElement.parentElement.classList.add('bg-primary');
+                this.parentElement.parentElement.classList.remove('border');
+                this.parentElement.parentElement.classList.add('text-white');
+                this.parentElement.parentElement.classList.remove('text-featureInput');
             } else {
-                this.parentElement.classList.remove('bg-primary');
+                this.parentElement.parentElement.classList.remove('bg-primary');
+                this.parentElement.parentElement.classList.add('border');
+                this.parentElement.parentElement.classList.remove('text-white');
+                this.parentElement.parentElement.classList.add('text-featureInput');
             }
         });
     });

@@ -1,100 +1,147 @@
 <div class="step flex flex-col justify-evenly w-full">
-        <button class="my-5" onclick="prevStep()"><img src="../../assets/img/back-feature.png" alt=""></button>
-        <h3 class="text-xl font-bold my-5">Quelles sont vos habitudes alimentaires ?</h3>
-        
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+    <button class="relative left-0 my-5" onclick="prevStep()"><img src="../../assets/img/back-feature.png" alt=""></button>
+    
+    <h2 class="text-lg font-bold my-5">Quelles sont vos habitudes alimentaires ?</h2>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="diet" value="végétarien">
-            <p>Végétarien</p>
-            <img src="" alt="">
-        </label>
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+            <p class="ml-2">Végétarien</p>
+        </div>
+        <img src="../../assets/img/vegetarian.png" alt="">
+    </label>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="diet" value="vegan">
-            <p>Vegan</p>
-            <img src="" alt="">
-        </label>
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+            <p class="ml-2">Vegan</p>
+        </div>
+        <img src="../../assets/img/vegan.png" alt="">
+    </label>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="diet" value="sans gluten">
-            <p>Sans gluten</p>
-            <img src="" alt="">
-        </label>
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+            <p class="ml-2">Sans gluten</p>
+        </div>
+        <img src="../../assets/img/gluten-free.png" alt="">
+    </label>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="diet" value="omnivore">
-            <p>Omnivore</p>
-            <img src="" alt="">
-        </label>
+            <p class="ml-2">Omnivore</p>
+        </div>
+        <img src="../../assets/img/omnivore.png" alt="">
+    </label>
 
-        <h3 class="text-xl font-bold my-5">Avez-vous des allergies ?</h3>
+    <h2 class="text-lg font-bold my-5">Avez-vous des allergies ?</h2>
 
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="fruits à coque">
-            <p>Fruits à coque</p>
-            <img src="" alt="">
-        </label>
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+            <p class="ml-2">Fruits à coque</p>
+        </div>
+        <img src="../../assets/img/nuts.png" alt="">
+    </label>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="lactose">
-            <p>Lactose</p>
-            <img src="" alt="">
-        </label>
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+            <p class="ml-2">Lactose</p>
+        </div>
+        <img src="../../assets/img/lactose.png" alt="">
+    </label>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="fruits de mer">
-            <p>Fruits de mer</p>
-            <img src="" alt="">
-        </label>
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+            <p class="ml-2">Fruits de mer</p>
+        </div>
+        <img src="../../assets/img/seafood.png" alt="">
+    </label>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="mollusques">
-            <p>Mollusques</p>
-            <img src="" alt="">
-        </label>
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+            <p class="ml-2">Mollusques</p>
+        </div>
+        <img src="../../assets/img/shellfish.png" alt="">
+    </label>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="arachides">
-            <p>Arachides</p>
-            <img src="" alt="">
-        </label>
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+            <p class="ml-2">Arachides</p>
+        </div>
+        <img src="../../assets/img/peanut.png" alt="">
+    </label>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="poisson">
-            <p>Poisson</p>
-            <img src="" alt="">
-        </label>
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+            <p class="ml-2">Poisson</p>
+        </div>
+        <img src="../../assets/img/fish.png" alt="">
+    </label>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="céleri">
-            <p>Céleri</p>
-            <img src="" alt="">
-        </label>
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+            <p class="ml-2">Céleri</p>
+        </div>
+        <img src="../../assets/img/celery.png" alt="">
+    </label>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="soja">
-            <p>Soja</p>
-            <img src="" alt="">
-        </label>
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+            <p class="ml-2">Soja</p>
+        </div>
+        <img src="../../assets/img/soy.png" alt="">
+    </label>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="sulfites">
-            <p>Sulfites</p>
-            <img src="" alt="">
-        </label>
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+            <p class="ml-2">Sulfites</p>
+        </div>
+        <img src="../../assets/img/sulfites.png" alt="">
+    </label>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="sésame">
-            <p>Sésame</p>
-            <img src="" alt="">
-        </label>
-        <label class="rounded-md border border-black py-2 px-6 my-5 flex justify-between items-center">
+            <p class="ml-2">Sésame</p>
+        </div>
+        <img src="../../assets/img/sesame.png" alt="">
+    </label>
+    
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+        <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="lupin">
-            <p>Lupin</p>
-            <img src="" alt="">
-        </label>
+            <p class="ml-2">Lupin</p>
+        </div>
+        <img src="../../assets/img/lupin.png" alt="">
+    </label>
 
-        <button class="my-5 rounded-full bg-secondary p-3 w-full text-white font-bold" onclick="nextStep()">Suivant</button>
-    </div>
+    <button class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-20" onclick="nextStep()">
+        <p>Suivant</p>
+        <img src="../../assets/img/arrow-button.png" alt="">
+    </button>
+</div>

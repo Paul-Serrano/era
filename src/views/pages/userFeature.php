@@ -51,6 +51,12 @@
         <h2>Recommandations</h2>
         <div id="recommendations"></div>
     </div>
+    <div class="h-[100px]"></div>
+    <div class="flex justify-evenly items-center fixed bottom-0 left-0 py-5 w-full bg-[#fefefe] border-t-2 border-featureInput">
+        <a href="/panelUser" id="homeButton" class="flex flex-col justify-evenly items-center w-1/4"><img src="../../assets/img/featureHome.png" alt=""><p>Home</p></a>
+        <a href="/feature" id="toolsButton" class="flex flex-col justify-evenly items-center w-1/4"><img src="../../assets/img/featureTool.png" alt=""><p>Mes Outils</p></a>
+        <a href="#" id="forumButton" class="flex flex-col justify-evenly items-center w-1/4"><img src="../../assets/img/featureForum.png" alt=""><p>Forum</p></a>
+    </div>
 </div>
 <script src="/src/views/scripts/feature.js"></script>
 
