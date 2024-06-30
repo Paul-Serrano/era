@@ -12,11 +12,13 @@ require_once __DIR__ . '/../src/controllers/UserController.php';
 require_once __DIR__ . '/../src/controllers/PanelUserController.php';
 require_once __DIR__ . '/../src/controllers/AccountController.php';
 require_once __DIR__ . '/../src/controllers/NewsletterController.php';
+require_once __DIR__ . '/../src/controllers/ContactController.php';
 
 use Src\Controllers\AccountController;
 use Src\Controllers\HomeController;
 use Src\Controllers\AdminController;
 use Src\Controllers\BlogController;
+use Src\Controllers\ContactController;
 use Src\Controllers\LoginController;
 use Src\Controllers\NewsletterController;
 use Src\Controllers\SigninController;
@@ -126,6 +128,10 @@ switch ($requestUri) {
     case '/deleteNewsletter':
         $controller = new NewsletterController();
         echo $controller->delete();
+        break;
+    case '/contact':
+        $controller = new ContactController();
+        echo $controller->index();
         break;
     default:
         // Vérifier si l'URL correspond au format /article/{slug}

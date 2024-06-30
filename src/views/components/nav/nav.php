@@ -13,7 +13,7 @@ $user = $_SESSION['user'] ?? null;
             <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos solutions</a> <img src="../../assets/img/drop-down-arrow.png" alt="fleche menu déroulent" /></li>
             <li class="flex items-center m-0"><a href="/blog" class="hover:text-secondary italic lg:not-italic lg:font-bold">Blog</a></li>
             <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos tarifs</a></li>
-            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Contact</a></li>
+            <li class="flex items-center m-0"><a href="/contact" class="hover:text-secondary italic lg:not-italic lg:font-bold">Contact</a></li>
             
             <?php if($user) : ?>
                 <!-- Bouton Mon Compte avec déconnexion -->
@@ -50,7 +50,7 @@ $user = $_SESSION['user'] ?? null;
         <li class="w-3/4 flex"><a href="#" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Destinations</a></li>
         <li class="w-3/4 flex"><a href="/blog" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Blog</a></li>
         <li class="w-3/4 flex"><a href="#" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Offres</a></li>
-        <li class="w-3/4 flex"><a href="#" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Contact</a></li>
+        <li class="w-3/4 flex"><a href="/contact" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Contact</a></li>
         <?php if($user) : ?>
             <li class="w-3/4 flex"><a href="/account" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Mon Compte</a></li>
             <li class="w-3/4 flex"><a href="/signout" class="block text-center p-2 bg-secondary rounded hover:bg-secondary-dark text-xl w-2/3">Déconnexion</a></li>

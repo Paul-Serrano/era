@@ -12,19 +12,24 @@ use Src\Repository\Tool\Tool;
 
 class PanelUserController extends Tool
 {
+    private User $user;
     private array $features;
+    private array $userFeatures;
 
     public function __construct() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        $this->user = $_SESSION['user'];
         $this->features = $this->findAllFeatures();
+        $this->userFeatures = $this->findFeatureByUser($this->user);
     }
 
     public function index()
     {
-        session_start();
-        $user = $_SESSION['user'];
+        $user = $this->user;
         $features = $this->features;
-        $userFeatures = $this->findFeatureByUser($user->getEmail());
-        // Chargez la vue
+        $userFeatures = $this->userFeatures;
         ob_start();
         require __DIR__ . '/../views/components/header/header.php';
         require __DIR__ . '/../views/pages/panelUser.php';
@@ -46,8 +51,7 @@ class PanelUserController extends Tool
         return $this->features;
     }
 
-    public function findFeatureByUser($userEmail) {
-        $user = User::findByEmail($userEmail);
+    public function findFeatureByUser($user) {
         $features = $user->getFeatures();
         return $features;
     }

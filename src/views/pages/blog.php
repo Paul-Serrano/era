@@ -1,7 +1,7 @@
 <div class="my-5 w-[85%] mx-auto">
     <form method="GET" action="/blog">
         <div class="flex flex-col items-center">
-            <select name="author" class="border p-2 w-full">
+            <select name="author" class="border p-2 w-full my-5">
                 <option value="">Tous les auteurs</option>
                 <?php foreach ($data['authors'] as $author): ?>
                 <option value="<?= htmlspecialchars($author['mail']) ?>" <?= (isset($_GET['author']) && $_GET['author'] == $author['mail']) ? 'selected' : '' ?>>
@@ -19,7 +19,7 @@
                 <?php endforeach; ?>
             </select>
 
-            <button type="submit" class="bg-secondary text-white p-2 my-2 w-full">Filtrer</button>
+            <button type="submit" class="bg-black text-white p-2 my-5 w-full rounded-full">Filtrer</button>
         </div>
     </form>
 
@@ -34,22 +34,24 @@
 
     <ul class="flex flex-col items-center justify-evenly">
         <?php foreach ($data['articles'] as $article): ?>
-        <li class="border-secondary border-4 p-4 w-full my-5 flex rounded-2xl justify-between">
-            <div class="flex flex-col justify-evenly w-1/2">
-                <div>
-                    <h2 class="font-bold text-xl"><?= htmlspecialchars($article->getTitle()); ?></h2>
-                    <p><?= htmlspecialchars($article->getAutor()); ?></p>
+        <li class="border-featureInput border-2 p-4 w-full my-5 flex rounded-2xl justify-between flex-col">
+            <a class="" href="/article/<?= $article->getSlug();?>"> 
+                <img src="../../assets/img/blog.png" alt="">
+                <div class="flex flex-col justify-evenly w-full">
+                    <div class="my-5">
+                        <h2 class="font-bold text-xl"><?= htmlspecialchars($article->getTitle()); ?></h2>
+                        <p><?= htmlspecialchars($article->getAutor()); ?></p>
+                    </div>
+                    <!-- <div class="article-content my-5">
+                        <?= substr($article->getContent(), 0, 100) ;?>
+                    </div> -->
                 </div>
-                <!-- <div class="article-content my-5">
-                    <?= substr($article->getContent(), 0, 100) ;?>
-                </div> -->
-                <a class="bg-secondary text-white py-1 w-2/3 text-center my-1" href="/article/<?= $article->getSlug();?>">Voir plus</a> 
-            </div>
-            <div class="flex flex-col justify-evenly items-center my-2 w-1/3">
-                <?php foreach ($article->getTags() as $tag): ?>
-                    <span class="bg-secondary text-white py-1 w-full text-center my-1"><?= htmlspecialchars($tag) ;?></span>
-                <?php endforeach; ?>
-            </div>   
+                <div class="grid grid-cols-2 gap-2">
+                    <?php foreach ($article->getTags() as $tag): ?>
+                        <span class="bg-featureInput text-white py-1 w-full text-center font-bold rounded-full p-2 h-full align-middle"><?= htmlspecialchars($tag) ;?></span>
+                    <?php endforeach; ?>
+                </div> 
+            </a>  
         </li>
         <?php endforeach; ?>
     </ul>

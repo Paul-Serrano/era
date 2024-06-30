@@ -1,7 +1,7 @@
 <div class="w-full">
     <?php if ($userFeatures): ?>
         <ul class="p-0 w-full list-disc grid grid-cols-2 gap-4 my-5">
-            <?php foreach ($features as $key => $feature): ?>
+            <?php foreach ($userFeatures as $key => $feature): ?>
                 <?php if(($key + 1) % 3 == 1): ?>
                 <li class="flex border-featureInput border-2 p-2 w-full col-span-2 rounded-lg bg-white">
                     <a class="flex w-full" href="/userFeature?id=<?= $feature->getId();?>">

@@ -259,12 +259,29 @@ class User extends Tool {
         }
 
         foreach($this->getFeatures() as $feature) {
-            self::$db->query("INSERT INTO user_features (user_mail, feature_id) VALUES ('".$this->getEmail()."', '".$feature->getId()."')");
+            // Vérifier si le couple user_mail/language_name existe déjà
+            if (!$this->existsUserFeature($this->getEmail(), $feature->getId())) {
+                self::$db->query("INSERT INTO user_features (user_mail, feature_id) VALUES (?, ?)", [
+                    $this->getEmail(),
+                    $feature->getId()
+                ]);
+            }
         }
+
+        // foreach($this->getFeatures() as $feature) {
+        //     self::$db->query("INSERT INTO user_features (user_mail, feature_id) VALUES ('".$this->getEmail()."', '".$feature->getId()."')");
+        // }
     }
 
     private function existsUserLanguage($email, $languageName) {
         $result = self::$db->query("SELECT COUNT(*) AS count FROM user_language WHERE user_mail = ? AND language_name = ?", [$email, $languageName]);
+        $count = $result->fetchColumn();
+        
+        return $count > 0;
+    }
+
+    private function existsUserFeature($email, $featureId) {
+        $result = self::$db->query("SELECT COUNT(*) AS count FROM user_features WHERE user_mail = ? AND language_name = ?", [$email, $featureId]);
         $count = $result->fetchColumn();
         
         return $count > 0;
