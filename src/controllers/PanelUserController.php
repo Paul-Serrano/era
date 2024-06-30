@@ -20,7 +20,7 @@ class PanelUserController extends Tool
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
-        $this->user = $_SESSION['user'];
+        $_SESSION ? $this->user = $_SESSION['user'] : $this->user = User::findByEmail('test@gmail.com');
         $this->features = $this->findAllFeatures();
         $this->userFeatures = $this->findFeatureByUser($this->user);
     }
@@ -72,6 +72,7 @@ class PanelUserController extends Tool
         if ($id && $id == 1) {
             $feature = Feature::findById((int)$id);
             if ($feature) {
+                // Tool::dd($this->user->getFirstname());
                 require_once __DIR__ . '/../views/components/header/header.php';
                 require_once __DIR__ . '/../views/pages/userFeature.php';
                 return;

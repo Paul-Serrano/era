@@ -3,7 +3,7 @@
 </div>
 <div class="step flex flex-col justify-evenly w-full">
     <button class="relative left-0" onclick="prevStep()"><img src="../../assets/img/back-feature.png" alt=""></button>
-    <h2 class="text-2xl font-bold my-5">Bonjour <span class="capitalize"><?= $user->getFirstname() ?> !</span></h2>
+    <h2 class="text-2xl font-bold my-5">Bonjour <span class="capitalize"><?= $user ? $user->getFirstname() : 'Test' ?> !</span></h2>
     <label class="text-xl font-bold mt-5" for="country">Où voulez-vous aller ?</label>
     <input class="rounded-md border border-featureInput p-2 my-5" type="text" id="country" name="country">
     

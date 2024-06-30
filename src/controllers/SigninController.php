@@ -44,7 +44,8 @@ class SigninController
                 $_POST['description'],
             );
             $user
-                ->setPassword(password_hash($_POST['password'], PASSWORD_BCRYPT));
+                ->setPassword(password_hash($_POST['password'], PASSWORD_BCRYPT))
+                ->setAdmin(0);
                 // ->setImgPath($_POST['img_path'])
 
             foreach($_POST['selectedLangs'] as $data) {

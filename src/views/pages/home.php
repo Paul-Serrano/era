@@ -1,5 +1,5 @@
 <div class="container mx-auto">
-    <a class="ml-5 font-bold underline" href="/userFeature?id=1">Lien direct vers le MVP</a>
+    <a class="ml-5 font-bold underline" href="/demoMvp">Lien direct vers le MVP</a>
     <section class="relative z-10 h-[600px] lg:h-auto">
         <?php include __DIR__ . '/../components/Landing/cover/cover.php'; ?>
     </section>

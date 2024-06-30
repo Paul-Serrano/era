@@ -54,8 +54,10 @@ switch ($requestUri) {
         echo $controller->viewFeature($_GET['id']);
         break;
     case '/userFeature':
+    case '/demoMvp':
         $controller = new PanelUserController();
-        echo $controller->viewUserFeature($_GET['id']);
+        $_GET ? $id = $_GET['id'] : $id = 1;
+        echo $controller->viewUserFeature($id);
         break;
     case '/login': // Ajout de la route de connexion
         $controller = new LoginController();
