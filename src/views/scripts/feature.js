@@ -5,8 +5,17 @@ const formData = {
 };
 
 function nextStep() {
+    if(currentStep == 2) {
+        if(
+            document.getElementById('country').value.length === 0 ||  document.getElementById('budgetTotal').length === 0 || 
+            document.getElementById('budgetPersonal').length === 0 || document.getElementById('budgetLeisure').length === 0 || 
+            document.getElementById('startDate').length === 0 || document.getElementById('endDate').length === 0
+        ) {
+            alert('Veuillez renseigner tous les champs svp');
+            return;
+        }
+    }
     if(currentStep < 10) saveStepData(currentStep);
-    console.log(formData);
     if (currentStep < 12) {
         document.getElementById(`step${currentStep}`).style.display = 'none';
         currentStep++;
@@ -134,15 +143,6 @@ function getStepForField(field) {
 function saveStepData(step) {
     switch(step) {
         case 2:
-            if(
-                document.getElementById('country').value.length === 0 ||  document.getElementById('budgetTotal').length === 0 || 
-                document.getElementById('budgetPersonal').length === 0 || document.getElementById('budgetLeisure').length === 0 || 
-                document.getElementById('startDate').length === 0 || document.getElementById('endDate').length === 0
-            ) {
-                console.log('lol');
-                alert('Veuillez renseigner tous les champs svp');
-            }
-            console.log(document.getElementById('country').value.length);
             formData.preferences = {
                 country: document.getElementById('country').value,
                 budgetTotal: document.getElementById('budgetTotal').value,
