@@ -1,5 +1,4 @@
 <?php
-
 $error = isset($_GET['error']) ? $_GET['error'] : '';
 
 // Fonction pour afficher le message d'erreur
@@ -8,7 +7,6 @@ function displayErrorMessage($error) {
         case 'passNoMatch':
             echo '<p style="color: red;">Les mots de passe ne correspondent pas.</p>';
             break;
-        // Ajoutez d'autres cas ici pour d'autres types d'erreurs si nécessaire
         case 'wrongMail':
             echo '<p style="color: red;">Mail invalide</p>';
             break;
@@ -26,40 +24,41 @@ if (!empty($error)) {
     displayErrorMessage($error);
 }
 ?>
-<div class="w-[80%] mx-auto my-10 flex flex-col">
+
+<div class="w-[80%] mx-auto my-10">
     <form action="/register" method="POST">
-        <h2 class="ml-5 font-bold text-xl text-secondary my-5">Inscription</h2>
+        <h2 class="ml-5 font-bold text-xl text-featureInput my-10">Inscription</h2>
         <div class="flex flex-col my-5">
-            <label for="email">Email</label>
-            <input class="border-2 border-black my-2 rounded-md p-2" type="email" id="email" name="email" required>
+            <label class="text-featureInput" for="email">Email</label class="text-featureInput">
+            <input class="rounded-md border border-featureInput p-2 mb-5" type="email" id="email" name="email" required>
         </div>
         <div class="flex flex-col my-5">
-            <label for="password">Mot de passe</label>
-            <input class="border-2 border-black my-2 rounded-md p-2" type="password" id="password" name="password" required>
+            <label class="text-featureInput" for="password">Mot de passe</label class="text-featureInput">
+            <input class="rounded-md border border-featureInput p-2 mb-5" type="password" id="password" name="password" required>
         </div>
         <div class="flex flex-col my-5">
-            <label for="passwordVerif">Répétez mot de passe svp</label>
-            <input class="border-2 border-black my-2 rounded-md p-2" type="password" id="passwordVerif" name="passwordVerif" required>
+            <label class="text-featureInput" for="passwordVerif">Répétez mot de passe svp</label class="text-featureInput">
+            <input class="rounded-md border border-featureInput p-2 mb-5" type="password" id="passwordVerif" name="passwordVerif" required>
         </div>
         <div class="flex flex-col my-5">
-            <label for="firstname">Prénom</label>
-            <input class="border-2 border-black my-2 rounded-md p-2" type="text" id="firstname" name="firstname" required>
+            <label class="text-featureInput" for="firstname">Prénom</label class="text-featureInput">
+            <input class="rounded-md border border-featureInput p-2 mb-5" type="text" id="firstname" name="firstname" required>
         </div>
         <div class="flex flex-col my-5">
-            <label for="lastname">Nom de famille</label>
-            <input class="border-2 border-black my-2 rounded-md p-2" type="text" id="lastname" name="lastname" required>
+            <label class="text-featureInput" for="lastname">Nom de famille</label class="text-featureInput">
+            <input class="rounded-md border border-featureInput p-2 mb-5" type="text" id="lastname" name="lastname" required>
         </div>
         <div class="flex flex-col my-5">
-            <label for="job">Secteur d'activité</label>
-            <input class="border-2 border-black my-2 rounded-md p-2" type="text" id="job" name="job" required>
+            <label class="text-featureInput" for="job">Secteur d'activité</label class="text-featureInput">
+            <input class="rounded-md border border-featureInput p-2 mb-5" type="text" id="job" name="job" required>
         </div>
         <div class="flex flex-col my-5">
-            <label for="description">Description</label>
-            <input class="border-2 border-black my-2 rounded-md p-2" id="description" name="description" type="textarea" required>
+            <label class="text-featureInput" for="description">Description</label class="text-featureInput">
+            <input class="rounded-md border border-featureInput p-2 mb-5" id="description" name="description" type="textarea" required>
         </div>
         <div class="flex flex-col my-5">
-            <label for="lang">Languages</label>
-            <select class="capitalize" name="lang" id="lang">
+            <label class="text-featureInput" for="lang">Languages</label class="text-featureInput">
+            <select class="capitalize rounded-md border border-featureInput p-2 mb-5" name="lang" id="lang">
                 <option class="capitalize" value="">Choisissez les langues parlées</option>
                 <?php foreach ($langs as $lang): ?>
                     <option class="capitalize" value="<?= htmlspecialchars($lang->getName()) ?>"><?= htmlspecialchars($lang->getName()) ?></option>
@@ -68,18 +67,17 @@ if (!empty($error)) {
         </div>
 
         <div id="selected-langs"></div>
-
         <div id="hidden-langs-container"></div>
 
-        <div class="">
-            <button type="submit" class="bg-secondary font-bold text-white px-2 py-4 my-2 w-full rounded-full">Inscription</button>
+        <div>
+            <button type="submit" class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-10">Inscription</button>
         </div>
     </form>
+    <div class="bg-secondary w-full my-10 h-[5px]"></div>
     <div class="flex flex-col">
-        <a href="/login" class="bg-secondary font-bold text-white px-2 py-4 my-10 w-full rounded-full text-center">Déjà un compte ? connectez vous !</a>
+        <h2 class="ml-5 font-bold text-xl text-featureInput mb-10">Connectez vous</h2>
+        <p class="my-2">Vous avez déjà un compte ?</p>
+        <a href="/login" class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-2">Page de Connexion</a>
     </div>
 </div>
 <script src="/src/views/scripts/signin.js"></script>
-
-
-

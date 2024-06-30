@@ -231,7 +231,7 @@ class User extends Tool {
                 $this->getJob(),
                 $this->getDescription(),
                 '',
-                0,
+                $this->isAdmin(),
                 $this->getEmail()
             ]);
         } else {
@@ -244,7 +244,7 @@ class User extends Tool {
                 $this->getJob(),
                 $this->getDescription(),
                 '',
-                0
+                $this->isAdmin()
             ]);
         }
 

@@ -1,3 +1,6 @@
+<div class="progress-bar-container w-full h-2 bg-primary bg-opacity-25 rounded-full my-4">
+    <div id="progress-bar" class="h-2 bg-primary rounded-full w-[16%]"></div>
+</div>
 <div class="step flex flex-col justify-evenly">
     <button class="my-5" onclick="prevStep()"><img src="../../assets/img/back-feature.png" alt=""></button>
     <img src="../../assets/img/step3.png" alt="">

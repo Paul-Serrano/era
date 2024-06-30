@@ -14,17 +14,17 @@
 <div>
     <h2 class="text-xl font-bold my-5">Liste des fonctionnalités</h2>
     <?php if (!empty($data['features'])): ?>
-        <div class="list-disc pl-5">
+        <div class="list-disc">
             <?php foreach ($data['features'] as $feature): ?>
-                <div class="my-3">
-                    <div class="flex justify-between items-center">
-                        <div>
+                <div class="my-3 border-2 border-black p-2">
+                    <div class="flex flex-col justify-between items-center">
+                        <div class="grid grid-cols-2 grid-gap-2 w-full">
                             <strong>Nom :</strong> <?= htmlspecialchars($feature->getName()) ?><br>
                             <strong>Description :</strong> <?= htmlspecialchars($feature->getDescription()) ?><br>
                             <strong>Prix :</strong> <?= htmlspecialchars($feature->getPrice()) ?> €<br>
                             <strong>Position :</strong> <?= htmlspecialchars($feature->getPosition()) ?>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="flex justify-between w-full">
                             <form method="POST" action="/deleteFeature" style="display:inline;">
                                 <input type="hidden" name="featureId" value="<?= $feature->getId() ?>">
                                 <button type="submit" class="p-2 bg-red-500 text-white rounded">Supprimer</button>
