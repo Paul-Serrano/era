@@ -266,6 +266,8 @@ class User extends Tool {
                 ]);
             }
         }
+
+        $_SESSION['user'] = $this;
     }
 
     private function existsUserLanguage($email, $languageName) {
