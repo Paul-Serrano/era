@@ -7,28 +7,28 @@
                 <div class="flex flex-col">
                     <img class="md:h-[200px]" src="../../assets/img/community.png" alt="" />
                     <h4 class="text-xl font-bold md:text-2xl">Une Communauté</h4>
-                    <p class="font-light leading-6 text-xl text-justify my-4">Rejoins notre réseau local et international, et partage vos expériences sur notre blog hyper interactif !</p>
+                    <p class="font-light leading-6 text-xl my-4">Rejoins notre réseau local et international, et partage vos expériences sur notre blog hyper interactif !</p>
                 </div>
             </div>
             <div class="carousel-item w-full md:w-1/3 md:mx-[8.83%] md:border-black md:border-2 md:p-5 md:rounded-xl flex-shrink-0 flex justify-center">
                 <div class="flex flex-col">
                     <img class="md:h-[200px]" src="../../assets/img/help.png" alt="">
                     <h4 class="text-xl font-bold md:text-2xl">Entraide</h4>
-                    <p class="font-light leading-6 text-xl text-justify my-4">On est là pour vous, avec nos psychologues et notre réseau associatif local, pour vous soutenir à fond !</p>
+                    <p class="font-light leading-6 text-xl my-4">On est là pour vous, avec nos psychologues et notre réseau associatif local, pour vous soutenir à fond !</p>
                 </div>
             </div>
             <div class="carousel-item w-full md:w-1/3 md:mx-[8.83%] md:border-black md:border-2 md:p-5 md:rounded-xl flex-shrink-0 flex justify-center">
                 <div class="flex flex-col">
                     <img class="md:h-[200px]" src="../../assets/img/experience.png" alt="">
                     <h4 class="text-xl font-bold md:text-2xl">Expérience</h4>
-                    <p class="font-light leading-6 text-xl text-justify my-4">Plonge dans la culture du pays avec nous, une immersion garantie !</p>
+                    <p class="font-light leading-6 text-xl my-4">Plonge dans la culture du pays avec nous, une immersion garantie !</p>
                 </div>
             </div>
             <div class="carousel-item w-full md:w-1/3 md:mx-[8.83%] md:border-black md:border-2 md:p-5 md:rounded-xl flex-shrink-0 flex justify-center">
                 <div class="flex flex-col">
                     <img class="md:h-[200px]" src="../../assets/img/focused.png" alt="">
                     <h4 class="text-xl font-bold md:text-2xl">Engagé</h4>
-                    <p class="font-light leading-6 text-xl text-justify my-4">On est super engagés pour l’environnement et on fait de notre mieux pour réduire au max notre empreinte carbone !</p>
+                    <p class="font-light leading-6 text-xl my-4">On est super engagés pour l’environnement et on fait de notre mieux pour réduire au max notre empreinte carbone !</p>
                 </div>
             </div>
         </div>

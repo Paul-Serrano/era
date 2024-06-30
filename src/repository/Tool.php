@@ -13,4 +13,13 @@ class Tool
         }
         die(1);
     }
+
+    public static function dump(...$vars)
+    {
+        foreach ($vars as $var) {
+            echo "<pre>";
+            var_dump($var);
+            echo "</pre>";
+        }
+    }
 }

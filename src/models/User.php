@@ -191,7 +191,6 @@ class User extends Tool {
                     $user->setFeature($feature);
                 }
             }
-            // Tool::dd($user);
             return $user;
         }
 
@@ -248,7 +247,7 @@ class User extends Tool {
             ]);
         }
 
-        foreach($this->getLanguages() as $lang) {
+        foreach($this->getLanguages() as $key => $lang) {
             // Vérifier si le couple user_mail/language_name existe déjà
             if (!$this->existsUserLanguage($this->getEmail(), $lang->getName())) {
                 self::$db->query("INSERT INTO user_language (user_mail, language_name) VALUES (?, ?)", [
@@ -258,7 +257,7 @@ class User extends Tool {
             }
         }
 
-        foreach($this->getFeatures() as $feature) {
+        foreach($this->getFeatures() as $key => $feature) {
             // Vérifier si le couple user_mail/language_name existe déjà
             if (!$this->existsUserFeature($this->getEmail(), $feature->getId())) {
                 self::$db->query("INSERT INTO user_features (user_mail, feature_id) VALUES (?, ?)", [
@@ -267,21 +266,17 @@ class User extends Tool {
                 ]);
             }
         }
-
-        // foreach($this->getFeatures() as $feature) {
-        //     self::$db->query("INSERT INTO user_features (user_mail, feature_id) VALUES ('".$this->getEmail()."', '".$feature->getId()."')");
-        // }
     }
 
     private function existsUserLanguage($email, $languageName) {
         $result = self::$db->query("SELECT COUNT(*) AS count FROM user_language WHERE user_mail = ? AND language_name = ?", [$email, $languageName]);
         $count = $result->fetchColumn();
-        
+
         return $count > 0;
     }
 
     private function existsUserFeature($email, $featureId) {
-        $result = self::$db->query("SELECT COUNT(*) AS count FROM user_features WHERE user_mail = ? AND language_name = ?", [$email, $featureId]);
+        $result = self::$db->query("SELECT COUNT(*) AS count FROM user_features WHERE user_mail = ? AND feature_id = ?", [$email, $featureId]);
         $count = $result->fetchColumn();
         
         return $count > 0;

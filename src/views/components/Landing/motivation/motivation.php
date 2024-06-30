@@ -1,4 +1,4 @@
-<div class="bg-white mt-10 rounded-5xl p-8 lg:w-2/3 lg:m-auto lg:my-20 lg:px-2">
+<div class="bg-white my-10 rounded-5xl p-8 lg:w-2/3 lg:m-auto lg:my-20 lg:px-2">
     <div class="flex justify-end lg:w-3/4 lg:m-auto">
         <div class="border-black border-2 px-6 py-2 rounded-full flex justify-center lg:w-1/3">
             <p class="text-lg">2024</p>

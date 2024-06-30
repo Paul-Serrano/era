@@ -12,19 +12,17 @@
     <section class="relative px-10 pt-10 pb-32 top-[-50px] z-40 bg-black rounded-t-5xl">
         <?php include __DIR__ . '/../components/Landing/motivation/motivation.php'; ?>
     </section>
-    <section class="relative p-10 top-[-100px] z-50 bg-white rounded-t-5xl">
-        <?php include __DIR__ . '/../components/Landing/destination/destination.php'; ?>
+    <section class="relative top-[-100px] z-50 bg-white rounded-t-5xl">
+        <?php include __DIR__ . '/../components/Landing/solution/solution.php'; ?>
     </section>
     <section class="relative top-[-100px] z-60 bg-black rounded-t-5xl">
         <?php include __DIR__ . '/../components/Landing/offers/offers.php'; ?>
     </section>
-    <section class="relative p-10 top-[-125px] z-70 bg-white rounded-t-5xl">
-        <?php include __DIR__ . '/../components/Landing/contact/contact.php'; ?>
     </section>
-    <section class="relative p-10 top-[-125px] z-80 bg-white rounded-t-5xl">
+    <section class="relative p-10 top-[-125px] z-70 bg-white rounded-t-5xl">
         <?php include __DIR__ . '/../components/Landing/help/help.php'; ?>
     </section>
-    <section class="newsletter-popup absolute p-5 top-[100px] left-[12.5%] z-90 bg-white rounded-5xl border-black border-2 w-3/4 lg:w-1/2 lg:left-[25%]">
+    <section class="newsletter-popup absolute p-5 top-[100px] left-[12.5%] z-80 bg-white rounded-5xl border-black border-2 w-3/4 lg:w-1/2 lg:left-[25%]">
         <?php include __DIR__ . '/../components/Landing/newsletter-popup/newsletter-popup.php'; ?>
     </section>
 </div>
