@@ -6,7 +6,7 @@
     
     <h2 class="text-lg font-bold my-5">Quelles sont vos habitudes alimentaires ?</h2>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="diet" value="végétarien">
@@ -15,7 +15,7 @@
         <img src="../../assets/img/vegetarian.png" alt="">
     </label>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="diet" value="vegan">
@@ -24,7 +24,7 @@
         <img src="../../assets/img/vegan.png" alt="">
     </label>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="diet" value="sans gluten">
@@ -33,7 +33,7 @@
         <img src="../../assets/img/gluten-free.png" alt="">
     </label>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="diet" value="omnivore">
@@ -44,7 +44,7 @@
 
     <h2 class="text-lg font-bold my-5">Avez-vous des allergies ?</h2>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="fruits à coque">
@@ -53,7 +53,7 @@
         <img src="../../assets/img/nuts.png" alt="">
     </label>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="lactose">
@@ -62,7 +62,7 @@
         <img src="../../assets/img/lactose.png" alt="">
     </label>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="fruits de mer">
@@ -71,7 +71,7 @@
         <img src="../../assets/img/seafood.png" alt="">
     </label>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="mollusques">
@@ -80,7 +80,7 @@
         <img src="../../assets/img/shellfish.png" alt="">
     </label>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="arachides">
@@ -89,7 +89,7 @@
         <img src="../../assets/img/peanut.png" alt="">
     </label>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="poisson">
@@ -98,7 +98,7 @@
         <img src="../../assets/img/fish.png" alt="">
     </label>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="céleri">
@@ -107,7 +107,7 @@
         <img src="../../assets/img/celery.png" alt="">
     </label>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="soja">
@@ -116,7 +116,7 @@
         <img src="../../assets/img/soy.png" alt="">
     </label>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="sulfites">
@@ -125,7 +125,7 @@
         <img src="../../assets/img/sulfites.png" alt="">
     </label>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="sésame">
@@ -134,7 +134,7 @@
         <img src="../../assets/img/sesame.png" alt="">
     </label>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="allergy" value="lupin">
@@ -143,7 +143,7 @@
         <img src="../../assets/img/lupin.png" alt="">
     </label>
 
-    <button class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-20" onclick="nextStep()">
+    <button class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-20 lg:w-1/4 lg:mr-0 lg:py-2 lg:py-2" onclick="nextStep()">
         <p>Suivant</p>
         <img src="../../assets/img/arrow-button.png" alt="">
     </button>

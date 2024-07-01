@@ -6,7 +6,7 @@
     
     <h2 class="text-lg font-bold my-5">Pratiquez-vous une religion ?</h2>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="radio" name="religion" value="chrétien">
@@ -15,7 +15,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="radio" name="religion" value="musulman">
@@ -24,7 +24,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="radio" name="religion" value="juif">
@@ -33,7 +33,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="radio" name="religion" value="hindou">
@@ -42,7 +42,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="radio" name="religion" value="bouddhiste">
@@ -51,7 +51,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="radio" name="religion" value="sikh">
@@ -60,7 +60,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="radio" name="religion" value="athée">
@@ -69,7 +69,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="radio" name="religion" value="agnostique">
@@ -78,7 +78,7 @@
         <img src="" alt="">
     </label>
 
-    <button class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-20" onclick="nextStep()">
+    <button class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-20 lg:w-1/4 lg:mr-0 lg:py-2" onclick="nextStep()">
         <p>Suivant</p>
         <img src="../../assets/img/arrow-button.png" alt="">
     </button>

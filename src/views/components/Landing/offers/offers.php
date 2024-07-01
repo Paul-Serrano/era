@@ -2,9 +2,9 @@
 <div class="carousel-offer-component flex flex-col items-center py-5">
     <h3 class="text-white text-2xl font-bold leading-8 mt-16 w-1/2 mb-8 lg:hidden">Choisis ta formule !</h3>
     <hr class="bg-white border-white border-5 w-full lg:hidden"/>
-    <div class="carousel-offer relative overflow-hidden w-full my-10 lg:flex lg:justify-around lg:h-[600px]">
-        <div class="carousel-offer-inner flex transition-transform duration-300 h-full lg:w-[90%] lg:space-x-4 lg:m-auto lg:justify-between">
-            <div class="carousel-offer-item w-full flex-shrink-0 flex justify-center lg:w-[30%] lg:border-white lg:border lg:p-2 lg:mx-2 lg:rounded-2xl">
+    <div class="carousel-offer relative overflow-hidden w-full my-10 lg:flex lg:justify-around">
+        <div class="carousel-offer-inner flex transition-transform duration-300 h-full lg:w-[90%] lg:grid lg:gap-10 lg:grid-cols-3 lg:m-auto lg:justify-between">
+            <div class="carousel-offer-item w-full flex-shrink-0 flex justify-center lg:w-[90%] lg:border-white lg:border lg:p-2 lg:mx-2 lg:rounded-2xl">
                 <div class="flex flex-col py-8 px-20 lg:px-10 lg:justify-between">
                     <div class="flex flex-col">
                         <h4 class="text-white text-2xl font-bold lg:text-2xl">Formule Freemium</h4>
@@ -25,7 +25,7 @@
                     </button>
                 </div>
             </div>
-            <div class="carousel-offer-item w-full flex-shrink-0 flex justify-center lg:w-[30%] lg:border-white lg:border lg:p-2 lg:mx-2 lg:rounded-2xl">
+            <div class="carousel-offer-item w-full flex-shrink-0 flex justify-center lg:w-[90%] lg:border-white lg:border lg:p-2 lg:mx-2 lg:rounded-2xl">
                 <div class="flex flex-col py-8 px-20 lg:px-10">
                     <div>
                         <h4 class="text-white text-2xl font-bold">Starter pack Découverte</h4>
@@ -47,7 +47,7 @@
                     </button>
                 </div>
             </div>
-            <div class="carousel-offer-item w-full flex-shrink-0 flex justify-center lg:w-[30%] lg:border-white lg:border lg:p-2 lg:mx-2 lg:rounded-2xl">
+            <div class="carousel-offer-item w-full flex-shrink-0 flex justify-center lg:w-[90%] lg:border-white lg:border lg:p-2 lg:mx-2 lg:rounded-2xl">
                 <div class="flex flex-col py-8 px-20 lg:px-10 lg:justify-between">
                     <div>
                         <h4 class="text-white text-2xl font-bold">Forfait Classique</h4>
@@ -68,7 +68,7 @@
                     </button>
                 </div>
             </div>
-            <div class="carousel-offer-item w-full flex-shrink-0 flex justify-center lg:w-[30%] lg:border-white lg:border lg:p-2 lg:mx-2 lg:rounded-2xl">
+            <div class="carousel-offer-item w-full flex-shrink-0 flex justify-center lg:w-[90%] lg:border-white lg:border lg:p-2 lg:mx-2 lg:rounded-2xl">
                 <div class="flex flex-col py-8 px-20 lg:px-10 lg:justify-between">
                     <div>
                         <h4 class="text-white text-2xl font-bold">Forfait Pro</h4>
@@ -90,7 +90,7 @@
                     </button>
                 </div>
             </div>
-            <div class="carousel-offer-item w-full flex-shrink-0 flex justify-center lg:w-[30%] lg:border-white lg:border lg:p-2 lg:mx-2 lg:rounded-2xl">
+            <div class="carousel-offer-item w-full flex-shrink-0 flex justify-center lg:col-span-2 lg:w-[95%] lg:border-white lg:border lg:p-2 lg:mx-2 lg:rounded-2xl">
                 <div class="flex flex-col py-8 px-20 lg:px-10 lg:justify-between">
                     <div>
                         <h4 class="text-white text-2xl font-bold">Forfait Premium</h4>

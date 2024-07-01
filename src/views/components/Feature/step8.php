@@ -6,7 +6,7 @@
     
     <h2 class="text-lg font-bold my-5">Pratiquez-vous un/des sport(s) ?</h2>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="sports" value="randonnée">
@@ -15,7 +15,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="sports" value="camping">
@@ -24,7 +24,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="sports" value="pêche">
@@ -33,7 +33,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="sports" value="sports nautiques">
@@ -42,7 +42,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="sports" value="cyclisme">
@@ -51,7 +51,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="sports" value="course à pied">
@@ -60,7 +60,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="sports" value="fitness">
@@ -69,7 +69,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="sports" value="yoga">
@@ -78,7 +78,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="sports" value="sports de raquettes">
@@ -87,7 +87,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="sports" value="sports d'équipe">
@@ -98,7 +98,7 @@
 
     <h2 class="text-lg font-bold my-5">Avez-vous un loisir ?</h2>
     
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="leisure" value="cinema">
@@ -107,7 +107,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="leisure" value="théâtre">
@@ -116,7 +116,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="leisure" value="plongée">
@@ -125,7 +125,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="leisure" value="concerts">
@@ -134,7 +134,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="leisure" value="danse">
@@ -143,7 +143,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="leisure" value="poterie">
@@ -152,7 +152,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="leisure" value="jeux de carte">
@@ -161,7 +161,7 @@
         <img src="" alt="">
     </label>
 
-    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput">
+    <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
         <div class="flex items-center">
             <img src="../../assets/img/radio-button.png" alt="">
             <input class="hidden" type="checkbox" name="leisure" value="casino">
@@ -170,7 +170,7 @@
         <img src="" alt="">
     </label>
     
-    <button class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-20" onclick="nextStep()">
+    <button class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-20 lg:w-1/4 lg:mr-0 lg:py-2" onclick="nextStep()">
         <p>Suivant</p>
         <img src="../../assets/img/arrow-button.png" alt="">
     </button>

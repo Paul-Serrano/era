@@ -12,7 +12,7 @@
             <img src="../../assets/img/facebook.png" alt="">
             <p class="hidden lg:flex lg:font-bold lg:ml-5">Facebook</p>
         </a>
-        <a href="" class="lg:flex lg:w-2/3 lg:items-center">
+        <a href="https://www.instagram.com/mouvup_/?igsh=MXJhbHY4dGJtajBlMw%3D%3D" target="_blank" class="lg:flex lg:w-2/3 lg:items-center">
             <img src="../../assets/img/instagram.png" alt="">
             <p class="hidden lg:flex lg:font-bold lg:ml-5">Instagram</p>
         </a>
