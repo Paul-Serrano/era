@@ -47,9 +47,9 @@
         <?php include_once __DIR__ . '/../components/Feature/step11.php' ?>
     </div>
     <!-- Step 12 (recommendations) -->
-    <div id="step12" class="step flex flex-col" style="display:none;">
+    <div id="step12" class="step flex flex-col lg:w-2/3 lg:m-auto" style="display:none;">
         <h2 class="text-2xl font-bold">Votre nouveau train de vie est ici !</h2>
-        <img src="../../assets/img/step12.png" alt="">
+        <img src="../../assets/img/step12.png" alt="" class="lg:w-1/3 lg:m-auto">
         <div id="recommendations" class="w-full m-auto">
             <div class="flex flex-col">
                 <h3 class="text-lg font-bold">Votre taux de confort</h3>

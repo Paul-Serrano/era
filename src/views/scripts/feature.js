@@ -87,18 +87,21 @@ function displayRecap() {
         habitName.textContent = habit.replace(/([A-Z])/g, ' $1').toLowerCase();
     
         let habitValue = document.createElement('div');
-        habitValue.className = 'grid grid-cols-2';
+        habitValue.className = 'grid grid-cols-2 lg:flex';
     
         if (Array.isArray(formData.habits[habit])) {
             for (let item of formData.habits[habit]) {
                 let itemDiv = document.createElement('span');
-                itemDiv.className = 'capitalize text-center bg-white rounded-full p-2 my-2 m-auto w-[90%]';
+                itemDiv.className = 'capitalize text-center bg-white rounded-full p-2 my-2 mx-auto w-[90%] lg:w-auto lg:mx-2';
                 itemDiv.textContent = item;
                 habitValue.appendChild(itemDiv);
             }
         } else {
-            habitValue.textContent = formData.habits[habit];
-            habitValue.className = 'capitalize text-center bg-white rounded-full p-2 my-2 m-auto w-[90%]';
+            let habitSpan = document.createElement('span');
+            habitSpan.textContent = formData.habits[habit];
+            habitSpan.className = 'capitalize text-center bg-white rounded-full p-2 my-2 mx-auto w-[90%] lg:w-auto lg:mx-2';
+            habitValue.appendChild(habitSpan);
+            habitValue.className = 'flex';  
         }
     
         let editButton = document.createElement('button');

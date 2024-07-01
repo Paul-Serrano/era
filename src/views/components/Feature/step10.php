@@ -4,7 +4,7 @@
 <div id="step10" class="step flex flex-col justify-evenly w-full">
     <button class="relative left-0 my-5" onclick="prevStep()"><img src="../../assets/img/back-feature.png" alt=""></button>
     <h2 class="font-bold text-2xl">Récapitulons vos réponses jusqu'à maintenant</h2>
-    <div id="recap" class="flex flex-col space-y-4 p-4 border rounded-lg">
+    <div id="recap" class="flex flex-col space-y-4 p-4 border rounded-lg lg:w-1/2 lg:m-auto">
         <div class="flex items-center justify-between">
             <h3 class="text-lg font-bold">Vos préférences</h3>
             <button onclick="goToStep(2)" class="bg-black p-2 rounded-xl text-white">Modifier</button>
@@ -32,5 +32,5 @@
         </div>
         <!-- Récapitulatif des choix sera affiché ici -->
     </div>
-    <button class="my-5 rounded-full bg-black p-3 w-full text-white font-bold" onclick="submitForm()">Soumettre</button>
+    <button class="my-5 rounded-full bg-black p-3 w-full text-white font-bold lg:w-1/4 lg:m-auto" onclick="submitForm()">Soumettre</button>
 </div>

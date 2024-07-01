@@ -1,5 +1,5 @@
 <!-- public/components/footer.php -->
-<footer class="footer-component bg-black text-white px-6 py-6 flex flex-col justify-evenly lg:grid lg:grid-cols-3 lg:grid-rows-4 lg:px-28">
+<footer class="footer-component bg-black text-white px-6 py-10 lg:py-20 flex flex-col justify-evenly lg:grid lg:grid-cols-3 lg:grid-rows-4 lg:px-28">
     <div class="flex flex-col lg:col-start-1 lg:row-start-1 col-span-2">
         <h3 class="text-[1.75rem] font-thin">S’inscrire à la Newsletter </h3>
         <form action="" method="POST" class="flex items-center justify-between my-5 lg:justify-start">

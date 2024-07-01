@@ -1394,6 +1394,11 @@ video {
   padding-bottom: 2rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pb-32 {
   padding-bottom: 8rem;
 }
@@ -1822,6 +1827,10 @@ video {
     width: 95%;
   }
 
+  .lg\:w-auto {
+    width: auto;
+  }
+
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2006,6 +2015,11 @@ video {
   .lg\:py-2 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  .lg\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .lg\:pl-48 {
