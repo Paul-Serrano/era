@@ -12,5 +12,6 @@
             <img src="../../assets/img/arrow-button.png" alt="découvrir">
         </button>
     </div>
-    <img class="w-full h-full absolute right-0 bottom-0 z-[-1] lg:w-1/2 lg:-bottom-10" src="../../assets/img/bubble.png" alt="">
+    <img class="w-full h-full absolute bottom-0 z-[-1] lg:w-1/2 lg:-bottom-10 lg:hidden" src="../../assets/img/bubble.svg" alt="">
+    <img class="w-full h-full absolute right-0 bottom-0 z-[-1] lg:w-1/2 lg:-bottom-10 hidden lg:flex" src="../../assets/img/bubble.png" alt="">
 </div>

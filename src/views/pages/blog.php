@@ -1,6 +1,7 @@
 <div class="my-5 w-[85%] mx-auto">
-    <form method="GET" action="/blog">
-        <div class="flex flex-col items-center">
+    <form method="GET" action="/blog" class="lg:flex lg:justify-between lg:w-full lg:items-center">
+        <h2 class="hidden lg:flex lg:text-3xl lg:font-bold">Apprenez en tous les jours</h2>
+        <div class="flex flex-col items-center lg:w-1/3">
             <select name="author" class="border p-2 w-full my-5">
                 <option value="">Tous les auteurs</option>
                 <?php foreach ($data['authors'] as $author): ?>
@@ -32,10 +33,10 @@
         <?php endif; ?>
     </div>
 
-    <ul class="flex flex-col items-center justify-evenly">
+    <ul class="flex flex-col items-center justify-evenly lg:grid lg:grid-cols-3 lg:gap-10">
         <?php foreach ($data['articles'] as $article): ?>
-        <li class="border-featureInput border-2 p-4 w-full my-5 flex rounded-2xl justify-between flex-col">
-            <a class="" href="/article/<?= $article->getSlug();?>"> 
+        <li class="border-featureInput border-2 p-4 w-full my-5 flex rounded-2xl justify-between flex-col lg:h-full">
+            <a class="lg:flex lg:flex-col lg:justify-between" href="/article/<?= $article->getSlug();?>"> 
                 <img src="../../assets/img/blog.png" alt="">
                 <div class="flex flex-col justify-evenly w-full">
                     <div class="my-5">

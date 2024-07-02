@@ -66,18 +66,18 @@ if (!empty($error)) {
             </select>
         </div>
 
-        <div id="selected-langs"></div>
+        <div id="selected-langs" class="lg:flex lg:space-x-2"></div>
         <div id="hidden-langs-container"></div>
 
         <div>
-            <button type="submit" class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-10">Inscription</button>
+            <button type="submit" class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-10 lg:w-1/3 lg:m-auto lg:my-10">Inscription</button>
         </div>
     </form>
     <div class="bg-secondary w-full my-10 h-[5px]"></div>
     <div class="flex flex-col">
         <h2 class="ml-5 font-bold text-xl text-featureInput mb-10">Connectez vous</h2>
         <p class="my-2">Vous avez déjà un compte ?</p>
-        <a href="/login" class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-2">Page de Connexion</a>
+        <a href="/login" class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-2 lg:w-1/3 lg:m-auto lg:my-10">Page de Connexion</a>
     </div>
 </div>
 <script src="/src/views/scripts/signin.js"></script>

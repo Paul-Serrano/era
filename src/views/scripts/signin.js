@@ -19,12 +19,13 @@ const userLangSelect = document.getElementById('lang');
                 if (!langAlreadySelected) {
                     // Créer un élément pour afficher le langue sélectionné
                     const langElement = document.createElement('span');
-                    langElement.className = 'w-auto capitalize new-selected-tag bg-secondary p-2 rounded-xl text-white font-bold flex items-center my-2';
+                    langElement.className = 'w-auto capitalize new-selected-tag bg-secondary p-2 rounded-xl text-white font-bold flex items-center my-2 lg:justify-between';
                     langElement.textContent = selectedLang + ' ';
                     
                     // Ajouter un bouton pour supprimer le langue sélectionné
                     const removeButton = document.createElement('button');
                     removeButton.textContent = 'x';
+                    removeButton.className = 'lg:ml-5'
                     removeButton.addEventListener('click', function() {
                         selectedLangsContainer.removeChild(langElement);
                         hiddenLangsContainer.removeChild(hiddenField);

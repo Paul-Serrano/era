@@ -1,4 +1,4 @@
-<div class="container mx-auto">
+<div class="mx-auto">
     <a class="ml-5 font-bold underline" href="/demoMvp">Lien direct vers le MVP</a>
     <section class="relative z-10 h-[600px] lg:h-auto">
         <?php include __DIR__ . '/../components/Landing/cover/cover.php'; ?>
@@ -15,7 +15,7 @@
     <section class="relative top-[-100px] z-50 bg-white rounded-t-5xl">
         <?php include __DIR__ . '/../components/Landing/solution/solution.php'; ?>
     </section>
-    <section class="relative top-[-100px] z-60 bg-black rounded-t-5xl">
+    <section class="relative top-[-100px] z-60 bg-black rounded-t-5xl" id="homeOffer">
         <?php include __DIR__ . '/../components/Landing/offers/offers.php'; ?>
     </section>
     </section>

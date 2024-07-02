@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Ajouter la langue à l'affichage visuel
         const span = document.createElement('span');
         span.className = 'w-auto capitalize new-selected-tag bg-secondary p-2 rounded-xl text-white font-bold flex items-center my-2';
-        span.innerHTML = `${lang} <button>x</button>`;
+        span.innerHTML = `${lang} <button class="ml-5">x</button>`;
         span.querySelector('button').addEventListener('click', function() {
             removeLang(lang, span);
         });
