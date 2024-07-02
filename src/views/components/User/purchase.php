@@ -14,7 +14,9 @@
                         <div class="flex flex-col w-1/2 items-end lg:items-center">
                             <h2 class="font-bold"><?php echo $feature->getName(); ?></h2>
                             <p class="bg-featureInput p-2 rounded-xl text-white font-bold w-1/3 text-center my-2"><?php echo $feature->getPrice(); ?>€</p>
-                            <p class="bg-primary p-2 rounded-xl text-white font-bold text-center lg:w-1/3">Fonctionnelle</p>
+                            <?php if($key == 0): ?>
+                                <p class="bg-primary p-2 rounded-xl text-white font-bold text-center lg:w-1/3">Fonctionnelle</p>
+                            <?php endif; ?>
                         </div>
                     </a>
                 </li>

@@ -12,7 +12,7 @@ $user = $_SESSION['user'] ?? null;
         <ul class="hidden lg:flex lg:order-2 lg:w-[60%] lg:justify-evenly space-x-4 bg-[#fefefe]">
             <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos solutions</a> <img src="../../assets/img/drop-down-arrow.png" alt="fleche menu déroulent" /></li>
             <li class="flex items-center m-0"><a href="/blog" class="hover:text-secondary italic lg:not-italic lg:font-bold">Blog</a></li>
-            <li class="flex items-center m-0"><a href="#homeOffer" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos tarifs</a></li>
+            <li class="flex items-center m-0"><a href="/#homeOffer" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos tarifs</a></li>
             <li class="flex items-center m-0"><a href="/contact" class="hover:text-secondary italic lg:not-italic lg:font-bold">Contact</a></li>
             
             <?php if($user) : ?>
@@ -48,7 +48,7 @@ $user = $_SESSION['user'] ?? null;
     <!-- Mobile navigation links -->
     <ul id="mobile-nav-links" class="bg-white lg:hidden hidden flex-col items-center space-y-2 mt-4 absolute left-0 w-full z-50 py-5 border-b-8 border-secondary">
         <li class="w-3/4 flex"><a href="/blog" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Blog</a></li>
-        <li class="w-3/4 flex"><a href="#homeOffer" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Offres</a></li>
+        <li class="w-3/4 flex"><a href="/#homeOffer" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Offres</a></li>
         <li class="w-3/4 flex"><a href="/contact" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Contact</a></li>
         <?php if($user) : ?>
             <li class="w-3/4 flex"><a href="/account" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Mon Compte</a></li>
