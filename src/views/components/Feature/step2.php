@@ -24,5 +24,5 @@
     <label  class="text-featureInput"for="endDate">Date de fin</label>
     <input class="rounded-md border border-featureInput p-2 mb-5 lg:w-1/2" type="date" id="endDate" name="endDate">
     
-    <button class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-20 lg:w-1/4 lg:mr-0 lg:py-2 lg:w-1/4 lg:mr-0 lg:py-2" onclick="nextStep()"><p>Suivant</p><img src="../../assets/img/arrow-button.png" alt=""></button>
+    <button class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-20 lg:w-1/4 lg:mr-0 lg:py-2" onclick="nextStep()"><p>Suivant</p><img src="../../assets/img/arrow-button.png" alt=""></button>
 </div>
