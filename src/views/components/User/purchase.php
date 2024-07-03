@@ -5,7 +5,7 @@
     </div>
     <div class="w-full lg:my-10">
     <?php if ($features): ?>
-        <ul class="p-0 w-full list-disc grid grid-cols-2 gap-4 my-5 lg:w-2/3 lg:m-auto">
+        <ul class="p-0 w-full list-disc grid grid-cols-2 gap-4 mt-5 mb-20 lg:w-2/3 lg:m-auto">
             <?php foreach ($features as $key => $feature): ?>
                 <?php if(($key + 1) % 3 == 1): ?>
                 <li class="flex border-featureInput border-2 p-2 w-full col-span-2 rounded-lg bg-white">
@@ -13,7 +13,7 @@
                         <img class="w-1/2 lg:w-1/4" src="../../assets/img/feature.svg" alt="">
                         <div class="flex flex-col w-1/2 items-end lg:items-center">
                             <h2 class="font-bold"><?php echo $feature->getName(); ?></h2>
-                            <p class="bg-featureInput p-2 rounded-xl text-white font-bold w-1/3 text-center my-2"><?php echo $feature->getPrice(); ?>€</p>
+                            <p class="bg-featureInput p-2 rounded-xl text-white font-bold w-1/2 text-center my-2"><?php echo $feature->getPrice(); ?>€</p>
                             <?php if($key == 0): ?>
                                 <p class="bg-primary p-2 rounded-xl text-white font-bold text-center lg:w-1/3">Fonctionnelle</p>
                             <?php endif; ?>

@@ -2,7 +2,7 @@
     <h2 class="font-bold text-xl lg:text-3xl">Mes Outils</h2>
     <p>Profitez de vos fonctionnalités</p>
     <?php if ($userFeatures): ?>
-        <ul class="p-0 w-full list-disc grid grid-cols-2 gap-4 my-5 lg:w-2/3 lg:m-auto lg:my-10">
+        <ul class="p-0 w-full list-disc grid grid-cols-2 gap-4 mt-5 mb-20 lg:w-2/3 lg:m-auto lg:my-10">
             <?php foreach ($userFeatures as $key => $feature): ?>
                 <?php if(($key + 1) % 3 == 1): ?>
                 <li class="flex border-featureInput border-2 p-2 w-full col-span-2 rounded-lg bg-white">

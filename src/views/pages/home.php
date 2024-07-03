@@ -3,7 +3,7 @@
     <section class="relative z-10 h-[600px] lg:h-auto">
         <?php include __DIR__ . '/../components/Landing/cover/cover.php'; ?>
     </section>
-    <section class="relative z-20 rounded-t-5xl bg-black h-[350px]">
+    <section class="relative z-20 rounded-t-5xl bg-black">
         <?php include __DIR__ . '/../components/Landing/explainer/explainer.php'; ?>
     </section>
     <section class="relative top-[-25px] z-30 bg-white rounded-t-5xl">

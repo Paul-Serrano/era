@@ -52,13 +52,13 @@ $user = $_SESSION['user'] ?? null;
         <li class="w-3/4 flex"><a href="/contact" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Contact</a></li>
         <?php if($user) : ?>
             <li class="w-3/4 flex"><a href="/account" class="block text-center p-2 text-secondary rounded hover:bg-secondary-dark text-xl">Mon Compte</a></li>
-            <li class="w-3/4 flex"><a href="/signout" class="text-white font-bold rounded-3xl block text-center p-2 bg-red-500 rounded hover:bg-secondary-dark text-xl w-2/3">Déconnexion</a></li>
+            <li class="w-full justify-center items-center lg:w-3/4 flex"><a href="/signout" class="text-white font-bold rounded-3xl block text-center p-2 bg-red-500 rounded hover:bg-secondary-dark text-xl w-2/3">Déconnexion</a></li>
             <?php if($user->isAdmin()): ?>
-                <li class="w-3/4 flex"><a href="/admin" class="text-white font-bold rounded-3xl block text-center p-2 bg-primary rounded hover:bg-secondary-dark text-xl w-2/3">Panel Admin</a></li>
+                <li class="w-full justify-center items-center lg:w-3/4 flex"><a href="/admin" class="text-white font-bold rounded-3xl block text-center p-2 bg-primary rounded hover:bg-secondary-dark text-xl w-2/3">Panel Admin</a></li>
             <?php endif; ?>
-            <li class="w-3/4 flex"><a href="/panelUser" class="text-white font-bold rounded-3xl block text-center p-2 bg-secondary rounded hover:bg-secondary-dark text-xl w-2/3">Panel User</a></li>
+            <li class="w-full justify-center items-center lg:w-3/4 flex"><a href="/panelUser" class="text-white font-bold rounded-3xl block text-center p-2 bg-secondary rounded hover:bg-secondary-dark text-xl w-2/3">Panel User</a></li>
         <?php else : ?>
-            <li class="w-3/4 flex"><a href="/login" class="text-white font-bold rounded-3xl block text-center p-2 bg-secondary rounded hover:bg-secondary-dark text-xl w-2/3">Se Connecter</a></li>
+            <li class="w-full justify-center items-center lg:w-3/4 flex"><a href="/login" class="text-white font-bold rounded-3xl block text-center p-2 bg-secondary rounded hover:bg-secondary-dark text-xl w-2/3">Se Connecter</a></li>
         <?php endif; ?>
     </ul>
 </nav>
