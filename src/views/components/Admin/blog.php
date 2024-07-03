@@ -41,21 +41,21 @@
             </select>
         </div>
 
-        <div id="selected-tags"></div>
+        <div id="selected-tags" class="flex flex-col lg:grid lg:grid-cols-6 lg:gap-2"></div>
 
         <div id="hidden-fields-container"></div>
 
-        <button type="submit" name="articleSubmit" value="yes">Update</button>
+        <button class="flex justify-center items-center p-2 bg-primary text-white font-bold rounded-full my-5" type="submit" name="articleSubmit" value="yes">Poster</button>
     </div>
 </form>
 
 <h2 class="px-5 py-2 bg-black text-white my-5">Articles Existants</h2>
-<ul class="lg:grid flex flex-col grid-cols-3 lg:space-x-2 lg:space-y-2">
+<ul class="lg:grid flex flex-col grid-cols-3 lg:space-x-2">
     <?php foreach ($data['articles'] as $article): ?>
-    <li class="border-black border-2 p-2">
+    <li class="border-black border-2 p-2 my-2">
         <h2><?= htmlspecialchars($article->getTitle()) ?></h2>
         <p><?= htmlspecialchars($article->getAutor()) ?></p>
-        <div class="flex justify-evenly items-center w-full my-2">
+        <div class="grid grid-cols-2 gap-2 items-center w-full my-2">
             <?php foreach ($article->getTags() as $tag): ?>
                 <span class="bg-black text-white rounded-xl p-2"><?= htmlspecialchars($tag) ;?></span>
             <?php endforeach; ?>
@@ -94,10 +94,10 @@
             </select>
         </div>
 
-        <div id="new-selected-tags"></div>
+        <div id="new-selected-tags" class="flex flex-col lg:grid lg:grid-cols-6 lg:gap-2"></div>
 
         <div id="new-hidden-fields-container"></div>
 
-        <button class="p-2 bg-secondary text-white font-bold text-center rounded-xl" type="submit" name="newArticleSubmit" value="yes">Update</button>
+        <button class="p-2 bg-primary text-white font-bold text-center rounded-xl" type="submit" name="newArticleSubmit" value="yes">Update</button>
     </div>
 </form>

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!tagAlreadySelected) {
                     // Créer un élément pour afficher le tag sélectionné
                     const tagElement = document.createElement('span');
-                    tagElement.className = 'selected-tag bg-secondary p-2 rounded-xl text-white font-bold';
+                    tagElement.className = 'selected-tag bg-secondary p-2 rounded-xl text-white font-boldbg-secondary p-2 rounded-xl text-white font-bold w-auto flex items-center justify-between my-2';
                     tagElement.textContent = selectedTag + ' ';
                     
                     // Ajouter un bouton pour supprimer le tag sélectionné
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
     tinymce.init({
         selector: '#newContentArticleTextarea',
         height: 350,
-        plugins: 'link', // Inclure le plugin 'link'
+        plugins: 'link | link code', // Inclure le plugin 'link'
         toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link',
         setup: (editor) => {
             editor.ui.registry.addContextToolbar('imagealignment', {
@@ -145,7 +145,7 @@ function editArticle(title, content, tags, id) {
     selectedTags.replaceChildren('');
     tags.forEach((tag) => {
         const savedTagElement = document.createElement('span');
-        savedTagElement.className = 'new-selected-tag bg-secondary p-2 rounded-xl text-white font-bold';
+        savedTagElement.className = 'new-selected-tag bg-secondary p-2 rounded-xl text-white font-boldn w-auto flex items-center justify-between my-2';
         savedTagElement.textContent = tag + ' ';
 
         const newRemoveButton = document.createElement('button');
@@ -159,6 +159,11 @@ function editArticle(title, content, tags, id) {
         selectedTags.appendChild(savedTagElement);
     });
     newUpdateHiddenFields();
+    scrollTo('updateArticleForm');
+}
+
+function scrollTo(element) {
+    document.getElementById(element).scrollIntoView({ behavior: 'smooth' });
 }
 
 function newUpdateHiddenFields() {
@@ -173,8 +178,6 @@ function newUpdateHiddenFields() {
         newHiddenField.value = newTagName;
         newHiddenFieldsContainer.appendChild(newHiddenField);
     });
-
-    return newHiddenField;
 }
 
 const newArticleTagSelect = document.getElementById('newArticleTags');
@@ -198,7 +201,7 @@ if (newArticleTagSelect && newSelectedTagsContainer && newHiddenFieldsContainer)
             if (!newTagAlreadySelected) {
                 // Créer un élément pour afficher le tag sélectionné
                 const newTagElement = document.createElement('span');
-                newTagElement.className = 'new-selected-tag bg-secondary p-2 rounded-xl text-white font-bold';
+                newTagElement.className = 'new-selected-tag bg-secondary p-2 rounded-xl text-white font-bold w-auto flex items-center justify-between my-2';
                 newTagElement.textContent = newSelectedTag + ' ';
                 
                 // Ajouter un bouton pour supprimer le tag sélectionné

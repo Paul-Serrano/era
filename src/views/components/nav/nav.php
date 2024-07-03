@@ -10,7 +10,7 @@ $user = $_SESSION['user'] ?? null;
         
         <!-- Menu for desktop -->
         <ul class="hidden lg:flex lg:order-2 lg:w-[60%] lg:justify-evenly space-x-4 bg-[#fefefe]">
-            <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos solutions</a> <img src="../../assets/img/drop-down-arrow.png" alt="fleche menu déroulent" /></li>
+            <!-- <li class="flex items-center m-0"><a href="#" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos solutions</a> <img src="../../assets/img/drop-down-arrow.png" alt="fleche menu déroulent" /></li> -->
             <li class="flex items-center m-0"><a href="/blog" class="hover:text-secondary italic lg:not-italic lg:font-bold">Blog</a></li>
             <li class="flex items-center m-0"><a href="/#homeOffer" class="hover:text-secondary italic lg:not-italic lg:font-bold">Nos tarifs</a></li>
             <li class="flex items-center m-0"><a href="/contact" class="hover:text-secondary italic lg:not-italic lg:font-bold">Contact</a></li>

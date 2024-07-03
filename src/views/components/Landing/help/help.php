@@ -64,5 +64,6 @@
         <p>Voir plus</p>
         <img src="../../assets/img/arrow-button.png" alt="why digital nomad">
     </button>
+    <img class="w-full absolute right-0 bottom-[-100px] z-[-1] md:hidden" src="../../assets/img/sponsorNet.svg" alt="">
 </div>
 <script src="/src/views/components/Landing/help/help.js"></script>

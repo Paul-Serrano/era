@@ -1,5 +1,5 @@
 <!-- public/components/carousel.php -->
-<div class="carousel-component flex flex-col items-center py-5 px-12 md:w-[90%] md:m-auto">
+<div class="carousel-component flex flex-col items-center py-5 px-12 md:w-[90%] md:m-auto bg-carousel">
     <h3 class="text-2xl font-bold leading-8 mt-16">Ce que nous sommes</h3>
     <div class="carousel relative overflow-hidden w-full my-10">
         <div class="carousel-inner flex transition-transform duration-300 h-full">
@@ -41,6 +41,6 @@
         <div class="indicator-item w-8 h-2 bg-secondary opacity-50"></div>
         <div class="indicator-item w-8 h-2 bg-secondary opacity-50"></div>
     </div>
-    <img class="w-full h-full absolute right-0 bottom-0 z-[-1] md:hidden" src="../../assets/img/explainer-net.png" alt="">
+    <img class="w-full h-full absolute right-0 bottom-0 z-[-1] md:hidden" src="../../assets/img/carousel.svg" alt="">
 </div>
 <script src="/src/views/components/Landing/carousel/carousel.js"></script>
