@@ -57,7 +57,7 @@ if (!empty($error)) {
             <input class="rounded-md border border-featureInput p-2 mb-5" id="description" name="description" type="textarea" required>
         </div>
         <div class="flex flex-col my-5">
-            <label class="text-featureInput" for="lang">Languages</label class="text-featureInput">
+            <label class="text-featureInput" for="lang">Langages</label class="text-featureInput">
             <select class="capitalize rounded-md border border-featureInput p-2 mb-5" name="lang" id="lang">
                 <option class="capitalize" value="">Choisissez les langues parlées</option>
                 <?php foreach ($langs as $lang): ?>

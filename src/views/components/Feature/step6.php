@@ -12,7 +12,7 @@
             <input class="hidden" type="radio" name="religion" value="chrétien">
             <p class="ml-2">Chrétien</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/christianity.png" alt="">
     </label>
 
     <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
@@ -21,7 +21,7 @@
             <input class="hidden" type="radio" name="religion" value="musulman">
             <p class="ml-2">Musulman</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/muslim.png" alt="">
     </label>
 
     <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
@@ -30,7 +30,7 @@
             <input class="hidden" type="radio" name="religion" value="juif">
             <p class="ml-2">Juif</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/jewish.png" alt="">
     </label>
 
     <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
@@ -39,7 +39,7 @@
             <input class="hidden" type="radio" name="religion" value="hindou">
             <p class="ml-2">Hindou</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/hinduism.png" alt="">
     </label>
 
     <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
@@ -48,7 +48,7 @@
             <input class="hidden" type="radio" name="religion" value="bouddhiste">
             <p class="ml-2">Bouddhiste</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/buddhism.png" alt="">
     </label>
 
     <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
@@ -57,7 +57,7 @@
             <input class="hidden" type="radio" name="religion" value="sikh">
             <p class="ml-2">Sikh</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/sikhs.png" alt="">
     </label>
 
     <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
@@ -66,7 +66,7 @@
             <input class="hidden" type="radio" name="religion" value="athée">
             <p class="ml-2">Athée</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/athe.png" alt="">
     </label>
 
     <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
@@ -75,7 +75,7 @@
             <input class="hidden" type="radio" name="religion" value="agnostique">
             <p class="ml-2">Agnostique</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/agnostic.png" alt="">
     </label>
 
     <button class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-20 lg:w-1/4 lg:mr-0 lg:py-2" onclick="nextStep()">

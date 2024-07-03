@@ -19,7 +19,7 @@ const userLangSelect = document.getElementById('lang');
                 if (!langAlreadySelected) {
                     // Créer un élément pour afficher le langue sélectionné
                     const langElement = document.createElement('span');
-                    langElement.className = 'w-auto capitalize new-selected-tag bg-secondary p-2 rounded-xl text-white font-bold flex items-center my-2 lg:justify-between';
+                    langElement.className = 'w-auto capitalize new-selected-tag bg-secondary py-2 px-4 rounded-xl text-white font-bold flex items-center my-2 justify-between';
                     langElement.textContent = selectedLang + ' ';
                     
                     // Ajouter un bouton pour supprimer le langue sélectionné

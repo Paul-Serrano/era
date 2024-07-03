@@ -12,7 +12,7 @@
             <input class="hidden" type="checkbox" name="transport" value="avion">
             <p class="ml-2">Avion</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/plane.png" alt="">
     </label>
 
     <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
@@ -21,7 +21,7 @@
             <input class="hidden" type="checkbox" name="transport" value="train">
             <p class="ml-2">Train</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/train.png" alt="">
     </label>
 
     <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
@@ -30,7 +30,7 @@
             <input class="hidden" type="checkbox" name="transport" value="voiture">
             <p class="ml-2">Voiture</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/car.png" alt="">
     </label>
 
     <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
@@ -39,7 +39,7 @@
             <input class="hidden" type="checkbox" name="transport" value="bus">
             <p class="ml-2">Bus</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/bus.png" alt="">
     </label>
 
     <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
@@ -48,7 +48,7 @@
             <input class="hidden" type="checkbox" name="transport" value="vélo">
             <p class="ml-2">Vélo</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/bike.png" alt="">
     </label>
 
     <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
@@ -57,7 +57,7 @@
             <input class="hidden" type="checkbox" name="transport" value="marche">
             <p class="ml-2">Marche</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/walk.png" alt="">
     </label>
 
     <label class="rounded-md border border-featureInput py-2 px-6 my-5 flex justify-between items-center text-featureInput lg:w-1/2">
@@ -66,7 +66,7 @@
             <input class="hidden" type="checkbox" name="transport" value="transports en commun">
             <p class="ml-2">Transports en commun</p>
         </div>
-        <img src="" alt="">
+        <img src="../../assets/img/subway.png" alt="">
     </label>
     
     <button class="py-3 bg-black font-bold text-white rounded-full w-full my-5 mx-auto flex items-center justify-evenly px-20 lg:w-1/4 lg:mr-0 lg:py-2" onclick="nextStep()">

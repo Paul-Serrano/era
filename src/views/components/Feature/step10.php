@@ -24,8 +24,8 @@
             </div>
             <div class="flex flex-col my-4">
                 <p class="font-bold">Dates de voyage</p>
-                <div class="flex items-center justify-between">
-                    <span id="recapStartDate" class="bg-white rounded-full p-2 text-center align-middle"></span>
+                <div class="flex flex-col items-center justify-between">
+                    <span id="recapStartDate" class="bg-white rounded-full p-2 text-center align-middle my-5"></span>
                     <span id="recapEndDate" class="bg-white rounded-full p-2 text-center align-middle"></span>
                 </div>
             </div>

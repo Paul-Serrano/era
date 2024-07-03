@@ -7,6 +7,11 @@
 
 - ou Créez votre propre espace ! (Vous ne serez cependant pas Admin, donc pas de possibilité d'accéder au panel de configuration)
 
+# MVP générateur de train de vie
+
+- Lien direct depuis la homepage
+- Après Connexion: Panel User -> générateur de train de vie -> souscrire -> mes outils -> générateur de train de vie
+
 # Vos possibilités, aujourd'hui :
 
 - En tant que User: 
